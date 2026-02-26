@@ -1,4 +1,7 @@
 {
+  "build": {
+    "outputDirectory": "mbti"
+  },
   "rewrites": [
     {
       "source": "/mbti/(.*)",
