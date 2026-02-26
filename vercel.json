@@ -1,0 +1,23 @@
+{
+  "rewrites": [
+    {
+      "source": "/mbti/(.*)",
+      "destination": "/mbti/index.html"
+    },
+    {
+      "source": "/mbti",
+      "destination": "/mbti/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/mbti/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
