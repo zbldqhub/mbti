@@ -6,17 +6,12 @@ import { defineConfig } from "vite"
 export default defineConfig({
   base: './',
   plugins: [vue()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
   server: {
     port: 3000,
     host: true
   },
   build: {
-    outDir: 'dist',
+    outDir: 'mbti',
     assetsDir: 'assets',
     sourcemap: false,
     rollupOptions: {
@@ -24,5 +19,10 @@ export default defineConfig({
         manualChunks: undefined
       }
     }
-  }
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 });
