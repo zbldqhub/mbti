@@ -11,7 +11,7 @@ export default defineConfig({
     host: true
   },
   build: {
-    outDir: 'mbti',
+    outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
     rollupOptions: {

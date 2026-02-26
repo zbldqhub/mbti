@@ -1,17 +1,17 @@
 {
   "rewrites": [
     {
-      "source": "/mbti/(.*)",
-      "destination": "/mbti/index.html"
+      "source": "/mbti(.*)",
+      "destination": "/index.html"
     },
     {
-      "source": "/mbti",
-      "destination": "/mbti/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/mbti/assets/(.*)",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
