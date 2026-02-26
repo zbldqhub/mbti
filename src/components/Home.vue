@@ -36,7 +36,7 @@
         <span class="btn-text">开始测试</span>
         <span class="btn-arrow">→</span>
       </button>
-      <p class="sub-text">基于经典MBTI理论 · 28题免费</p>
+      <p class="sub-text">基于经典MBTI理论 · 全部免费</p>
     </div>
 
     <!-- 底部信息 -->
