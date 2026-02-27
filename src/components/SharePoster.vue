@@ -42,7 +42,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { calculateMBTIType, getTypeInfo, calculatePercentages } from '../utils/scoring.js';
+import { calculateMBTIType, getTypeInfo } from '../utils/scoring.js';
 import { qrCodeImage } from '../config/images.js';
 
 const props = defineProps({
@@ -60,7 +60,6 @@ const showCopySuccess = ref(false);
 
 const mbtiType = calculateMBTIType(props.scores);
 const typeInfo = getTypeInfo(mbtiType);
-const percentages = calculatePercentages(props.scores);
 
 // 分享链接
 const shareUrl = 'https://www.szsztop.cn/mbti';
@@ -86,11 +85,11 @@ const generatePoster = async () => {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const dpr = 2; // 高清输出
+  const dpr = 2;
   
-  // 画布尺寸 - 加高以提供更好的间距
+  // 画布尺寸 - 1:1 正方形，更简洁
   const width = 375;
-  const height = 720;
+  const height = 600;
   canvas.width = width * dpr;
   canvas.height = height * dpr;
   canvas.style.width = width + 'px';
@@ -100,23 +99,21 @@ const generatePoster = async () => {
   // 清除画布
   ctx.clearRect(0, 0, width, height);
 
-  // ===== 背景 =====
+  // ===== 渐变背景 =====
   const bgGradient = ctx.createLinearGradient(0, 0, 0, height);
   bgGradient.addColorStop(0, '#7C3AED');
-  bgGradient.addColorStop(0.5, '#8B5CF6');
   bgGradient.addColorStop(1, '#A78BFA');
   ctx.fillStyle = bgGradient;
   ctx.fillRect(0, 0, width, height);
 
-  // 装饰圆
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
+  // ===== 装饰圆点 =====
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
   [
-    { x: 50, y: 80, r: 50 },
-    { x: 340, y: 120, r: 70 },
-    { x: 300, y: 300, r: 40 },
-    { x: 60, y: 400, r: 60 },
-    { x: 320, y: 520, r: 45 },
-    { x: 100, y: 600, r: 35 }
+    { x: 40, y: 60, r: 40 },
+    { x: 340, y: 100, r: 60 },
+    { x: 320, y: 280, r: 35 },
+    { x: 50, y: 350, r: 50 },
+    { x: 330, y: 450, r: 40 }
   ].forEach(c => {
     ctx.beginPath();
     ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
@@ -124,33 +121,33 @@ const generatePoster = async () => {
   });
 
   // ===== 顶部标题 =====
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-  ctx.font = '16px -apple-system, sans-serif';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+  ctx.font = '14px -apple-system, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('我的MBTI性格类型', width / 2, 45);
+  ctx.fillText('我的 MBTI 性格类型', width / 2, 40);
 
-  // ===== 类型字母 =====
+  // ===== 类型字母（大） =====
   ctx.fillStyle = '#FFFFFF';
-  ctx.font = 'bold 68px -apple-system, sans-serif';
-  ctx.fillText(mbtiType, width / 2, 110);
+  ctx.font = 'bold 80px -apple-system, sans-serif';
+  ctx.fillText(mbtiType, width / 2, 115);
 
   // ===== 类型名称 =====
   ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-  ctx.font = '26px -apple-system, sans-serif';
-  ctx.fillText(typeInfo.name, width / 2, 150);
+  ctx.font = '24px -apple-system, sans-serif';
+  ctx.fillText(typeInfo.name, width / 2, 155);
 
   // ===== 关键词标签 =====
   const keywords = typeInfo.keywords.slice(0, 3);
-  const tagWidth = 80;
-  const tagGap = 12;
+  const tagWidth = 76;
+  const tagGap = 10;
   const startX = (width - (keywords.length * tagWidth + (keywords.length - 1) * tagGap)) / 2;
   
   keywords.forEach((keyword, i) => {
     const x = startX + i * (tagWidth + tagGap);
-    const y = 170;
+    const y = 175;
     
     // 标签背景
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
     roundRect(ctx, x, y, tagWidth, 28, 14);
     ctx.fill();
     
@@ -160,121 +157,91 @@ const generatePoster = async () => {
     ctx.fillText(keyword, x + tagWidth / 2, y + 19);
   });
 
-  // ===== 白色卡片 - 维度分析 =====
-  const cardY = 215;
-  const cardH = 260;
+  // ===== 分隔线 =====
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(60, 220);
+  ctx.lineTo(315, 220);
+  ctx.stroke();
+
+  // ===== 核心特质（简化展示） =====
   ctx.fillStyle = '#FFFFFF';
-  roundRect(ctx, 24, cardY, width - 48, cardH, 16);
-  ctx.fill();
+  ctx.font = 'bold 16px -apple-system, sans-serif';
+  ctx.fillText('核心特质', width / 2, 250);
 
-  // 卡片标题
-  ctx.fillStyle = '#1F2937';
-  ctx.font = 'bold 17px -apple-system, sans-serif';
-  ctx.fillText('性格维度分析', width / 2, cardY + 32);
-
-  // 维度数据
-  const dims = [
-    { name: '外向 E', val: percentages.E, color: '#F59E0B' },
-    { name: '内向 I', val: percentages.I, color: '#8B5CF6' },
-    { name: '实感 S', val: percentages.S, color: '#3B82F6' },
-    { name: '直觉 N', val: percentages.N, color: '#8B5CF6' },
-    { name: '思考 T', val: percentages.T, color: '#EC4899' },
-    { name: '情感 F', val: percentages.F, color: '#8B5CF6' },
-    { name: '判断 J', val: percentages.J, color: '#10B981' },
-    { name: '知觉 P', val: percentages.P, color: '#8B5CF6' }
-  ];
-
-  let y = cardY + 58;
-  const barMaxW = 190;
-  const barH = 12;
-
-  dims.forEach(d => {
-    // 名称
-    ctx.fillStyle = '#6B7280';
-    ctx.font = '11px -apple-system, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText(d.name, 45, y + 9);
-
-    // 背景条
-    ctx.fillStyle = '#F3F4F6';
-    roundRect(ctx, 100, y - 2, barMaxW, barH, 6);
+  const traits = typeInfo.description.traits.slice(0, 3);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+  ctx.font = '14px -apple-system, sans-serif';
+  ctx.textAlign = 'left';
+  
+  traits.forEach((trait, i) => {
+    const y = 280 + i * 32;
+    // 圆点
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.beginPath();
+    ctx.arc(70, y - 4, 4, 0, Math.PI * 2);
     ctx.fill();
-
-    // 进度条
-    ctx.fillStyle = d.color;
-    const barW = Math.max((d.val / 100) * barMaxW, 4);
-    roundRect(ctx, 100, y - 2, barW, barH, 6);
-    ctx.fill();
-
-    // 百分比
-    ctx.fillStyle = '#374151';
-    ctx.font = 'bold 11px -apple-system, sans-serif';
-    ctx.textAlign = 'right';
-    ctx.fillText(d.val + '%', 315, y + 9);
-
-    y += 28;
+    // 文字
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    // 截断文字避免过长
+    const displayTrait = trait.length > 18 ? trait.substring(0, 18) + '...' : trait;
+    ctx.fillText(displayTrait, 85, y);
   });
 
-  // ===== 底部区域 =====
-  const bottomY = 495;
+  // ===== 底部区域 - 二维码 =====
+  const bottomY = 420;
   
-  // Logo
-  ctx.fillStyle = '#FFFFFF';
-  ctx.font = 'bold 18px -apple-system, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText('🔮 MBTI性格测试', width / 2, bottomY);
-
   // 二维码背景卡片
   ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
-  roundRect(ctx, 24, bottomY + 18, width - 48, 100, 12);
+  roundRect(ctx, 30, bottomY, width - 60, 140, 16);
   ctx.fill();
 
   // 绘制二维码
   try {
     const qrImg = await loadImage(qrCodeImage);
-    const qrSize = 75;
-    const qrX = 45;
-    const qrY = bottomY + 30;
+    const qrSize = 90;
+    const qrX = 50;
+    const qrY = bottomY + 25;
     
     // 白色背景
     ctx.fillStyle = '#FFFFFF';
-    roundRect(ctx, qrX - 4, qrY - 4, qrSize + 8, qrSize + 8, 6);
+    roundRect(ctx, qrX - 5, qrY - 5, qrSize + 10, qrSize + 10, 8);
     ctx.fill();
     
     ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
   } catch (e) {
     // 占位符
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(45, bottomY + 30, 75, 75);
+    ctx.fillRect(50, bottomY + 25, 90, 90);
     ctx.fillStyle = '#8B5CF6';
-    ctx.font = '11px sans-serif';
+    ctx.font = '12px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('二维码', 82, bottomY + 72);
+    ctx.fillText('二维码', 95, bottomY + 75);
   }
 
-  // 二维码文字
-  ctx.fillStyle = '#FFFFFF';
-  ctx.font = '15px -apple-system, sans-serif';
+  // 右侧文字
   ctx.textAlign = 'left';
-  ctx.fillText('扫码测测你的MBTI性格', 135, bottomY + 60);
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = 'bold 16px -apple-system, sans-serif';
+  ctx.fillText('扫码测测你的', 155, bottomY + 50);
+  ctx.fillText('MBTI性格', 155, bottomY + 75);
 
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-  ctx.font = '12px -apple-system, sans-serif';
-  ctx.fillText('3分钟快速测试 · 免费体验', 135, bottomY + 82);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+  ctx.font = '13px -apple-system, sans-serif';
+  ctx.fillText('3分钟快速测试 · 免费', 155, bottomY + 105);
 
   // 网址
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-  ctx.font = '13px -apple-system, sans-serif';
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+  ctx.font = '12px -apple-system, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText(shareUrl, width / 2, bottomY + 108);
+  ctx.fillText(shareUrl, width / 2, bottomY + 125);
 };
 
 // 加载图片
 const loadImage = (src) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    // 只有跨域图片才需要设置 crossOrigin
-    // 本地图片不需要，否则会导致加载失败
     if (src.startsWith('http')) {
       img.crossOrigin = 'anonymous';
     }
@@ -300,13 +267,12 @@ const savePoster = () => {
 
 // 复制分享文案
 const copyShareText = () => {
-  const text = `🔮 我的MBTI性格类型是 ${mbtiType}（${typeInfo.name}）\n\n✨ 性格关键词：${typeInfo.keywords.join(' · ')}\n\n🎯 推荐职业：${typeInfo.description.careers.slice(0, 5).join('、')}\n\n💡 快来测测你的MBTI性格类型吧！\n${shareUrl}`;
+  const text = `🔮 我的MBTI性格类型是 ${mbtiType}（${typeInfo.name}）\n\n✨ 性格关键词：${typeInfo.keywords.join(' · ')}\n\n💡 快来测测你的MBTI性格类型吧！\n${shareUrl}`;
   
   navigator.clipboard.writeText(text).then(() => {
     showCopySuccess.value = true;
     setTimeout(() => showCopySuccess.value = false, 2000);
   }).catch(() => {
-    // 如果复制失败，显示提示
     alert('复制失败，请手动复制');
   });
 };
@@ -348,9 +314,9 @@ onMounted(() => {
 }
 
 .poster-canvas {
-  max-height: 52vh;
+  max-height: 55vh;
   max-width: 85vw;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
