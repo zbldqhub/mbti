@@ -319,53 +319,57 @@ onMounted(() => {
   margin: 0;
 }
 
-/* 结果内容 */
+/* 结果内容 - 优化间距 */
 .result-content {
-  padding: 24px 20px;
-  padding-bottom: calc(24px + env(safe-area-inset-bottom, 20px));
+  padding: 16px 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 20px));
 }
 
-/* 类型头部 */
+/* 类型头部 - 优化间距 */
 .type-header {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .type-icon {
-  font-size: 64px;
-  margin-bottom: 12px;
+  font-size: 48px;
+  margin-bottom: 8px;
   display: inline-block;
   animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
 .type-name {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: #1F2937;
-  margin: 0 0 12px 0;
+  margin: 0 0 10px 0;
 }
 
 .type-letters {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
 .letter {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: #E5E7EB;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: #9CA3AF;
   transition: all 0.3s ease;
@@ -374,66 +378,68 @@ onMounted(() => {
 .letter.highlight {
   background: linear-gradient(135deg, #8B5CF6, #7C3AED);
   color: white;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 3px 10px rgba(139, 92, 246, 0.3);
 }
 
 .type-keywords {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .keyword {
-  padding: 6px 14px;
+  padding: 4px 10px;
   background: #F3E8FF;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 16px;
+  font-size: 13px;
   color: #7C3AED;
   font-weight: 500;
 }
 
-/* 雷达图区域 */
+/* 雷达图区域 - 优化间距 */
 .radar-section {
   background: white;
-  border-radius: 20px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .section-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #1F2937;
-  margin: 0 0 20px 0;
+  margin: 0 0 12px 0;
   text-align: center;
 }
 
 .radar-chart-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  min-height: 240px;
+  margin-bottom: 12px;
+  min-height: 180px;
 }
 
 .dimension-labels {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .dimension-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
-  font-size: 14px;
+  gap: 12px;
+  font-size: 13px;
 }
 
 .dim-label {
   color: #9CA3AF;
   transition: all 0.3s ease;
+  min-width: 80px;
+  text-align: center;
 }
 
 .dim-label.active {
@@ -445,88 +451,89 @@ onMounted(() => {
   color: #E5E7EB;
 }
 
-/* 特质区域 */
+/* 特质区域 - 优化间距 */
 .traits-section,
 .career-section,
 .relationship-section {
   background: white;
-  border-radius: 20px;
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .traits-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .trait-item {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   color: #4B5563;
-  line-height: 1.6;
+  line-height: 1.5;
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .trait-bullet {
   color: #8B5CF6;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
-/* 职业标签 */
+/* 职业标签 - 优化间距 */
 .career-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .career-tag {
-  padding: 10px 18px;
+  padding: 8px 14px;
   background: linear-gradient(135deg, #F3E8FF, #EDE9FE);
-  border-radius: 24px;
-  font-size: 14px;
+  border-radius: 20px;
+  font-size: 13px;
   color: #7C3AED;
   font-weight: 500;
 }
 
-/* 人际关系 */
+/* 人际关系 - 优化间距 */
 .relationship-text {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   color: #4B5563;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-/* 继续答题卡片 */
+/* 继续答题卡片 - 优化间距 */
 .continue-section {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .continue-card {
   background: linear-gradient(135deg, #FFFFFF, #F3E8FF);
   border: 2px solid #8B5CF6;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.12);
 }
 
 .continue-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
 .continue-icon {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .continue-title {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 700;
   color: #7C3AED;
   margin: 0;
@@ -535,61 +542,62 @@ onMounted(() => {
 .continue-features {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 15px;
+  gap: 8px;
+  font-size: 14px;
   color: #4B5563;
 }
 
 .feature-check {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background: #8B5CF6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 12px;
+  font-size: 11px;
+  flex-shrink: 0;
 }
 
 .continue-note {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  padding: 12px;
+  gap: 6px;
+  padding: 10px;
   background: rgba(139, 92, 246, 0.08);
-  border-radius: 12px;
-  margin-bottom: 20px;
-  font-size: 13px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 12px;
   color: #6B7280;
 }
 
 .note-icon {
-  font-size: 16px;
+  font-size: 14px;
   flex-shrink: 0;
 }
 
 .continue-btn {
   width: 100%;
-  padding: 16px;
+  padding: 12px;
   background: linear-gradient(135deg, #8B5CF6, #7C3AED);
   border: none;
-  border-radius: 14px;
+  border-radius: 12px;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   transition: all 0.3s ease;
 }
 
@@ -605,33 +613,33 @@ onMounted(() => {
   transform: translateX(4px);
 }
 
-/* 深度内容 */
+/* 深度内容 - 优化间距 */
 .deep-content-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .deep-card {
   background: white;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .cognitive-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .cognitive-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px;
-  border-radius: 12px;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
 }
 
 .cognitive-item.primary {
@@ -651,53 +659,55 @@ onMounted(() => {
 }
 
 .cognitive-label {
-  padding: 4px 10px;
+  padding: 3px 8px;
   background: #8B5CF6;
-  border-radius: 6px;
-  font-size: 12px;
+  border-radius: 5px;
+  font-size: 11px;
   color: white;
   font-weight: 600;
+  flex-shrink: 0;
 }
 
 .cognitive-value {
-  font-size: 14px;
+  font-size: 13px;
   color: #4B5563;
 }
 
 .stress-text {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   color: #4B5563;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .career-detailed {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .career-detailed-tag {
-  padding: 10px 16px;
+  padding: 8px 14px;
   background: linear-gradient(135deg, #8B5CF6, #7C3AED);
-  border-radius: 24px;
-  font-size: 13px;
+  border-radius: 20px;
+  font-size: 12px;
   color: white;
   font-weight: 500;
 }
 
-/* 底部按钮 */
+/* 底部按钮 - 优化间距 */
 .action-section {
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  padding: 0 4px;
 }
 
 .restart-btn,
 .share-btn {
   flex: 1;
-  height: 48px;
-  border-radius: 12px;
-  font-size: 15px;
+  height: 44px;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -705,7 +715,7 @@ onMounted(() => {
 
 .restart-btn {
   background: white;
-  border: 2px solid #E5E7EB;
+  border: 1.5px solid #E5E7EB;
   color: #6B7280;
 }
 
