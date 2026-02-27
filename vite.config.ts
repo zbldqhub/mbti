@@ -15,7 +15,10 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: false,
     rollupOptions: {
-      input: path.resolve(__dirname, './vue-index.html'),
+      input: {
+        main: path.resolve(__dirname, './index.html'),
+        mbti: path.resolve(__dirname, './vue-index.html'),
+      },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',

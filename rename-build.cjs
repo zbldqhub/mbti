@@ -1,70 +1,56 @@
 const fs = require('fs');
 const path = require('path');
 
-// 创建mbti目录
-const mbtiDir = path.join(__dirname, 'mbti');
+const distDir = path.join(__dirname, 'dist');
+
+if (!fs.existsSync(distDir)) {
+  console.error('dist directory not found');
+  process.exit(1);
+}
+
+// 在dist目录内创建mbti目录
+const mbtiDir = path.join(distDir, 'mbti');
 if (!fs.existsSync(mbtiDir)) {
   fs.mkdirSync(mbtiDir, { recursive: true });
-  console.log('Created mbti directory');
+  console.log('Created dist/mbti directory');
 }
 
-// 复制dist目录下的所有文件到mbti目录
-const distDir = path.join(__dirname, 'dist');
-if (fs.existsSync(distDir)) {
-  const files = fs.readdirSync(distDir);
-  files.forEach(file => {
-    const sourcePath = path.join(distDir, file);
-    const destPath = path.join(mbtiDir, file);
-    
-    if (fs.statSync(sourcePath).isDirectory()) {
-      // 复制目录
-      if (!fs.existsSync(destPath)) {
-        fs.mkdirSync(destPath, { recursive: true });
-      }
-      const dirFiles = fs.readdirSync(sourcePath);
-      dirFiles.forEach(dirFile => {
-        const dirSourcePath = path.join(sourcePath, dirFile);
-        const dirDestPath = path.join(destPath, dirFile);
-        fs.copyFileSync(dirSourcePath, dirDestPath);
-      });
-    } else {
-      // 复制文件
-      fs.copyFileSync(sourcePath, destPath);
-    }
-  });
-  console.log('Copied files from dist to mbti directory');
+// 复制vue-index.html到mbti目录并重命名为index.html
+const vueIndexPath = path.join(distDir, 'vue-index.html');
+const mbtiIndexPath = path.join(mbtiDir, 'index.html');
+if (fs.existsSync(vueIndexPath)) {
+  let content = fs.readFileSync(vueIndexPath, 'utf8');
+  // 修改资源引用路径，从mbti目录指向父目录的assets
+  content = content.replace(/src="\.\/assets\//g, 'src="../assets/');
+  content = content.replace(/href="\.\/assets\//g, 'href="../assets/');
+  fs.writeFileSync(mbtiIndexPath, content);
+  console.log('Created dist/mbti/index.html with updated asset paths');
+  
+  // 删除原始的vue-index.html
+  fs.unlinkSync(vueIndexPath);
+  console.log('Removed original vue-index.html');
 } else {
-  console.error('dist directory not found');
+  console.error('vue-index.html not found in dist');
 }
 
-// 重命名HTML文件
-const htmlPath = path.join(__dirname, 'mbti', 'vue-index.html');
-const newHtmlPath = path.join(__dirname, 'mbti', 'index.html');
-if (fs.existsSync(htmlPath)) {
-  fs.renameSync(htmlPath, newHtmlPath);
-  console.log('Renamed vue-index.html to index.html');
+// 修改主index.html中的MBTI链接为相对路径
+const mainIndexPath = path.join(distDir, 'index.html');
+if (fs.existsSync(mainIndexPath)) {
+  let content = fs.readFileSync(mainIndexPath, 'utf8');
+  // 将/mbti链接改为相对路径 ./mbti/
+  content = content.replace(/href="\/mbti"/g, 'href="./mbti/"');
+  fs.writeFileSync(mainIndexPath, content);
+  console.log('Updated main index.html MBTI link to relative path');
 }
 
-// 重命名CSS和JS文件
-const assetsDir = path.join(__dirname, 'mbti', 'assets');
-if (fs.existsSync(assetsDir)) {
-  const files = fs.readdirSync(assetsDir);
-  files.forEach(file => {
-    if (file.startsWith('vue-index-')) {
-      const newFileName = file.replace('vue-index-', 'index-');
-      const oldPath = path.join(assetsDir, file);
-      const newPath = path.join(assetsDir, newFileName);
-      fs.renameSync(oldPath, newPath);
-      console.log(`Renamed ${file} to ${newFileName}`);
-    }
-  });
-}
-
-// 修改index.html文件中的资源引用
-const indexHtmlPath = path.join(__dirname, 'mbti', 'index.html');
-if (fs.existsSync(indexHtmlPath)) {
-  let content = fs.readFileSync(indexHtmlPath, 'utf8');
-  content = content.replace(/vue-index-/g, 'index-');
-  fs.writeFileSync(indexHtmlPath, content);
-  console.log('Updated resource references in index.html');
-}
+console.log('');
+console.log('Build post-processing completed!');
+console.log('');
+console.log('Deployment structure:');
+console.log('  dist/');
+console.log('    ├── index.html      (主页 - 访问 /)');
+console.log('    ├── assets/         (公共资源)');
+console.log('    └── mbti/');
+console.log('         └── index.html (MBTI测试页 - 访问 /mbti/)');
+console.log('');
+console.log('部署时只需上传 dist 目录即可！');
