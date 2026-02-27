@@ -192,17 +192,17 @@ const generatePoster = async () => {
   // ===== 底部区域 - 二维码 =====
   const bottomY = 420;
   
-  // 二维码背景卡片
+  // 二维码背景卡片 - 增加高度给网址留出空间
   ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
-  roundRect(ctx, 30, bottomY, width - 60, 140, 16);
+  roundRect(ctx, 30, bottomY, width - 60, 155, 16);
   ctx.fill();
 
   // 绘制二维码
   try {
     const qrImg = await loadImage(qrCodeImage);
-    const qrSize = 90;
+    const qrSize = 85;
     const qrX = 50;
-    const qrY = bottomY + 25;
+    const qrY = bottomY + 20;
     
     // 白色背景
     ctx.fillStyle = '#FFFFFF';
@@ -213,29 +213,29 @@ const generatePoster = async () => {
   } catch (e) {
     // 占位符
     ctx.fillStyle = '#FFFFFF';
-    ctx.fillRect(50, bottomY + 25, 90, 90);
+    ctx.fillRect(50, bottomY + 20, 85, 85);
     ctx.fillStyle = '#8B5CF6';
     ctx.font = '12px sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillText('二维码', 95, bottomY + 75);
+    ctx.fillText('二维码', 92, bottomY + 68);
   }
 
   // 右侧文字
   ctx.textAlign = 'left';
   ctx.fillStyle = '#FFFFFF';
   ctx.font = 'bold 16px -apple-system, sans-serif';
-  ctx.fillText('扫码测测你的', 155, bottomY + 50);
-  ctx.fillText('MBTI性格', 155, bottomY + 75);
+  ctx.fillText('扫码测测你的', 155, bottomY + 45);
+  ctx.fillText('MBTI性格', 155, bottomY + 70);
 
   ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
   ctx.font = '13px -apple-system, sans-serif';
-  ctx.fillText('3分钟快速测试 · 免费', 155, bottomY + 105);
+  ctx.fillText('3分钟快速测试 · 免费', 155, bottomY + 98);
 
-  // 网址
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+  // 网址 - 放在卡片底部居中，与上方内容保持距离
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
   ctx.font = '12px -apple-system, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText(shareUrl, width / 2, bottomY + 125);
+  ctx.fillText(shareUrl, width / 2, bottomY + 138);
 };
 
 // 加载图片
