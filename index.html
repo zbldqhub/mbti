@@ -1,66 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="theme-color" content="#8B5CF6" />
-    <meta name="description" content="3分钟完成MBTI性格测试，发现真实的自己。基于经典MBTI理论，28题免费测试。" />
-    <meta name="keywords" content="MBTI,性格测试,心理测试,人格类型" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>" />
-    <title>MBTI性格测试 - 3分钟发现真实的自己</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字手作 - 欢迎</title>
     <style>
-      /* 预加载样式，防止闪烁 */
-      html, body {
-        margin: 0;
-        padding: 0;
-        background: #F3F4F6;
-      }
-      #app {
-        min-height: 100vh;
-      }
-      /* 加载动画 */
-      .app-loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #F3F4F6;
-        z-index: 9999;
-      }
-      .app-loading-spinner {
-        width: 40px;
-        height: 40px;
-        border: 3px solid #E5E7EB;
-        border-top-color: #8B5CF6;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-      .app-loading-text {
-        margin-top: 16px;
-        font-size: 14px;
-        color: #6B7280;
-      }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
     </style>
-  </head>
-  <body>
-    <div id="app">
-      <!-- 预加载动画 -->
-      <div class="app-loading">
-        <div class="app-loading-spinner"></div>
-        <p class="app-loading-text">加载中...</p>
-      </div>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到数字手作</h1>
+        <p>这里是数字手作的官方网站，我们致力于为您提供优质的数字产品和服务。</p>
+        <p>探索我们的MBTI性格测试，了解真实的自己：</p>
+        <a href="/mbti" class="btn">开始MBTI测试</a>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+    <div class="footer">
+        <p>&copy; 2026 数字手作. 保留所有权利.</p>
+    </div>
+</body>
 </html>
