@@ -1,5 +1,4 @@
 {
-  "outputDirectory": "mbti",
   "headers": [
     {
       "source": "/assets/(.*)",
