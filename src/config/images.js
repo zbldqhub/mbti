@@ -1,13 +1,14 @@
 /**
  * 图片配置文件
- * 
+ *
  * 新手配置指南：
- * 
+ *
  * 1. 题目配图：可以替换为 Unsplash 上的高质量图片链接
  *    获取方式：访问 https://unsplash.com，搜索关键词，复制图片链接
- * 
- * 2. 二维码图片：替换为你自己的二维码图片链接
- *    获取方式：使用草料二维码 https://cli.im 生成，上传到你的服务器或图床
+ *
+ * 2. 二维码图片：支持两种方式
+ *    a) 本地图片（推荐）：将二维码图片放在 public/images/qrcode.png
+ *    b) 在线图片：使用图片URL（如：https://example.com/qrcode.png）
  */
 
 // ============================================
@@ -15,16 +16,19 @@
 // ============================================
 
 /**
- * 二维码图片URL
- * 
- * 替换方式：
- * 1. 访问 https://cli.im 生成你的二维码
- * 2. 下载二维码图片，上传到图床（如：https://imgur.com、https://sm.ms）
- * 3. 将下面的链接替换为你的二维码图片链接
- * 
+ * 二维码图片路径
+ *
+ * 使用本地图片（推荐）：
+ * 1. 将你的二维码图片命名为 qrcode.png
+ * 2. 放到 public/images/ 目录下
+ * 3. 下面的配置保持 'images/qrcode.png' 即可（注意没有斜杠开头）
+ *
+ * 使用在线图片：
+ * 直接将路径改为完整的URL，如：'https://example.com/qrcode.png'
+ *
  * 推荐尺寸：200x200 像素
  */
-export const qrCodeImage = 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200&h=200&fit=crop';
+export const qrCodeImage = 'images/qrcode.png';
 
 // ============================================
 // 题目配图配置
@@ -257,7 +261,7 @@ export const getQuestionImage = (dimension, questionId) => {
     'TF': tfImages,
     'JP': jpImages
   };
-  
+
   const images = imageMap[dimension] || eiImages;
   // 使用题目ID对图片数组长度取模，确保每个题目都有唯一图片
   return images[(questionId - 1) % images.length];
