@@ -21,14 +21,14 @@
  * 使用本地图片（推荐）：
  * 1. 将你的二维码图片命名为 qrcode.png
  * 2. 放到 public/images/ 目录下
- * 3. 下面的配置保持 'images/qrcode.png' 即可（注意没有斜杠开头）
+ * 3. 下面的配置保持 '/images/qrcode.png' 即可（注意带斜杠开头）
  *
  * 使用在线图片：
  * 直接将路径改为完整的URL，如：'https://example.com/qrcode.png'
  *
  * 推荐尺寸：200x200 像素
  */
-export const qrCodeImage = 'images/qrcode.png';
+export const qrCodeImage = '/images/qrcode.png';
 
 // ============================================
 // 题目配图配置
