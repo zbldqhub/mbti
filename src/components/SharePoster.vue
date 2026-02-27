@@ -316,7 +316,11 @@ const generatePoster = async () => {
 const loadImage = (src) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.crossOrigin = 'anonymous';
+    // 只有跨域图片才需要设置 crossOrigin
+    // 本地图片不需要，否则会导致加载失败
+    if (src.startsWith('http')) {
+      img.crossOrigin = 'anonymous';
+    }
     img.onload = () => resolve(img);
     img.onerror = () => reject(new Error('加载失败'));
     img.src = src;
