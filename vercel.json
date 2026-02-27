@@ -1,4 +1,9 @@
 {
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/mbti", "destination": "/mbti/index.html" },
+    { "source": "/mbti/(.*)", "destination": "/mbti/index.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
