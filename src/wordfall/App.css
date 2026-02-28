@@ -46,3 +46,46 @@ html {
     transform: none;
   }
 }
+
+/* 下落词语样式 */
+.falling-word {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  z-index: 50;
+  opacity: 1;
+  transition: opacity 0.2s, transform 0.2s;
+  padding: 25px 35px;
+  margin: -25px -35px;
+  min-width: 80px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.falling-word:hover {
+  transform: scale(1.2) !important;
+}
+
+.falling-word.collecting {
+  opacity: 0.5;
+  z-index: 100;
+  transform: scale(1.2) !important;
+}
+
+/* 粒子动画 */
+@keyframes particle-explode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--vx, 80px), var(--vy, 80px)) scale(0);
+  }
+}
+
+.particle-effect {
+  animation: particle-explode 0.6s ease-out forwards;
+}
