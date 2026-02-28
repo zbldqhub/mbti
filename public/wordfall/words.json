@@ -1,0 +1,10047 @@
+[
+  {
+    "id": "cosmic_0000",
+    "text": "星群",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0001",
+    "text": "日食",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0002",
+    "text": "月晕",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0003",
+    "text": "潮汐",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0004",
+    "text": "磁暴",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0005",
+    "text": "极光",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0006",
+    "text": "银河",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0007",
+    "text": "宇宙微波",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0008",
+    "text": "事件视界",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0009",
+    "text": "暗物质",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0010",
+    "text": "虫洞",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0011",
+    "text": "光年",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0012",
+    "text": "闰秒",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0013",
+    "text": "蓝调时刻",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0014",
+    "text": "黄金时刻",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0015",
+    "text": "天顶",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0016",
+    "text": "地平线",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0017",
+    "text": "对流层",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0018",
+    "text": "平流层",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0019",
+    "text": "积雨云",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0020",
+    "text": "卷云",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0021",
+    "text": "层积云",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0022",
+    "text": "蘑菇云",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0023",
+    "text": "晨昏线",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0024",
+    "text": "本初子午线",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0025",
+    "text": "国际日期变更线",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0026",
+    "text": "夏至",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0027",
+    "text": "冬至",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0028",
+    "text": "春分",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0029",
+    "text": "秋分",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0030",
+    "text": "满月",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0031",
+    "text": "新月",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0032",
+    "text": "上弦月",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0033",
+    "text": "下弦月",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0034",
+    "text": "血月",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0035",
+    "text": "超级月亮",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0036",
+    "text": "流星雨",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0037",
+    "text": "陨石",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0038",
+    "text": "黑洞",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0039",
+    "text": "白矮星",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0040",
+    "text": "红巨星",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0041",
+    "text": "星云",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0042",
+    "text": "星团",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0043",
+    "text": "类星体",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0044",
+    "text": "脉冲星",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0045",
+    "text": "引力波",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0046",
+    "text": "相对论",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0047",
+    "text": "量子纠缠",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0048",
+    "text": "薛定谔的猫",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0049",
+    "text": "麦哲伦云",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0050",
+    "text": "仙女座",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0051",
+    "text": "猎户座",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0052",
+    "text": "北斗",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0053",
+    "text": "北极星",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0054",
+    "text": "天狼星",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0055",
+    "text": "启明星",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0056",
+    "text": "长庚星",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0057",
+    "text": "黄道",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0058",
+    "text": "赤道",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0059",
+    "text": "回归线",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0060",
+    "text": "极圈",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0061",
+    "text": "大气层",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0062",
+    "text": "臭氧层",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0063",
+    "text": "电离层",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0064",
+    "text": "磁层",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0065",
+    "text": "太阳风",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0066",
+    "text": "宇宙射线",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0067",
+    "text": "背景辐射",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0068",
+    "text": "弦理论",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0069",
+    "text": "平行宇宙",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0070",
+    "text": "多维空间",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0071",
+    "text": "克莱因瓶",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0072",
+    "text": "莫比乌斯环",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0073",
+    "text": "分形",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0074",
+    "text": "斐波那契",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0075",
+    "text": "黄金分割",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0076",
+    "text": "卡西尼缝",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0077",
+    "text": "土星光环",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0078",
+    "text": "木星大红斑",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0079",
+    "text": "黑洞照片",
+    "category": "cosmic",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0080",
+    "text": "闰年式的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0081",
+    "text": "黄道带的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0082",
+    "text": "星际的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0083",
+    "text": "轨道的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0084",
+    "text": "逃逸的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0085",
+    "text": "坍缩的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0086",
+    "text": "膨胀的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0087",
+    "text": "红移的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0088",
+    "text": "蓝移的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0089",
+    "text": "视差的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0090",
+    "text": "天顶的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0091",
+    "text": "子午线的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0092",
+    "text": "对流的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0093",
+    "text": "平流的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0094",
+    "text": "电离的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0095",
+    "text": "磁化的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0096",
+    "text": "引力的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0097",
+    "text": "相对论的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0098",
+    "text": "量子的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0099",
+    "text": "纠缠的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0100",
+    "text": "叠加的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0101",
+    "text": "熵增的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0102",
+    "text": "热寂的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0103",
+    "text": "奇点的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0104",
+    "text": "视界的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0105",
+    "text": "穿越的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0106",
+    "text": "折叠的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0107",
+    "text": "弯曲的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0108",
+    "text": "涟漪的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0109",
+    "text": "震荡的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0110",
+    "text": "辐射的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0111",
+    "text": "折射的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0112",
+    "text": "衍射的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0113",
+    "text": "干涉的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0114",
+    "text": "光谱的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0115",
+    "text": "紫外的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0116",
+    "text": "红外的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0117",
+    "text": "可见的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0118",
+    "text": "不可见的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0119",
+    "text": "暗的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0120",
+    "text": "明的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0121",
+    "text": "闪烁的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0122",
+    "text": "恒定的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0123",
+    "text": "变光的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0124",
+    "text": "双星的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0125",
+    "text": "密接的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0126",
+    "text": "爆发的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0127",
+    "text": "超新星的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0128",
+    "text": "星云状的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0129",
+    "text": "尘埃的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0130",
+    "text": "空旷的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0131",
+    "text": "浩瀚的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0132",
+    "text": "无垠的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0133",
+    "text": "无限的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0134",
+    "text": "有限的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0135",
+    "text": "边界的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0136",
+    "text": "维度的",
+    "category": "cosmic",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0137",
+    "text": "坍缩",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0138",
+    "text": "膨胀",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0139",
+    "text": "红移",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0140",
+    "text": "逃逸",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0141",
+    "text": "环绕",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0142",
+    "text": "公转",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0143",
+    "text": "自转",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0144",
+    "text": "章动",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0145",
+    "text": "岁差",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0146",
+    "text": "折射",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0147",
+    "text": "衍射",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0148",
+    "text": "干涉",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0149",
+    "text": "偏振",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0150",
+    "text": "叠加",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0151",
+    "text": "纠缠",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0152",
+    "text": "测量",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0153",
+    "text": "观测",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0154",
+    "text": "探索",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0155",
+    "text": "穿越",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0156",
+    "text": "折叠",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0157",
+    "text": "弯曲",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0158",
+    "text": "撕裂",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0159",
+    "text": "吞噬",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0160",
+    "text": "辐射",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0161",
+    "text": "爆发",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0162",
+    "text": "闪烁",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0163",
+    "text": "湮灭",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0164",
+    "text": "创生",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0165",
+    "text": "演化",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0166",
+    "text": "冷却",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0167",
+    "text": "加热",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0168",
+    "text": "压缩",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0169",
+    "text": "膨胀",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0170",
+    "text": "聚合",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0171",
+    "text": "分裂",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0172",
+    "text": "吸引",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0173",
+    "text": "排斥",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0174",
+    "text": "扰动",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0175",
+    "text": "震荡",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0176",
+    "text": "传播",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "cosmic_0177",
+    "text": "衰减",
+    "category": "cosmic",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0178",
+    "text": "苔藓",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0179",
+    "text": "地衣",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0180",
+    "text": "蕨类",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0181",
+    "text": "松针",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0182",
+    "text": "银杏",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0183",
+    "text": "梧桐",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0184",
+    "text": "悬铃木",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0185",
+    "text": "香樟",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0186",
+    "text": "水杉",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0187",
+    "text": "红杉",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0188",
+    "text": "榕树",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0189",
+    "text": "根系",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0190",
+    "text": "年轮",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0191",
+    "text": "树脂",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0192",
+    "text": "树瘤",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0193",
+    "text": "菌丝",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0194",
+    "text": "孢子",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0195",
+    "text": "花粉",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0196",
+    "text": "彼岸花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0197",
+    "text": "曼珠沙华",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0198",
+    "text": "樱花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0199",
+    "text": "桃花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0200",
+    "text": "梨花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0201",
+    "text": "杏花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0202",
+    "text": "海棠",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0203",
+    "text": "紫藤",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0204",
+    "text": "凌霄",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0205",
+    "text": "爬山虎",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0206",
+    "text": "常春藤",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0207",
+    "text": "多肉",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0208",
+    "text": "仙人掌",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0209",
+    "text": "芦荟",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0210",
+    "text": "龟背竹",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0211",
+    "text": "琴叶榕",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0212",
+    "text": "橡皮树",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0213",
+    "text": "散尾葵",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0214",
+    "text": "尤加利",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0215",
+    "text": "橄榄枝",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0216",
+    "text": "月桂",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0217",
+    "text": "迷迭香",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0218",
+    "text": "薰衣草",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0219",
+    "text": "薄荷",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0220",
+    "text": "罗勒",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0221",
+    "text": "百里香",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0222",
+    "text": "茉莉",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0223",
+    "text": "栀子",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0224",
+    "text": "桂花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0225",
+    "text": "梅花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0226",
+    "text": "兰花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0227",
+    "text": "竹子",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0228",
+    "text": "竹笋",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0229",
+    "text": "落叶",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0230",
+    "text": "腐殖质",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0231",
+    "text": "泥土",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0232",
+    "text": "沙砾",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0233",
+    "text": "鹅卵石",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0234",
+    "text": "贝壳",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0235",
+    "text": "珊瑚",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0236",
+    "text": "浮游生物",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0237",
+    "text": "海藻",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0238",
+    "text": "海带",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0239",
+    "text": "浮萍",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0240",
+    "text": "睡莲",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0241",
+    "text": "荷花",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0242",
+    "text": "芦苇",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0243",
+    "text": "蒲苇",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0244",
+    "text": "蒲公英",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0245",
+    "text": "苍耳",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0246",
+    "text": "蒺藜",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0247",
+    "text": "荆棘",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0248",
+    "text": "蔷薇",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0249",
+    "text": "玫瑰",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0250",
+    "text": "月季",
+    "category": "nature",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0251",
+    "text": "肉质的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0252",
+    "text": "木本的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0253",
+    "text": "草质的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0254",
+    "text": "常绿的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0255",
+    "text": "落叶的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0256",
+    "text": "针叶的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0257",
+    "text": "阔叶的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0258",
+    "text": "缠绕的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0259",
+    "text": "匍匐的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0260",
+    "text": "攀援的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0261",
+    "text": "多汁的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0262",
+    "text": "干燥的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0263",
+    "text": "湿润的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0264",
+    "text": "肥沃的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0265",
+    "text": "贫瘠的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0266",
+    "text": "酸性的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0267",
+    "text": "碱性的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0268",
+    "text": "砂质的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0269",
+    "text": "粘质的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0270",
+    "text": "壤土的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0271",
+    "text": "腐殖的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0272",
+    "text": "发酵的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0273",
+    "text": "霉变的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0274",
+    "text": "菌丝的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0275",
+    "text": "孢子的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0276",
+    "text": "光合的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0277",
+    "text": "呼吸的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0278",
+    "text": "蒸腾的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0279",
+    "text": "导管的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0280",
+    "text": "筛管的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0281",
+    "text": "形成层的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0282",
+    "text": "韧皮的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0283",
+    "text": "木质的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0284",
+    "text": "年轮的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0285",
+    "text": "纹理的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0286",
+    "text": "疤痕的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0287",
+    "text": "瘤状的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0288",
+    "text": "气生的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0289",
+    "text": "水生的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0290",
+    "text": "两栖的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0291",
+    "text": "旱生的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0292",
+    "text": "阴生的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0293",
+    "text": "阳生的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0294",
+    "text": "群落的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0295",
+    "text": "生态的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0296",
+    "text": "野生的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0297",
+    "text": "栽培的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0298",
+    "text": "杂交的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0299",
+    "text": "变异的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0300",
+    "text": "突变的",
+    "category": "nature",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0301",
+    "text": "光合作用",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0302",
+    "text": "呼吸",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0303",
+    "text": "蒸腾",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0304",
+    "text": "传输",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0305",
+    "text": "扎根",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0306",
+    "text": "萌芽",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0307",
+    "text": "抽枝",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0308",
+    "text": "展叶",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0309",
+    "text": "开花",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0310",
+    "text": "结果",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0311",
+    "text": "结实",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0312",
+    "text": "散播",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0313",
+    "text": "飘落",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0314",
+    "text": "腐烂",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0315",
+    "text": "分解",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0316",
+    "text": "发酵",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0317",
+    "text": "霉变",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0318",
+    "text": "结晶",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0319",
+    "text": "凝结",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0320",
+    "text": "蒸发",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0321",
+    "text": "渗透",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0322",
+    "text": "扩散",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0323",
+    "text": "吸附",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0324",
+    "text": "吸收",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0325",
+    "text": "反射",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0326",
+    "text": "折射",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0327",
+    "text": "投射",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0328",
+    "text": "遮阴",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0329",
+    "text": "庇护",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0330",
+    "text": "缠绕",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0331",
+    "text": "攀援",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0332",
+    "text": "匍匐",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0333",
+    "text": "直立",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0334",
+    "text": "倾斜",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0335",
+    "text": "弯曲",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0336",
+    "text": "断裂",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0337",
+    "text": "愈合",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0338",
+    "text": "结痂",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0339",
+    "text": "流胶",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0340",
+    "text": "分泌",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0341",
+    "text": "散发",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0342",
+    "text": "弥漫",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0343",
+    "text": "飘散",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0344",
+    "text": "坠落",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0345",
+    "text": "堆积",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0346",
+    "text": "沉淀",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0347",
+    "text": "淤积",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0348",
+    "text": "冲刷",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0349",
+    "text": "侵蚀",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0350",
+    "text": "风化",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0351",
+    "text": "钙化",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "nature_0352",
+    "text": "碳化",
+    "category": "nature",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0353",
+    "text": "指纹",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0354",
+    "text": "掌纹",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0355",
+    "text": "生命线",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0356",
+    "text": "智慧线",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0357",
+    "text": "感情线",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0358",
+    "text": "腕骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0359",
+    "text": "指骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0360",
+    "text": "关节",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0361",
+    "text": "韧带",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0362",
+    "text": "肌腱",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0363",
+    "text": "肌肉",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0364",
+    "text": "筋膜",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0365",
+    "text": "皮肤",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0366",
+    "text": "表皮",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0367",
+    "text": "真皮",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0368",
+    "text": "皮下组织",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0369",
+    "text": "毛孔",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0370",
+    "text": "汗腺",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0371",
+    "text": "皮脂腺",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0372",
+    "text": "毛囊",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0373",
+    "text": "汗毛",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0374",
+    "text": "睫毛",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0375",
+    "text": "眉毛",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0376",
+    "text": "鬓角",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0377",
+    "text": "发际线",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0378",
+    "text": "太阳穴",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0379",
+    "text": "颧骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0380",
+    "text": "下颌骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0381",
+    "text": "颈椎",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0382",
+    "text": "胸椎",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0383",
+    "text": "腰椎",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0384",
+    "text": "尾椎",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0385",
+    "text": "肩胛骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0386",
+    "text": "锁骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0387",
+    "text": "肋骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0388",
+    "text": "胸骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0389",
+    "text": "骨盆",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0390",
+    "text": "髋骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0391",
+    "text": "膝盖",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0392",
+    "text": "脚踝",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0393",
+    "text": "足底",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0394",
+    "text": "掌心",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0395",
+    "text": "指腹",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0396",
+    "text": "指甲",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0397",
+    "text": "月牙",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0398",
+    "text": "舌苔",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0399",
+    "text": "味蕾",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0400",
+    "text": "扁桃体",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0401",
+    "text": "甲状腺",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0402",
+    "text": "肾上腺",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0403",
+    "text": "胰腺",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0404",
+    "text": "脾脏",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0405",
+    "text": "肝脏",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0406",
+    "text": "肾脏",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0407",
+    "text": "心脏",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0408",
+    "text": "肺部",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0409",
+    "text": "支气管",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0410",
+    "text": "气管",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0411",
+    "text": "食道",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0412",
+    "text": "胃",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0413",
+    "text": "肠道",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0414",
+    "text": "视网膜",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0415",
+    "text": "角膜",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0416",
+    "text": "虹膜",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0417",
+    "text": "瞳孔",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0418",
+    "text": "晶状体",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0419",
+    "text": "鼓膜",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0420",
+    "text": "耳蜗",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0421",
+    "text": "耳廓",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0422",
+    "text": "鼻梁",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0423",
+    "text": "鼻翼",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0424",
+    "text": "唇珠",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0425",
+    "text": "人中",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0426",
+    "text": "下巴",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0427",
+    "text": "喉结",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0428",
+    "text": "声带",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0429",
+    "text": "甲状腺软骨",
+    "category": "body",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0430",
+    "text": "冰凉的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0431",
+    "text": "温热的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0432",
+    "text": "滚烫的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0433",
+    "text": "冰凉的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0434",
+    "text": "酸胀的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0435",
+    "text": "麻木的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0436",
+    "text": "刺痛",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0437",
+    "text": "瘙痒",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0438",
+    "text": "战栗的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0439",
+    "text": "颤抖的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0440",
+    "text": "痉挛的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0441",
+    "text": "抽搐的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0442",
+    "text": "僵硬的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0443",
+    "text": "柔软的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0444",
+    "text": "松弛的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0445",
+    "text": "紧致的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0446",
+    "text": "弹性的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0447",
+    "text": "脆弱的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0448",
+    "text": "敏感的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0449",
+    "text": "迟钝的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0450",
+    "text": "锐利的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0451",
+    "text": "钝感的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0452",
+    "text": "湿润的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0453",
+    "text": "干燥的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0454",
+    "text": "油腻的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0455",
+    "text": "清爽的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0456",
+    "text": "粘稠的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0457",
+    "text": "丝滑的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0458",
+    "text": "粗糙的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0459",
+    "text": "细腻的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0460",
+    "text": "光滑的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0461",
+    "text": "皲裂的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0462",
+    "text": "破损的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0463",
+    "text": "愈合的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0464",
+    "text": "结痂的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0465",
+    "text": "疤痕的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0466",
+    "text": "色素的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0467",
+    "text": "沉淀的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0468",
+    "text": "沉淀的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0469",
+    "text": "透明的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0470",
+    "text": "浑浊的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0471",
+    "text": "充血",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0472",
+    "text": "苍白",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0473",
+    "text": "潮红",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0474",
+    "text": "蜡黄",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0475",
+    "text": "青紫",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0476",
+    "text": "淤青的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0477",
+    "text": "肿胀的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0478",
+    "text": "凹陷的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0479",
+    "text": "凸起的",
+    "category": "body",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0480",
+    "text": "颤抖",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0481",
+    "text": "战栗",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0482",
+    "text": "痉挛",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0483",
+    "text": "抽搐",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0484",
+    "text": "颤抖",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0485",
+    "text": "吞咽",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0486",
+    "text": "咀嚼",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0487",
+    "text": "咬合",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0488",
+    "text": "舔舐",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0489",
+    "text": "吮吸",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0490",
+    "text": "吹气",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0491",
+    "text": "呼吸",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0492",
+    "text": "喘息",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0493",
+    "text": "咳嗽",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0494",
+    "text": "打喷嚏",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0495",
+    "text": "流泪",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0496",
+    "text": "眨眼",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0497",
+    "text": "凝视",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0498",
+    "text": "斜视",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0499",
+    "text": "眯眼",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0500",
+    "text": "睁眼",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0501",
+    "text": "闭眼",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0502",
+    "text": "倾听",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0503",
+    "text": "耳鸣",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0504",
+    "text": "鼻塞",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0505",
+    "text": "呼吸",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0506",
+    "text": "心跳",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0507",
+    "text": "搏动",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0508",
+    "text": "泵血",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0509",
+    "text": "循环",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0510",
+    "text": "消化",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0511",
+    "text": "吸收",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0512",
+    "text": "排泄",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0513",
+    "text": "分泌",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0514",
+    "text": "出汗",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0515",
+    "text": "流泪",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0516",
+    "text": "流血",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0517",
+    "text": "结痂",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0518",
+    "text": "愈合",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0519",
+    "text": "再生",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0520",
+    "text": "生长",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0521",
+    "text": "衰老",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0522",
+    "text": "死亡",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0523",
+    "text": "腐烂",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0524",
+    "text": "分解",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0525",
+    "text": "钙化",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0526",
+    "text": "骨化",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0527",
+    "text": "纤维化",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0528",
+    "text": "硬化",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0529",
+    "text": "软化",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0530",
+    "text": "拉伸",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0531",
+    "text": "收缩",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0532",
+    "text": "舒张",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0533",
+    "text": "弯曲",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0534",
+    "text": "扭转",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0535",
+    "text": "伸展",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0536",
+    "text": "蜷缩",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0537",
+    "text": "拥抱",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0538",
+    "text": "推开",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0539",
+    "text": "触碰",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0540",
+    "text": "抚摸",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0541",
+    "text": "抓握",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0542",
+    "text": "松手",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0543",
+    "text": "坠落",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0544",
+    "text": "漂浮",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0545",
+    "text": "悬浮",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0546",
+    "text": "下沉",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "body_0547",
+    "text": "上升",
+    "category": "body",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0548",
+    "text": "磁带",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0549",
+    "text": "软盘",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0550",
+    "text": "光盘",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0551",
+    "text": "唱片",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0552",
+    "text": "胶片",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0553",
+    "text": "底片",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0554",
+    "text": "相纸",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0555",
+    "text": "显影液",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0556",
+    "text": "定影液",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0557",
+    "text": "暗房",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0558",
+    "text": "幻灯片",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0559",
+    "text": "投影仪",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0560",
+    "text": "显像管",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0561",
+    "text": "电子管",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0562",
+    "text": "晶体管",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0563",
+    "text": "集成电路",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0564",
+    "text": "电路板",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0565",
+    "text": "焊点",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0566",
+    "text": "电容",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0567",
+    "text": "电阻",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0568",
+    "text": "二极管",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0569",
+    "text": "三极管",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0570",
+    "text": "继电器",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0571",
+    "text": "变压器",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0572",
+    "text": "电感",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0573",
+    "text": "霓虹灯",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0574",
+    "text": "钨丝灯",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0575",
+    "text": "LED",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0576",
+    "text": "荧光灯",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0577",
+    "text": "灯管",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0578",
+    "text": "镇流器",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0579",
+    "text": "启辉器",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0580",
+    "text": "插座",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0581",
+    "text": "插头",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0582",
+    "text": "电线",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0583",
+    "text": "电缆",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0584",
+    "text": "光纤",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0585",
+    "text": "网线",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0586",
+    "text": "电话线",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0587",
+    "text": "电报机",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0588",
+    "text": "传真机",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0589",
+    "text": "打字机",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0590",
+    "text": "色带",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0591",
+    "text": "油墨",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0592",
+    "text": "碳粉",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0593",
+    "text": "硒鼓",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0594",
+    "text": "墨盒",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0595",
+    "text": "纸张",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0596",
+    "text": "草稿纸",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0597",
+    "text": "信纸",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0598",
+    "text": "便签",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0599",
+    "text": "便利贴",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0600",
+    "text": "胶带",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0601",
+    "text": "胶水",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0602",
+    "text": "订书机",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0603",
+    "text": "回形针",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0604",
+    "text": "图钉",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0605",
+    "text": "大头针",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0606",
+    "text": "剪刀",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0607",
+    "text": "刀片",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0608",
+    "text": "美工刀",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0609",
+    "text": "尺子",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0610",
+    "text": "圆规",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0611",
+    "text": "量角器",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0612",
+    "text": "三角板",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0613",
+    "text": "计算器",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0614",
+    "text": "算盘",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0615",
+    "text": "印章",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0616",
+    "text": "印泥",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0617",
+    "text": "火漆",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0618",
+    "text": "信封",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0619",
+    "text": "邮票",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0620",
+    "text": "邮戳",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0621",
+    "text": "明信片",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0622",
+    "text": "名片",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0623",
+    "text": "证件",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0624",
+    "text": "身份证",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0625",
+    "text": "护照",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0626",
+    "text": "驾照",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0627",
+    "text": "银行卡",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0628",
+    "text": "信用卡",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0629",
+    "text": "会员卡",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0630",
+    "text": "钥匙",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0631",
+    "text": "锁",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0632",
+    "text": "密码",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0633",
+    "text": "暗号",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0634",
+    "text": "信号",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0635",
+    "text": "波段",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0636",
+    "text": "频率",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0637",
+    "text": "频道",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0638",
+    "text": "杂音",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0639",
+    "text": "白噪音",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0640",
+    "text": "粉红噪音",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0641",
+    "text": "棕色噪音",
+    "category": "artifact",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0642",
+    "text": "二手的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0643",
+    "text": "三手的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0644",
+    "text": "翻新的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0645",
+    "text": "复古的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0646",
+    "text": "过时的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0647",
+    "text": "报废的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0648",
+    "text": "待修的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0649",
+    "text": "维修中的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0650",
+    "text": "故障的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0651",
+    "text": "短路的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0652",
+    "text": "断路",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0653",
+    "text": "过载的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0654",
+    "text": "欠压的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0655",
+    "text": "过曝的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0656",
+    "text": "欠曝的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0657",
+    "text": "虚焦的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0658",
+    "text": "手抖的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0659",
+    "text": "噪点",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0660",
+    "text": "颗粒感的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0661",
+    "text": "胶片感的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0662",
+    "text": "数码的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0663",
+    "text": "模拟的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0664",
+    "text": "数字的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0665",
+    "text": "模拟的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0666",
+    "text": "有线的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0667",
+    "text": "无线的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0668",
+    "text": "蓝牙的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0669",
+    "text": "红外的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0670",
+    "text": "紫外的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0671",
+    "text": "射频的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0672",
+    "text": "微波的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0673",
+    "text": "长波的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0674",
+    "text": "中波的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0675",
+    "text": "短波的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0676",
+    "text": "调频的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0677",
+    "text": "调幅的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0678",
+    "text": "单声道的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0679",
+    "text": "立体声的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0680",
+    "text": "环绕声的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0681",
+    "text": "降噪的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0682",
+    "text": "高保真的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0683",
+    "text": "无损的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0684",
+    "text": "压缩的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0685",
+    "text": "有损的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0686",
+    "text": "缓存的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0687",
+    "text": "延迟的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0688",
+    "text": "实时的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0689",
+    "text": "异步的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0690",
+    "text": "同步的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0691",
+    "text": "离线的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0692",
+    "text": "在线的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0693",
+    "text": "云端的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0694",
+    "text": "本地的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0695",
+    "text": "物理的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0696",
+    "text": "虚拟的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0697",
+    "text": "增强的",
+    "category": "artifact",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0698",
+    "text": "卡带",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0699",
+    "text": "掉帧",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0700",
+    "text": "卡顿",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0701",
+    "text": "缓冲",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0702",
+    "text": "加载",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0703",
+    "text": "下载",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0704",
+    "text": "上传",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0705",
+    "text": "同步",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0706",
+    "text": "备份",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0707",
+    "text": "恢复",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0708",
+    "text": "删除",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0709",
+    "text": "清空",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0710",
+    "text": "格式化",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0711",
+    "text": "刻录",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0712",
+    "text": "烧制",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0713",
+    "text": "压制",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0714",
+    "text": "转录",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0715",
+    "text": "翻录",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0716",
+    "text": "采样",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0717",
+    "text": "量化",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0718",
+    "text": "编码",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0719",
+    "text": "解码",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0720",
+    "text": "加密",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0721",
+    "text": "解密",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0722",
+    "text": "压缩",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0723",
+    "text": "解压",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0724",
+    "text": "打包",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0725",
+    "text": "解压",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0726",
+    "text": "上传",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0727",
+    "text": "下载",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0728",
+    "text": "缓冲",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0729",
+    "text": "缓存",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0730",
+    "text": "刷新",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0731",
+    "text": "重启",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0732",
+    "text": "关机",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0733",
+    "text": "开机",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0734",
+    "text": "待机",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0735",
+    "text": "休眠",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0736",
+    "text": "唤醒",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0737",
+    "text": "点击",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0738",
+    "text": "双击",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0739",
+    "text": "右击",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0740",
+    "text": "拖拽",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0741",
+    "text": "滑动",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0742",
+    "text": "缩放",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0743",
+    "text": "裁剪",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0744",
+    "text": "旋转",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0745",
+    "text": "滤镜",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0746",
+    "text": "调色",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0747",
+    "text": "对比度",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0748",
+    "text": "饱和度",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0749",
+    "text": "亮度",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0750",
+    "text": "锐化",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0751",
+    "text": "模糊",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0752",
+    "text": "降噪",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0753",
+    "text": "增益",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0754",
+    "text": "衰减",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0755",
+    "text": "失真",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0756",
+    "text": "混响",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0757",
+    "text": "延迟",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0758",
+    "text": "回声",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0759",
+    "text": "反馈",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0760",
+    "text": "震荡",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0761",
+    "text": "调制",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0762",
+    "text": "解调",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0763",
+    "text": "变频",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0764",
+    "text": "变压",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0765",
+    "text": "整流",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0766",
+    "text": "滤波",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0767",
+    "text": "放大",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0768",
+    "text": "缩小",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0769",
+    "text": "反转",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0770",
+    "text": "倒带",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0771",
+    "text": "快进",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0772",
+    "text": "暂停",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0773",
+    "text": "播放",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0774",
+    "text": "停止",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0775",
+    "text": "录音",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0776",
+    "text": "录像",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0777",
+    "text": "拍摄",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0778",
+    "text": "扫描",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0779",
+    "text": "打印",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0780",
+    "text": "复印",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0781",
+    "text": "传真",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0782",
+    "text": "发送",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0783",
+    "text": "接收",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0784",
+    "text": "传输",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0785",
+    "text": "中断",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0786",
+    "text": "连接",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0787",
+    "text": "断开",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0788",
+    "text": "配对",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0789",
+    "text": "解绑",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0790",
+    "text": "绑定",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0791",
+    "text": "登录",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0792",
+    "text": "注销",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0793",
+    "text": "注册",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0794",
+    "text": "注销",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0795",
+    "text": "验证",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0796",
+    "text": "校验",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0797",
+    "text": "失效",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0798",
+    "text": "过期",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0799",
+    "text": "续约",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0800",
+    "text": "续费",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0801",
+    "text": "欠费",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0802",
+    "text": "停机",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "artifact_0803",
+    "text": "复机",
+    "category": "artifact",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0804",
+    "text": "递归",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0805",
+    "text": "迭代",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0806",
+    "text": "循环",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0807",
+    "text": "反馈",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0808",
+    "text": "共振",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0809",
+    "text": "共鸣",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0810",
+    "text": "干涉",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0811",
+    "text": "衍射",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0812",
+    "text": "叠加",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0813",
+    "text": "纠缠",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0814",
+    "text": "熵",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0815",
+    "text": "焓",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0816",
+    "text": "自由能",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0817",
+    "text": "势能",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0818",
+    "text": "动能",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0819",
+    "text": "惯性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0820",
+    "text": "动量",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0821",
+    "text": "冲量",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0822",
+    "text": "力",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0823",
+    "text": "场",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0824",
+    "text": "波",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0825",
+    "text": "粒子",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0826",
+    "text": "弦",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0827",
+    "text": "膜",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0828",
+    "text": "维度",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0829",
+    "text": "时空",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0830",
+    "text": "因果",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0831",
+    "text": "逻辑",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0832",
+    "text": "悖论",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0833",
+    "text": "谬误",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0834",
+    "text": "真理",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0835",
+    "text": "假象",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0836",
+    "text": "幻觉",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0837",
+    "text": "梦境",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0838",
+    "text": "潜意识",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0839",
+    "text": "前意识",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0840",
+    "text": "意识",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0841",
+    "text": "认知",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0842",
+    "text": "知觉",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0843",
+    "text": "感觉",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0844",
+    "text": "直觉",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0845",
+    "text": "灵感",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0846",
+    "text": "顿悟",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0847",
+    "text": "启示",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0848",
+    "text": "预言",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0849",
+    "text": "征兆",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0850",
+    "text": "迹象",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0851",
+    "text": "符号",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0852",
+    "text": "象征",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0853",
+    "text": "隐喻",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0854",
+    "text": "转喻",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0855",
+    "text": "提喻",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0856",
+    "text": "反讽",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0857",
+    "text": "夸张",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0858",
+    "text": "排比",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0859",
+    "text": "对偶",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0860",
+    "text": "互文",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0861",
+    "text": "留白",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0862",
+    "text": "空隙",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0863",
+    "text": "间隔",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0864",
+    "text": "距离",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0865",
+    "text": "尺度",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0866",
+    "text": "比例",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0867",
+    "text": "分割",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0868",
+    "text": "黄金分割",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0869",
+    "text": "对称",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0870",
+    "text": "均衡",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0871",
+    "text": "节奏",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0872",
+    "text": "韵律",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0873",
+    "text": "旋律",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0874",
+    "text": "和声",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0875",
+    "text": "对位",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0876",
+    "text": "复调",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0877",
+    "text": "单调",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0878",
+    "text": "多调",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0879",
+    "text": "无调",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0880",
+    "text": "噪音",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0881",
+    "text": "乐音",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0882",
+    "text": "静音",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0883",
+    "text": "休止",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0884",
+    "text": "延长",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0885",
+    "text": "渐强",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0886",
+    "text": "渐弱",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0887",
+    "text": "突强",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0888",
+    "text": "突弱",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0889",
+    "text": "保持",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0890",
+    "text": "释放",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0891",
+    "text": "攻击",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0892",
+    "text": "衰减",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0893",
+    "text": "持续",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0894",
+    "text": "消失",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0895",
+    "text": "浮现",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0896",
+    "text": "涌现",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0897",
+    "text": "涌现性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0898",
+    "text": "自组织",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0899",
+    "text": "混沌",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0900",
+    "text": "分形",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0901",
+    "text": "蝴蝶效应",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0902",
+    "text": "多米诺",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0903",
+    "text": "连锁",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0904",
+    "text": "累积",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0905",
+    "text": "爆发",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0906",
+    "text": "临界",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0907",
+    "text": "相变",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0908",
+    "text": "质变",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0909",
+    "text": "量变",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0910",
+    "text": "否定",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0911",
+    "text": "否定之否定",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0912",
+    "text": "扬弃",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0913",
+    "text": "升华",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0914",
+    "text": "堕落",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0915",
+    "text": "超越",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0916",
+    "text": "transcend",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0917",
+    "text": "内在",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0918",
+    "text": "超越",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0919",
+    "text": "先验",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0920",
+    "text": "经验",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0921",
+    "text": "理性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0922",
+    "text": "感性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0923",
+    "text": "知性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0924",
+    "text": "悟性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0925",
+    "text": "灵性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0926",
+    "text": "神性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0927",
+    "text": "人性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0928",
+    "text": "兽性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0929",
+    "text": "物性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0930",
+    "text": "惰性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0931",
+    "text": "活性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0932",
+    "text": "惯性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0933",
+    "text": "黏性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0934",
+    "text": "弹性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0935",
+    "text": "塑性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0936",
+    "text": "脆性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0937",
+    "text": "刚性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0938",
+    "text": "柔性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0939",
+    "text": "韧性",
+    "category": "abstract",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0940",
+    "text": "未命名的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0941",
+    "text": "未定义的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0942",
+    "text": "第三人称的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0943",
+    "text": "第二人称的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0944",
+    "text": "第一人称的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0945",
+    "text": "复数的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0946",
+    "text": "单数的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0947",
+    "text": "集体的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0948",
+    "text": "个人的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0949",
+    "text": "主观的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0950",
+    "text": "客观的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0951",
+    "text": "唯心的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0952",
+    "text": "唯物的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0953",
+    "text": "辩证的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0954",
+    "text": "形而上的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0955",
+    "text": "形而下的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0956",
+    "text": "现象的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0957",
+    "text": "本质的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0958",
+    "text": "表象的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0959",
+    "text": "深层的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0960",
+    "text": "浅层的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0961",
+    "text": "显性的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0962",
+    "text": "隐性的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0963",
+    "text": "潜在的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0964",
+    "text": "显在的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0965",
+    "text": "可能的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0966",
+    "text": "必然的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0967",
+    "text": "偶然的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0968",
+    "text": "随机的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0969",
+    "text": "确定的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0970",
+    "text": "不确定的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0971",
+    "text": "模糊的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0972",
+    "text": "清晰的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0973",
+    "text": "混沌的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0974",
+    "text": "有序的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0975",
+    "text": "无序的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0976",
+    "text": "熵增的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0977",
+    "text": "熵减的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0978",
+    "text": "耗散的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0979",
+    "text": "结构的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0980",
+    "text": "解构的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0981",
+    "text": "建构的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0982",
+    "text": "重构的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0983",
+    "text": "颠覆的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0984",
+    "text": "保守的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0985",
+    "text": "激进的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0986",
+    "text": "温和的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0987",
+    "text": "极端的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0988",
+    "text": "中立的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0989",
+    "text": "偏颇的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0990",
+    "text": "全面的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0991",
+    "text": "片面的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0992",
+    "text": "系统的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0993",
+    "text": "零散的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0994",
+    "text": "整体的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0995",
+    "text": "局部的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0996",
+    "text": "宏观的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0997",
+    "text": "微观的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0998",
+    "text": "介观的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_0999",
+    "text": "纳观的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1000",
+    "text": "皮的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1001",
+    "text": "飞米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1002",
+    "text": "纳米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1003",
+    "text": "微米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1004",
+    "text": "毫米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1005",
+    "text": "厘米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1006",
+    "text": "分米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1007",
+    "text": "米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1008",
+    "text": "千米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1009",
+    "text": "兆米的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1010",
+    "text": "光年的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1011",
+    "text": "天文单位的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1012",
+    "text": "秒差距的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1013",
+    "text": "瞬间的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1014",
+    "text": "永恒的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1015",
+    "text": "暂时的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1016",
+    "text": "永久的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1017",
+    "text": "瞬时的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1018",
+    "text": "持续的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1019",
+    "text": "间断的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1020",
+    "text": "连续的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1021",
+    "text": "离散的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1022",
+    "text": "模拟的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1023",
+    "text": "数字的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1024",
+    "text": "连续的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1025",
+    "text": "量子的",
+    "category": "abstract",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1026",
+    "text": "稀释",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1027",
+    "text": "浓缩",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1028",
+    "text": "悬置",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1029",
+    "text": "搁置",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1030",
+    "text": "延迟",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1031",
+    "text": "提前",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1032",
+    "text": "同步",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1033",
+    "text": "异步",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1034",
+    "text": "并行",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1035",
+    "text": "串行",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1036",
+    "text": "递归",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1037",
+    "text": "迭代",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1038",
+    "text": "循环",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1039",
+    "text": "反馈",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1040",
+    "text": "共振",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1041",
+    "text": "共鸣",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1042",
+    "text": "干涉",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1043",
+    "text": "衍射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1044",
+    "text": "叠加",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1045",
+    "text": "纠缠",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1046",
+    "text": "坍缩",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1047",
+    "text": "跃迁",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1048",
+    "text": "跃动",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1049",
+    "text": "跳跃",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1050",
+    "text": "坠落",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1051",
+    "text": "上升",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1052",
+    "text": "悬浮",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1053",
+    "text": "漂浮",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1054",
+    "text": "沉淀",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1055",
+    "text": "析出",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1056",
+    "text": "结晶",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1057",
+    "text": "凝固",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1058",
+    "text": "融化",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1059",
+    "text": "蒸发",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1060",
+    "text": "凝结",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1061",
+    "text": "升华",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1062",
+    "text": "凝华",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1063",
+    "text": "吸附",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1064",
+    "text": "脱附",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1065",
+    "text": "吸收",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1066",
+    "text": "释放",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1067",
+    "text": "发射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1068",
+    "text": "接收",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1069",
+    "text": "反射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1070",
+    "text": "折射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1071",
+    "text": "透射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1072",
+    "text": "衍射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1073",
+    "text": "散射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1074",
+    "text": "漫反射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1075",
+    "text": "全反射",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1076",
+    "text": "临界",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1077",
+    "text": "相变",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1078",
+    "text": "转变",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1079",
+    "text": "转化",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1080",
+    "text": "转换",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1081",
+    "text": "变换",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1082",
+    "text": "变形",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1083",
+    "text": "变态",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1084",
+    "text": "变质",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1085",
+    "text": "变性",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1086",
+    "text": "变色",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1087",
+    "text": "变声",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1088",
+    "text": "变形",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1089",
+    "text": "变焦",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1090",
+    "text": "聚焦",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1091",
+    "text": "失焦",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1092",
+    "text": "对焦",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1093",
+    "text": "调整",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1094",
+    "text": "调节",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1095",
+    "text": "调制",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1096",
+    "text": "解调",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1097",
+    "text": "编码",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1098",
+    "text": "解码",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1099",
+    "text": "加密",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1100",
+    "text": "解密",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1101",
+    "text": "压缩",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "abstract_1102",
+    "text": "解压",
+    "category": "abstract",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1103",
+    "text": "闰秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1104",
+    "text": "闰年",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1105",
+    "text": "闰月",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1106",
+    "text": "时差",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1107",
+    "text": "时区",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1108",
+    "text": "格林威治",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1109",
+    "text": "北京时间",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1110",
+    "text": "东京时间",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1111",
+    "text": "纽约时间",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1112",
+    "text": "保质期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1113",
+    "text": "有效期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1114",
+    "text": "保修期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1115",
+    "text": "试用期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1116",
+    "text": "实习期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1117",
+    "text": "潜伏期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1118",
+    "text": "过渡期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1119",
+    "text": "更年期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1120",
+    "text": "青春期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1121",
+    "text": "中年危机",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1122",
+    "text": "黄金年代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1123",
+    "text": "白银年代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1124",
+    "text": "青铜年代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1125",
+    "text": "黑铁年代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1126",
+    "text": "石器时代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1127",
+    "text": "铁器时代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1128",
+    "text": "蒸汽时代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1129",
+    "text": "电气时代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1130",
+    "text": "信息时代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1131",
+    "text": "人工智能时代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1132",
+    "text": "后半夜",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1133",
+    "text": "凌晨",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1134",
+    "text": "拂晓",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1135",
+    "text": "黎明",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1136",
+    "text": "清晨",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1137",
+    "text": "上午",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1138",
+    "text": "正午",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1139",
+    "text": "下午",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1140",
+    "text": "傍晚",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1141",
+    "text": "黄昏",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1142",
+    "text": "薄暮",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1143",
+    "text": "入夜",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1144",
+    "text": "深夜",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1145",
+    "text": "子夜",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1146",
+    "text": "午夜",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1147",
+    "text": "零点",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1148",
+    "text": "凌晨三点",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1149",
+    "text": "破晓",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1150",
+    "text": "天亮",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1151",
+    "text": "天黑",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1152",
+    "text": "日出",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1153",
+    "text": "日落",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1154",
+    "text": "月出",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1155",
+    "text": "月落",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1156",
+    "text": "潮起",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1157",
+    "text": "潮落",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1158",
+    "text": "春分",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1159",
+    "text": "秋分",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1160",
+    "text": "夏至",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1161",
+    "text": "冬至",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1162",
+    "text": "立春",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1163",
+    "text": "立夏",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1164",
+    "text": "立秋",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1165",
+    "text": "立冬",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1166",
+    "text": "雨水",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1167",
+    "text": "惊蛰",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1168",
+    "text": "清明",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1169",
+    "text": "谷雨",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1170",
+    "text": "小满",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1171",
+    "text": "芒种",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1172",
+    "text": "小暑",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1173",
+    "text": "大暑",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1174",
+    "text": "处暑",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1175",
+    "text": "白露",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1176",
+    "text": "寒露",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1177",
+    "text": "霜降",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1178",
+    "text": "小雪",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1179",
+    "text": "大雪",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1180",
+    "text": "小寒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1181",
+    "text": "大寒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1182",
+    "text": "正月",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1183",
+    "text": "腊月",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1184",
+    "text": "闰月",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1185",
+    "text": "朔日",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1186",
+    "text": "望日",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1187",
+    "text": "晦日",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1188",
+    "text": "弦日",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1189",
+    "text": "上弦",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1190",
+    "text": "下弦",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1191",
+    "text": "旬",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1192",
+    "text": "纪",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1193",
+    "text": "代",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1194",
+    "text": "世",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1195",
+    "text": "期",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1196",
+    "text": "时",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1197",
+    "text": "刻",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1198",
+    "text": "分",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1199",
+    "text": "秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1200",
+    "text": "毫秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1201",
+    "text": "微秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1202",
+    "text": "纳秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1203",
+    "text": "皮秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1204",
+    "text": "飞秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1205",
+    "text": "阿秒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1206",
+    "text": "瞬间",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1207",
+    "text": "刹那",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1208",
+    "text": "须臾",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1209",
+    "text": "片刻",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1210",
+    "text": "片刻",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1211",
+    "text": "良久",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1212",
+    "text": "许久",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1213",
+    "text": "良久",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1214",
+    "text": "永恒",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1215",
+    "text": "永远",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1216",
+    "text": "永久",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1217",
+    "text": "暂时",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1218",
+    "text": "临时",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1219",
+    "text": "临时",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1220",
+    "text": "缓存",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1221",
+    "text": "存档",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1222",
+    "text": "读档",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1223",
+    "text": "存档点",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1224",
+    "text": "检查点",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1225",
+    "text": "里程碑",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1226",
+    "text": "纪念碑",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1227",
+    "text": "墓志铭",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1228",
+    "text": "回忆录",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1229",
+    "text": "日记",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1230",
+    "text": "周记",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1231",
+    "text": "月记",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1232",
+    "text": "年记",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1233",
+    "text": "史记",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1234",
+    "text": "历史",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1235",
+    "text": "史前",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1236",
+    "text": "未来",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1237",
+    "text": "过去",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1238",
+    "text": "现在",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1239",
+    "text": "当下",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1240",
+    "text": "此刻",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1241",
+    "text": "此时",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1242",
+    "text": "彼时",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1243",
+    "text": "彼时",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1244",
+    "text": "曾经",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1245",
+    "text": "曾经",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1246",
+    "text": "将来",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1247",
+    "text": "未来",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1248",
+    "text": "以后",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1249",
+    "text": "以前",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1250",
+    "text": "之前",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1251",
+    "text": "之后",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1252",
+    "text": "之上",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1253",
+    "text": "之下",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1254",
+    "text": "之内",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1255",
+    "text": "之外",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1256",
+    "text": "之间",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1257",
+    "text": "之际",
+    "category": "time",
+    "type": "noun",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1258",
+    "text": "延时的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1259",
+    "text": "实时的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1260",
+    "text": "缓存的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1261",
+    "text": "存档的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1262",
+    "text": "读档的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1263",
+    "text": "回溯的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1264",
+    "text": "前瞻的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1265",
+    "text": "预期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1266",
+    "text": "回顾的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1267",
+    "text": "追溯的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1268",
+    "text": "预测的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1269",
+    "text": "预知的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1270",
+    "text": "先知的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1271",
+    "text": "后觉的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1272",
+    "text": "迟钝的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1273",
+    "text": "敏锐的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1274",
+    "text": "敏捷的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1275",
+    "text": "迟缓的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1276",
+    "text": "迅速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1277",
+    "text": "缓慢的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1278",
+    "text": "快速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1279",
+    "text": "低速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1280",
+    "text": "高速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1281",
+    "text": "超速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1282",
+    "text": "匀速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1283",
+    "text": "变速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1284",
+    "text": "加速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1285",
+    "text": "减速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1286",
+    "text": "匀速的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1287",
+    "text": "瞬时的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1288",
+    "text": "持续的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1289",
+    "text": "间断的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1290",
+    "text": "连续的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1291",
+    "text": "离散的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1292",
+    "text": "周期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1293",
+    "text": "频率的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1294",
+    "text": "波长的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1295",
+    "text": "振幅的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1296",
+    "text": "相位的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1297",
+    "text": "暂时的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1298",
+    "text": "永久的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1299",
+    "text": "永恒的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1300",
+    "text": "瞬间的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1301",
+    "text": "刹那的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1302",
+    "text": "须臾的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1303",
+    "text": "片刻的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1304",
+    "text": "良久的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1305",
+    "text": "许久的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1306",
+    "text": "长期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1307",
+    "text": "短期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1308",
+    "text": "中期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1309",
+    "text": "近期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1310",
+    "text": "远期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1311",
+    "text": "即期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1312",
+    "text": "远期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1313",
+    "text": "逾期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1314",
+    "text": "到期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1315",
+    "text": "过期的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1316",
+    "text": "新鲜的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1317",
+    "text": "陈旧的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1318",
+    "text": "古老的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1319",
+    "text": "崭新的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1320",
+    "text": "全新的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1321",
+    "text": "半新的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1322",
+    "text": "二手的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1323",
+    "text": "三手的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1324",
+    "text": "流传",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1325",
+    "text": "传承",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1326",
+    "text": "遗传",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1327",
+    "text": "继承",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1328",
+    "text": "遗留",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1329",
+    "text": "遗迹",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1330",
+    "text": "遗址",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1331",
+    "text": "遗物",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1332",
+    "text": "遗风",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1333",
+    "text": "遗俗",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1334",
+    "text": "遗留下来的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1335",
+    "text": "保留下来的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1336",
+    "text": "保存的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1337",
+    "text": "遗失的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1338",
+    "text": "丢失的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1339",
+    "text": "找回的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1340",
+    "text": "寻回的",
+    "category": "time",
+    "type": "adj",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1341",
+    "text": "褪色",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1342",
+    "text": "掉色",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1343",
+    "text": "染色",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1344",
+    "text": "上色",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1345",
+    "text": "补色",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1346",
+    "text": "变色",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1347",
+    "text": "褪色",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1348",
+    "text": "沉淀",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1349",
+    "text": "沉积",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1350",
+    "text": "堆积",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1351",
+    "text": "淤积",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1352",
+    "text": "冲刷",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1353",
+    "text": "侵蚀",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1354",
+    "text": "风化",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1355",
+    "text": "钙化",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1356",
+    "text": "骨化",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1357",
+    "text": "纤维化",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1358",
+    "text": "硬化",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1359",
+    "text": "软化",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1360",
+    "text": "老化",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1361",
+    "text": "衰变",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1362",
+    "text": "衰减",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1363",
+    "text": "衰退",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1364",
+    "text": "衰弱",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1365",
+    "text": "衰败",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1366",
+    "text": "衰落",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1367",
+    "text": "兴盛",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1368",
+    "text": "兴起",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1369",
+    "text": "兴起",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1370",
+    "text": "复兴",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1371",
+    "text": "恢复",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1372",
+    "text": "修复",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1373",
+    "text": "复原",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1374",
+    "text": "还原",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1375",
+    "text": "返回",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1376",
+    "text": "回溯",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1377",
+    "text": "追溯",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1378",
+    "text": "回忆",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1379",
+    "text": "追忆",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1380",
+    "text": "缅怀",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1381",
+    "text": "怀念",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1382",
+    "text": "思念",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1383",
+    "text": "想念",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1384",
+    "text": "遗忘",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1385",
+    "text": "忘记",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1386",
+    "text": "牢记",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1387",
+    "text": "铭记",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1388",
+    "text": "铭刻",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1389",
+    "text": "刻录",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1390",
+    "text": "录制",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1391",
+    "text": "记录",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1392",
+    "text": "记载",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1393",
+    "text": "记述",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1394",
+    "text": "叙述",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1395",
+    "text": "讲述",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1396",
+    "text": "诉说",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1397",
+    "text": "倾诉",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1398",
+    "text": "聆听",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1399",
+    "text": "倾听",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1400",
+    "text": "听见",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1401",
+    "text": "听见",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1402",
+    "text": "听闻",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1403",
+    "text": "听说",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1404",
+    "text": "传说",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1405",
+    "text": "流传",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1406",
+    "text": "传承",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1407",
+    "text": "遗传",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1408",
+    "text": "继承",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1409",
+    "text": "遗留",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1410",
+    "text": "遗失",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1411",
+    "text": "丢失",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1412",
+    "text": "找回",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1413",
+    "text": "寻回",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1414",
+    "text": "寻找",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1415",
+    "text": "搜寻",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1416",
+    "text": "搜查",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1417",
+    "text": "查找",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1418",
+    "text": "翻阅",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1419",
+    "text": "浏览",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1420",
+    "text": "扫视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1421",
+    "text": "审视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1422",
+    "text": "注视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1423",
+    "text": "凝视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1424",
+    "text": "注视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1425",
+    "text": "凝视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1426",
+    "text": "凝望",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1427",
+    "text": "遥望",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1428",
+    "text": "眺望",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1429",
+    "text": "俯瞰",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1430",
+    "text": "仰视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1431",
+    "text": "平视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1432",
+    "text": "环视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1433",
+    "text": "环顾",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  },
+  {
+    "id": "time_1434",
+    "text": "扫视",
+    "category": "time",
+    "type": "verb",
+    "weight": 1.0
+  }
+]

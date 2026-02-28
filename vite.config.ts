@@ -18,6 +18,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, './index.html'),
         mbti: path.resolve(__dirname, './vue-index.html'),
+        wordfall: path.resolve(__dirname, './wordfall.html'),
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && node rename-build.cjs",
+    "build:all": "powershell -ExecutionPolicy Bypass -File build-all.ps1",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -43,6 +44,8 @@
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.34.3",
+    "html2canvas": "^1.4.1",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.562.0",
     "next-themes": "^0.4.6",

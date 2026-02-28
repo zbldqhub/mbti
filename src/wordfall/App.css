@@ -1,0 +1,48 @@
+/* App specific styles */
+
+/* 确保全屏显示 */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* 选中文字样式 */
+::selection {
+  background: rgba(103, 232, 249, 0.3);
+  color: #fff;
+}
+
+/* 禁用文本选择（游戏区域） */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 隐藏滚动条但保持功能 */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 响应式字体大小 */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 触摸设备优化 */
+@media (pointer: coarse) {
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+}

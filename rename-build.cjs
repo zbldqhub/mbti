@@ -33,14 +33,41 @@ if (fs.existsSync(vueIndexPath)) {
   console.error('vue-index.html not found in dist');
 }
 
-// 修改主index.html中的MBTI链接为相对路径
+// 在dist目录内创建wordfall目录
+const wordfallDir = path.join(distDir, 'wordfall');
+if (!fs.existsSync(wordfallDir)) {
+  fs.mkdirSync(wordfallDir, { recursive: true });
+  console.log('Created dist/wordfall directory');
+}
+
+// 复制wordfall.html到wordfall目录并重命名为index.html
+const wordfallHtmlPath = path.join(distDir, 'wordfall.html');
+const wordfallIndexPath = path.join(wordfallDir, 'index.html');
+if (fs.existsSync(wordfallHtmlPath)) {
+  let content = fs.readFileSync(wordfallHtmlPath, 'utf8');
+  // 修改资源引用路径
+  content = content.replace(/src="\.\.\//g, 'src="../');
+  content = content.replace(/href="\.\.\//g, 'href="../');
+  fs.writeFileSync(wordfallIndexPath, content);
+  console.log('Created dist/wordfall/index.html with updated asset paths');
+  
+  // 删除原始的wordfall.html
+  fs.unlinkSync(wordfallHtmlPath);
+  console.log('Removed original wordfall.html');
+} else {
+  console.error('wordfall.html not found in dist');
+}
+
+// 修改主index.html中的链接为相对路径
 const mainIndexPath = path.join(distDir, 'index.html');
 if (fs.existsSync(mainIndexPath)) {
   let content = fs.readFileSync(mainIndexPath, 'utf8');
   // 将/mbti链接改为相对路径 ./mbti/
   content = content.replace(/href="\/mbti"/g, 'href="./mbti/"');
+  // 将/wordfall链接改为相对路径 ./wordfall/
+  content = content.replace(/href="\/wordfall"/g, 'href="./wordfall/"');
   fs.writeFileSync(mainIndexPath, content);
-  console.log('Updated main index.html MBTI link to relative path');
+  console.log('Updated main index.html links to relative paths');
 }
 
 console.log('');
@@ -48,9 +75,11 @@ console.log('Build post-processing completed!');
 console.log('');
 console.log('Deployment structure:');
 console.log('  dist/');
-console.log('    ├── index.html      (主页 - 访问 /)');
-console.log('    ├── assets/         (公共资源)');
-console.log('    └── mbti/');
-console.log('         └── index.html (MBTI测试页 - 访问 /mbti/)');
+console.log('    ├── index.html         (主页 - 访问 /)');
+console.log('    ├── assets/            (公共资源)');
+console.log('    ├── mbti/');
+console.log('    │    └── index.html    (MBTI测试页 - 访问 /mbti/)');
+console.log('    └── wordfall/');
+console.log('         └── index.html    (词语瀑布 - 访问 /wordfall/)');
 console.log('');
 console.log('部署时只需上传 dist 目录即可！');
