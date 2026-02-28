@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState, useCallback, memo } from 'react';
 import type { Word, FallingWord, Particle } from '../types';
 import { categoryMeta } from '../hooks/useWords';
 import { generateSingleWord } from '../services/wordGenerationService';
@@ -8,14 +7,13 @@ interface WordCascadeProps {
   words: Word[];
   maxWords?: number;
   spawnInterval?: number;
-  fallDurationRange?: [number, number];
   onWordCollect: (word: Word, startX: number, startY: number) => void;
   collectedWords: Word[];
   isCollectionFull?: boolean;
 }
 
-// 粒子组件
-const ParticleEffect: React.FC<{ particles: Particle[]; onComplete: () => void }> = ({ particles, onComplete }) => {
+// 使用 CSS 动画代替 framer-motion
+const ParticleEffect: React.FC<{ particles: Particle[]; onComplete: () => void }> = memo(({ particles, onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(onComplete, 600);
     return () => clearTimeout(timer);
@@ -24,35 +22,29 @@ const ParticleEffect: React.FC<{ particles: Particle[]; onComplete: () => void }
   return (
     <>
       {particles.map((particle) => (
-        <motion.div
+        <div
           key={particle.id}
-          className="absolute w-2 h-2 rounded-full pointer-events-none"
+          className="absolute w-2 h-2 rounded-full pointer-events-none particle-effect"
           style={{
             backgroundColor: particle.color,
             boxShadow: `0 0 10px ${particle.color}`,
             left: particle.x,
             top: particle.y,
-          }}
-          initial={{ opacity: 1, scale: 1 }}
-          animate={{
-            x: particle.vx * 80,
-            y: particle.vy * 80,
-            opacity: 0,
-            scale: 0,
-          }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+            '--vx': particle.vx * 80,
+            '--vy': particle.vy * 80,
+          } as React.CSSProperties}
         />
       ))}
     </>
   );
-};
+});
 
-// 单个下落词语组件
+// 单个下落词语组件 - 使用纯 CSS 变换
 const FallingWordItem: React.FC<{
   word: FallingWord;
   onCollect: (word: FallingWord) => void;
   isCollecting: boolean;
-}> = ({ word, onCollect, isCollecting }) => {
+}> = memo(({ word, onCollect, isCollecting }) => {
   const meta = categoryMeta[word.category];
   const elementRef = useRef<HTMLDivElement>(null);
   const isCollectedRef = useRef(false);
@@ -83,41 +75,27 @@ const FallingWordItem: React.FC<{
   return (
     <div
       ref={elementRef}
-      className="absolute cursor-pointer select-none whitespace-nowrap pointer-events-auto"
+      className={`absolute cursor-pointer select-none whitespace-nowrap pointer-events-auto falling-word ${isCollecting ? 'collecting' : ''}`}
       style={{
         left: word.x,
         top: word.y,
         color: meta.color,
         textShadow: meta.glow,
-        fontSize: '1.5rem',
-        fontWeight: 900,
-        letterSpacing: '0.05em',
-        zIndex: isCollecting ? 100 : 50,
-        opacity: isCollecting ? 0.5 : 1,
-        transform: `rotate(${word.rotation}deg) scale(${isCollecting ? 1.2 : 1})`,
-        transition: 'opacity 0.2s, transform 0.2s',
-        padding: '25px 35px',
-        margin: '-25px -35px',
-        minWidth: '80px',
-        minHeight: '50px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        transform: `rotate(${word.rotation}deg)`,
       }}
     >
       {word.text}
     </div>
   );
-};
+});
 
 // 运动模式类型
 type MovementMode = 'fall' | 'diagonal' | 'bounce' | 'float' | 'spiral';
 
 export const WordCascade: React.FC<WordCascadeProps> = ({
   words,
-  maxWords = 35,
-  spawnInterval = 400,
-  fallDurationRange = [2, 8],
+  maxWords = 20, // 减少最大词语数量
+  spawnInterval = 600, // 增加生成间隔
   onWordCollect,
   collectedWords,
   isCollectionFull,
@@ -138,7 +116,6 @@ export const WordCascade: React.FC<WordCascadeProps> = ({
 
   // 生成随机词语
   const spawnWord = useCallback(() => {
-    // 优先使用传入的词库，如果为空则动态生成
     const wordSource = words.length > 0 ? words : [generateSingleWord()];
     const randomWord = wordSource[Math.floor(Math.random() * wordSource.length)];
     
@@ -148,9 +125,7 @@ export const WordCascade: React.FC<WordCascadeProps> = ({
     const x = Math.random() * (containerWidth - 100) + 50;
     const y = -60;
     const rotation = (Math.random() - 0.5) * 30;
-    const speed = fallDurationRange[0] + Math.random() * (fallDurationRange[1] - fallDurationRange[0]);
     
-    // 根据运动模式设置初始速度
     let vx = 0, vy = 0;
     switch (mode) {
       case 'fall':
@@ -180,20 +155,20 @@ export const WordCascade: React.FC<WordCascadeProps> = ({
       x,
       y,
       rotation,
-      speed,
+      speed: 1,
       vx,
       vy,
       mode,
       uniqueId: `falling_${wordIdCounter.current++}`,
-      rotationSpeed: (Math.random() - 0.5) * 2, // 旋转速度
-      spiralAngle: 0, // 螺旋运动的当前角度
+      rotationSpeed: (Math.random() - 0.5) * 2,
+      spiralAngle: 0,
     };
-  }, [words, fallDurationRange]);
+  }, [words]);
 
   // 创建粒子爆炸效果
   const createParticles = useCallback((x: number, y: number, color: string) => {
     const newParticles: Particle[] = [];
-    const particleCount = 6 + Math.floor(Math.random() * 3);
+    const particleCount = 6;
     
     for (let i = 0; i < particleCount; i++) {
       const angle = (Math.PI * 2 * i) / particleCount;
@@ -235,9 +210,20 @@ export const WordCascade: React.FC<WordCascadeProps> = ({
     onWordCollect(word, word.x, word.y);
   }, [createParticles, onWordCollect, collectingIds, isCollectionFull]);
 
-  // 动画循环
+  // 动画循环 - 使用 requestAnimationFrame 但降低频率
   useEffect(() => {
+    let lastTime = 0;
+    const targetFPS = 30; // 降低帧率到 30fps
+    const frameInterval = 1000 / targetFPS;
+
     const animate = (timestamp: number) => {
+      // 控制帧率
+      if (timestamp - lastTime < frameInterval) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
+      lastTime = timestamp;
+
       // 生成新词
       if (timestamp - lastSpawnTime.current > spawnInterval) {
         setFallingWords(prev => {
@@ -267,7 +253,6 @@ export const WordCascade: React.FC<WordCascadeProps> = ({
 
           switch (word.mode) {
             case 'fall':
-              // 垂直下落，带轻微摆动
               newX += word.vx;
               newY += word.vy;
               newVx *= 0.995;
@@ -275,43 +260,36 @@ export const WordCascade: React.FC<WordCascadeProps> = ({
               break;
 
             case 'diagonal':
-              // 斜向飞行
               newX += word.vx;
               newY += word.vy;
               newRotation += (word.rotationSpeed || 0) * 0.5;
               break;
 
             case 'bounce':
-              // 弹跳模式
               newX += word.vx;
               newY += word.vy;
               
-              // 左右边缘反弹
               if (newX <= 20 || newX >= containerWidth - 20) {
                 newVx = -newVx * 0.8;
                 newX = Math.max(20, Math.min(containerWidth - 20, newX));
               }
               
-              // 底部反弹
               if (newY >= containerHeight - 50) {
                 newVy = -newVy * 0.7;
                 newY = containerHeight - 50;
               }
               
-              // 重力
               newVy += 0.1;
               newRotation += word.rotationSpeed || 0;
               break;
 
             case 'float':
-              // 漂浮模式，缓慢下落带左右摆动
               newX += Math.sin(timestamp * 0.001 + word.uniqueId.charCodeAt(0)) * 0.5;
               newY += word.vy;
               newRotation = Math.sin(timestamp * 0.002) * 10;
               break;
 
             case 'spiral':
-              // 螺旋下降
               newSpiralAngle += 0.05;
               newX += Math.cos(newSpiralAngle) * 2;
               newY += word.vy;
