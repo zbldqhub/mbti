@@ -80,25 +80,37 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
     
     setIsGenerating(true);
     try {
-      const dataUrl = await domtoimage.toPng(posterRef.current, {
-        quality: 1,
+      // 使用 SVG 格式生成高清图片，不会改变布局
+      const dataUrl = await domtoimage.toSvg(posterRef.current, {
         bgcolor: undefined,
-        style: {
-          transform: 'none',
-        },
       });
       
-      const link = document.createElement('a');
-      const wordNames = words.map(w => w.text).join('_');
-      link.download = `${wordNames}.png`;
-      link.href = dataUrl;
-      link.click();
-      
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 2000);
+      // 将 SVG 转换为 PNG（使用 canvas 进行缩放）
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const scale = 2; // 放大倍数
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.scale(scale, scale);
+          ctx.drawImage(img, 0, 0);
+          
+          const link = document.createElement('a');
+          const wordNames = words.map(w => w.text).join('_');
+          link.download = `${wordNames}.png`;
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        }
+        setIsGenerating(false);
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 2000);
+      };
+      img.src = dataUrl;
     } catch (error) {
       console.error('Export failed:', error);
-    } finally {
       setIsGenerating(false);
     }
   };
