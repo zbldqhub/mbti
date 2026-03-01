@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-// 动态粒子背景
+// 粒子背景 - 带连线效果
 const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -42,7 +42,7 @@ const ParticleBackground: React.FC = () => {
 
     const init = () => {
       particles = [];
-      const particleCount = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+      const particleCount = Math.min(60, Math.floor((canvas.width * canvas.height) / 20000));
       for (let i = 0; i < particleCount; i++) {
         particles.push(createParticle());
       }
@@ -113,80 +113,9 @@ const ParticleBackground: React.FC = () => {
   );
 };
 
-// 流动光线效果
-const FlowingLines: React.FC = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* 主光线 - 更粗更明显 */}
-      <div
-        className="absolute w-full opacity-40"
-        style={{
-          top: '20%',
-          height: '2px',
-          background: 'linear-gradient(90deg, transparent, #67e8f9, #c084fc, #67e8f9, transparent)',
-          animation: 'flowLine 8s linear infinite',
-          boxShadow: '0 0 10px #67e8f9, 0 0 20px #c084fc',
-        }}
-      />
-      <div
-        className="absolute w-full opacity-30"
-        style={{
-          top: '40%',
-          height: '2px',
-          background: 'linear-gradient(90deg, transparent, #86efac, #fbbf24, #86efac, transparent)',
-          animation: 'flowLine 12s linear infinite reverse',
-          boxShadow: '0 0 10px #86efac, 0 0 20px #fbbf24',
-        }}
-      />
-      <div
-        className="absolute w-full opacity-25"
-        style={{
-          top: '60%',
-          height: '2px',
-          background: 'linear-gradient(90deg, transparent, #fca5a5, #67e8f9, #fca5a5, transparent)',
-          animation: 'flowLine 10s linear infinite',
-          boxShadow: '0 0 10px #fca5a5, 0 0 20px #67e8f9',
-        }}
-      />
-      <div
-        className="absolute w-full opacity-30"
-        style={{
-          top: '80%',
-          height: '2px',
-          background: 'linear-gradient(90deg, transparent, #c084fc, #86efac, #c084fc, transparent)',
-          animation: 'flowLine 15s linear infinite reverse',
-          boxShadow: '0 0 10px #c084fc, 0 0 20px #86efac',
-        }}
-      />
-
-      {/* 垂直光线 */}
-      <div
-        className="absolute h-full opacity-20"
-        style={{
-          left: '15%',
-          width: '2px',
-          background: 'linear-gradient(180deg, transparent, #67e8f9, transparent)',
-          animation: 'flowLineVertical 10s linear infinite',
-          boxShadow: '0 0 10px #67e8f9',
-        }}
-      />
-      <div
-        className="absolute h-full opacity-20"
-        style={{
-          left: '85%',
-          width: '2px',
-          background: 'linear-gradient(180deg, transparent, #c084fc, transparent)',
-          animation: 'flowLineVertical 12s linear infinite reverse',
-          boxShadow: '0 0 10px #c084fc',
-        }}
-      />
-    </div>
-  );
-};
-
 // 星空闪烁效果
 const TwinklingStars: React.FC = () => {
-  const stars = Array.from({ length: 80 }, (_, i) => ({
+  const stars = Array.from({ length: 60 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
@@ -283,9 +212,6 @@ export const BackgroundEffects: React.FC = () => {
       
       {/* 星空 */}
       <TwinklingStars />
-      
-      {/* 流动光线 */}
-      <FlowingLines />
       
       {/* 粒子连线 */}
       <ParticleBackground />

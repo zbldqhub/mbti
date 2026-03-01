@@ -22,30 +22,30 @@ export const CollectionBasket: React.FC<CollectionBasketProps> = ({
 
   return (
     <motion.div
-      className="fixed top-6 right-6 z-50"
+      className="fixed top-6 right-6 z-50 pointer-events-none"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
     >
       <div
         className={`
-          glass rounded-3xl p-5 min-w-[200px]
+          glass rounded-2xl p-3 min-w-[140px] pointer-events-auto
           transition-all duration-300
           ${isEmpty ? 'animate-pulse-border border-dashed border-2' : ''}
         `}
       >
         {/* 标题 */}
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-sm font-medium text-[#94a3b8]">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-medium text-[#94a3b8]">
             捕获 {collectedWords.length}/{maxCollection}
           </span>
-          <span className="text-lg">
+          <span className="text-sm">
             {isFull ? '✨' : isEmpty ? '○' : '◐'}
           </span>
         </div>
 
         {/* 已收集的词 */}
-        <div className="space-y-2 min-h-[80px]">
+        <div className="space-y-1 min-h-[50px]">
           <AnimatePresence mode="popLayout">
             {collectedWords.map((word, index) => {
               const meta = categoryMeta[word.category];
@@ -65,7 +65,7 @@ export const CollectionBasket: React.FC<CollectionBasketProps> = ({
                   className="flex items-center justify-between group"
                 >
                   <span
-                    className="text-lg font-bold px-3 py-1.5 rounded-xl transition-all duration-200"
+                    className="text-sm font-bold px-2 py-1 rounded-lg transition-all duration-200"
                     style={{
                       color: meta.color,
                       textShadow: meta.glow,
@@ -76,9 +76,9 @@ export const CollectionBasket: React.FC<CollectionBasketProps> = ({
                   </span>
                   <button
                     onClick={() => onRemove(index)}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-full hover:bg-white/10"
+                    className="opacity-0 group-hover:opacity-100 transition-opacity p-0.5 rounded-full hover:bg-white/10"
                   >
-                    <X className="w-4 h-4 text-[#94a3b8]" />
+                    <X className="w-3 h-3 text-[#94a3b8]" />
                   </button>
                 </motion.div>
               );
@@ -89,7 +89,7 @@ export const CollectionBasket: React.FC<CollectionBasketProps> = ({
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center text-[#64748b] text-sm py-6"
+              className="text-center text-[#64748b] text-xs py-3"
             >
               点击词语捕获
             </motion.div>
@@ -101,8 +101,8 @@ export const CollectionBasket: React.FC<CollectionBasketProps> = ({
           onClick={onGenerate}
           disabled={!isFull}
           className={`
-            w-full mt-4 py-3 px-4 rounded-xl font-bold text-sm
-            flex items-center justify-center gap-2
+            w-full mt-2 py-2 px-3 rounded-lg font-bold text-xs
+            flex items-center justify-center gap-1
             transition-all duration-300
             ${isFull 
               ? 'bg-gradient-to-r from-[#67e8f9] via-[#c084fc] to-[#fbbf24] text-[#0f172a] animate-breathe cursor-pointer' 
@@ -112,7 +112,7 @@ export const CollectionBasket: React.FC<CollectionBasketProps> = ({
           whileHover={isFull ? { scale: 1.02 } : {}}
           whileTap={isFull ? { scale: 0.98 } : {}}
         >
-          <Sparkles className="w-4 h-4" />
+          <Sparkles className="w-3 h-3" />
           {isFull ? '生成诗句' : `还需 ${maxCollection - collectedWords.length} 个词`}
         </motion.button>
       </div>
