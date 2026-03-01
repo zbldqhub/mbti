@@ -261,7 +261,7 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
                 </div>
 
                 {/* 使用的词 */}
-                <div className="absolute bottom-24 flex gap-3">
+                <div className="flex gap-3 mt-8">
                   {words.map((word, i) => (
                     <motion.span
                       key={i}
@@ -281,8 +281,8 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
                 </div>
 
                 {/* 底部信息 */}
-                <div className="absolute bottom-8 text-center">
-                  <p className="text-[#64748b] text-xs tracking-widest">
+                <div className="mt-auto pt-8 text-center">
+                  <p className="text-[#94a3b8] text-xs tracking-widest" style={{ color: 'rgba(148, 163, 184, 0.8)' }}>
                     词语瀑布 · {currentDate}
                   </p>
                 </div>
