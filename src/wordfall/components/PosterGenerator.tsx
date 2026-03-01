@@ -89,7 +89,7 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
       const img = new Image();
       img.onload = () => {
         const canvas = document.createElement('canvas');
-        const scale = 2; // 放大倍数
+        const scale = 3; // 放大倍数提高到3倍
         canvas.width = img.width * scale;
         canvas.height = img.height * scale;
         
@@ -283,7 +283,7 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
                     {words.map((word, i) => (
                       <motion.span
                         key={i}
-                        className="px-3 py-1.5 rounded-full text-sm"
+                        className="px-3 py-1.5 rounded-full text-sm whitespace-nowrap"
                         style={{
                           color: categoryMeta[word.category].color,
                           background: `${categoryMeta[word.category].color}20`,
