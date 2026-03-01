@@ -191,32 +191,34 @@ function App() {
     <div className="min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)' }}>
       {/* 炫酷背景效果 */}
       <BackgroundEffects />
-      {/* 顶部导航 */}
+      {/* 顶部导航 - 只让按钮区域可点击 */}
       <motion.header
-        className="fixed top-0 left-0 right-0 z-40 px-6 py-4"
+        className="fixed top-0 left-0 right-0 z-[100] px-6 py-4 pointer-events-none"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          {/* 标题区域 - 不可点击，词语可以穿过 */}
+          <div className="flex items-center gap-3 pointer-events-none">
             <Sparkles className="w-6 h-6 text-[#67e8f9]" />
             <h1 className="text-xl font-bold text-white">
               词语<span className="text-[#c084fc]">瀑布</span>
             </h1>
           </div>
           
+          {/* 按钮区域 - 只有按钮本身可点击 */}
           <div className="flex items-center gap-2">
             <button
               onClick={() => setShowGuide(true)}
-              className="p-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+              className="p-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors pointer-events-auto"
               title="游戏说明"
             >
               <BookOpen className="w-5 h-5 text-[#94a3b8]" />
             </button>
             <button
               onClick={() => setShowAbout(true)}
-              className="p-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+              className="p-2 rounded-xl bg-white/10 hover:bg-white/20 transition-colors pointer-events-auto"
               title="关于"
             >
               <Info className="w-5 h-5 text-[#94a3b8]" />
