@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, X, RefreshCw, Share2, Sparkles } from 'lucide-react';
-import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
 import type { Word } from '../types';
 import { categoryMeta } from '../hooks/useWords';
 import { generatePoemWithAI } from '../services/aiService';
@@ -80,17 +80,18 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
     
     setIsGenerating(true);
     try {
-      const canvas = await html2canvas(posterRef.current, {
-        scale: 2,
-        backgroundColor: null,
-        useCORS: true,
-        logging: false,
+      const dataUrl = await domtoimage.toPng(posterRef.current, {
+        quality: 1,
+        bgcolor: undefined,
+        style: {
+          transform: 'none',
+        },
       });
       
       const link = document.createElement('a');
       const wordNames = words.map(w => w.text).join('_');
       link.download = `${wordNames}.png`;
-      link.href = canvas.toDataURL('image/png');
+      link.href = dataUrl;
       link.click();
       
       setShowToast(true);
@@ -160,6 +161,7 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
             {/* 海报 */}
             <div
               ref={posterRef}
+              data-poster="true"
               className="relative w-[320px] h-[568px] rounded-2xl overflow-hidden"
               style={{
                 background: backgroundImage 
@@ -223,57 +225,59 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
                   ))}
                 </div>
 
-                {/* 诗句 */}
-                <div className="text-center space-y-4">
-                  {isAILoading || isImageLoading ? (
-                    <motion.div
-                      className="flex flex-col items-center gap-4"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                    >
+                {/* 中间区域 - 诗句居中 */}
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    {isAILoading || isImageLoading ? (
                       <motion.div
-                        className="w-12 h-12 border-4 border-[#67e8f9] border-t-transparent rounded-full"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                      />
-                      <p className="text-[#94a3b8] text-sm">
-                        {isAILoading && isImageLoading 
-                          ? 'AI正在创作诗句和背景...' 
-                          : isAILoading 
-                            ? 'AI正在创作诗句...' 
-                            : '正在生成背景...'}
-                      </p>
-                    </motion.div>
-                  ) : (
-                    <motion.p
-                      className="text-3xl font-bold leading-relaxed tracking-wider"
-                      style={{
-                        color: '#f8fafc',
-                        textShadow: '0 0 30px rgba(255,255,255,0.3)',
-                        fontFamily: "'Noto Serif SC', serif",
-                      }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      {verse}
-                    </motion.p>
-                  )}
+                        className="flex flex-col items-center gap-4"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                      >
+                        <motion.div
+                          className="w-12 h-12 border-4 border-[#67e8f9] border-t-transparent rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                        />
+                        <p className="text-[#94a3b8] text-sm">
+                          {isAILoading && isImageLoading 
+                            ? 'AI正在创作诗句和背景...' 
+                            : isAILoading 
+                              ? 'AI正在创作诗句...' 
+                              : '正在生成背景...'}
+                        </p>
+                      </motion.div>
+                    ) : (
+                      <motion.p
+                        className="text-3xl font-bold leading-relaxed tracking-wider"
+                        style={{
+                          color: '#f8fafc',
+                          textShadow: '0 0 30px rgba(255,255,255,0.3)',
+                          fontFamily: "'Noto Serif SC', serif",
+                        }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        {verse}
+                      </motion.p>
+                    )}
+                  </div>
                 </div>
 
                 {/* 使用的词 - 放在底部 */}
-                <div className="mt-auto flex flex-col items-center gap-4 pb-8">
+                <div className="flex flex-col items-center gap-4 pb-8">
                   <div className="flex gap-3">
                     {words.map((word, i) => (
                       <motion.span
                         key={i}
-                        className="px-3 rounded-full text-sm flex items-center justify-center"
+                        className="px-3 py-1.5 rounded-full text-sm"
                         style={{
                           color: categoryMeta[word.category].color,
                           background: `${categoryMeta[word.category].color}20`,
                           border: `1px solid ${categoryMeta[word.category].color}40`,
-                          height: '28px',
-                          lineHeight: '28px',
+                          display: 'inline-block',
+                          lineHeight: 1,
                         }}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
