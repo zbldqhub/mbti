@@ -261,28 +261,30 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
                   )}
                 </div>
 
-                {/* 使用的词 - 使用 padding 代替 absolute 定位 */}
-                <div className="flex gap-3 pt-12 pb-2">
-                  {words.map((word, i) => (
-                    <motion.span
-                      key={i}
-                      className="px-3 py-1 rounded-full text-sm"
-                      style={{
-                        color: categoryMeta[word.category].color,
-                        background: `${categoryMeta[word.category].color}20`,
-                        border: `1px solid ${categoryMeta[word.category].color}40`,
-                      }}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.5 + i * 0.1 }}
-                    >
-                      {word.text}
-                    </motion.span>
-                  ))}
-                </div>
+                {/* 使用的词 - 放在底部 */}
+                <div className="mt-auto flex flex-col items-center gap-4 pb-8">
+                  <div className="flex gap-3">
+                    {words.map((word, i) => (
+                      <motion.span
+                        key={i}
+                        className="px-3 rounded-full text-sm flex items-center justify-center"
+                        style={{
+                          color: categoryMeta[word.category].color,
+                          background: `${categoryMeta[word.category].color}20`,
+                          border: `1px solid ${categoryMeta[word.category].color}40`,
+                          height: '28px',
+                          lineHeight: '28px',
+                        }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.5 + i * 0.1 }}
+                      >
+                        {word.text}
+                      </motion.span>
+                    ))}
+                  </div>
 
-                {/* 底部信息 - 使用 padding 代替 absolute 定位 */}
-                <div className="pt-4 pb-8 text-center">
+                  {/* 底部信息 */}
                   <p className="text-[#64748b] text-xs tracking-widest">
                     词语瀑布 · {currentDate}
                   </p>
