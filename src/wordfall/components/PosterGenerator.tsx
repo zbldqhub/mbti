@@ -88,7 +88,8 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
       });
       
       const link = document.createElement('a');
-      link.download = `词语瀑布_${new Date().toISOString().slice(0, 10)}.png`;
+      const wordNames = words.map(w => w.text).join('_');
+      link.download = `${wordNames}.png`;
       link.href = canvas.toDataURL('image/png');
       link.click();
       
@@ -260,8 +261,8 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
                   )}
                 </div>
 
-                {/* 使用的词 */}
-                <div className="flex gap-3 mt-8">
+                {/* 使用的词 - 使用 padding 代替 absolute 定位 */}
+                <div className="flex gap-3 pt-12 pb-2">
                   {words.map((word, i) => (
                     <motion.span
                       key={i}
@@ -280,9 +281,9 @@ export const PosterGenerator: React.FC<PosterGeneratorProps> = ({
                   ))}
                 </div>
 
-                {/* 底部信息 */}
-                <div className="mt-auto pt-8 text-center">
-                  <p className="text-[#94a3b8] text-xs tracking-widest" style={{ color: 'rgba(148, 163, 184, 0.8)' }}>
+                {/* 底部信息 - 使用 padding 代替 absolute 定位 */}
+                <div className="pt-4 pb-8 text-center">
+                  <p className="text-[#64748b] text-xs tracking-widest">
                     词语瀑布 · {currentDate}
                   </p>
                 </div>
