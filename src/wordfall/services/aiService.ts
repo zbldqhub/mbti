@@ -2,7 +2,7 @@ import type { Word } from '../types';
 
 // Kimi API 配置
 const KIMI_API_URL = 'https://api.moonshot.cn/v1/chat/completions';
-const API_KEY = 'sk-MdjyLzEcqxLyDv4haXgLK1d7gKlZnikeWrPIdf0DdCMJI3bJ';
+const API_KEY = 'sk-7zNAsNfLd9kaB67LvCcyTtEoTe53ZLbZFWVnwcS72J7ncqdL';
 const MODEL = 'moonshot-v1-8k';
 
 // Pollinations AI 绘画 API (免费)
