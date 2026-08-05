@@ -1,8 +1,7 @@
 import type { Word } from '../types';
 
-// Kimi API 配置
-const KIMI_API_URL = 'https://api.moonshot.cn/v1/chat/completions';
-const API_KEY = 'sk-MdjyLzEcqxLyDv4haXgLK1d7gKlZnikeWrPIdf0DdCMJI3bJ';
+// Kimi API 配置（通过 Vercel Function 代理，避免在前端暴露 Key）
+const API_URL = '/api/chat';
 const MODEL = 'moonshot-v1-8k';
 
 // 词语类别
@@ -44,11 +43,10 @@ export async function generateWordsWithAI(count: number = 5): Promise<Word[]> {
 请直接输出JSON，不要其他解释。`;
 
   try {
-    const response = await fetch(KIMI_API_URL, {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: MODEL,

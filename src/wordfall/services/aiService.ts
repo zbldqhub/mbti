@@ -1,8 +1,7 @@
 import type { Word } from '../types';
 
-// Kimi API 配置
-const KIMI_API_URL = 'https://api.moonshot.cn/v1/chat/completions';
-const API_KEY = 'sk-7zNAsNfLd9kaB67LvCcyTtEoTe53ZLbZFWVnwcS72J7ncqdL';
+// Kimi API 配置（通过 Vercel Function 代理，避免在前端暴露 Key）
+const API_URL = '/api/chat';
 const MODEL = 'moonshot-v1-8k';
 
 // Pollinations AI 绘画 API (免费)
@@ -39,11 +38,10 @@ export async function generatePoemWithAI(words: Word[]): Promise<string> {
 输出：温柔的星空下，时光静静流淌`;
 
   try {
-    const response = await fetch(KIMI_API_URL, {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: MODEL,
@@ -139,11 +137,10 @@ export async function generateImagePrompt(verse: string, words: Word[]): Promise
 Dreamy night sky with floating stars and soft aurora lights, ethereal atmosphere, digital art style, gentle gradients of blue and purple, mysterious and poetic mood, soft glowing particles, cinematic lighting`;
 
   try {
-    const response = await fetch(KIMI_API_URL, {
+    const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: MODEL,
