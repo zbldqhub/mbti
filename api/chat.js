@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
   const maxTokens = Math.min(
     typeof body.max_tokens === 'number' && body.max_tokens > 0 ? body.max_tokens : 100,
-    1000
+    4000
   );
 
   const temperature =

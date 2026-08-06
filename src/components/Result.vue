@@ -3,7 +3,7 @@
     <!-- 加载动画 -->
     <div v-if="loading" class="loading-section">
       <div class="loading-spinner"></div>
-      <p class="loading-text">正在分析你的性格...</p>
+      <p class="loading-text">AI 正在分析你的性格...</p>
       <p class="loading-subtext">已完成 {{ analysisProgress }}%</p>
     </div>
 
@@ -69,7 +69,10 @@
 
       <!-- 核心特质 -->
       <div class="traits-section">
-        <h3 class="section-title">核心特质</h3>
+        <h3 class="section-title">
+          核心特质
+          <span v-if="aiReport" class="ai-badge">✨ AI 专属</span>
+        </h3>
         <div class="traits-list">
           <p v-for="(trait, index) in typeInfo.description.traits" :key="index" class="trait-item">
             <span class="trait-bullet">•</span>
@@ -184,12 +187,13 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { 
-  calculateMBTIType, 
-  calculatePercentages, 
-  getTypeInfo, 
-  getDeepReport 
+import {
+  calculateMBTIType,
+  calculatePercentages,
+  getTypeInfo,
+  getDeepReport
 } from '../utils/scoring.js';
+import { generateAIReport } from '../services/aiService.js';
 import SharePoster from './SharePoster.vue';
 import RadarChart from './RadarChart.vue';
 
@@ -201,6 +205,10 @@ const props = defineProps({
   hasCompletedAll: {
     type: Boolean,
     default: false
+  },
+  qaPairs: {
+    type: Array,
+    default: () => []
   }
 });
 
@@ -219,11 +227,33 @@ const mbtiType = computed(() => calculateMBTIType(props.scores));
 // 计算百分比
 const percentages = computed(() => calculatePercentages(props.scores));
 
-// 获取类型信息
-const typeInfo = computed(() => getTypeInfo(mbtiType.value));
+// AI 个性化报告（null 时使用本地模板）
+const aiReport = ref(null);
 
-// 获取深度报告
-const deepReport = computed(() => getDeepReport(mbtiType.value));
+// 获取类型信息（AI 报告优先，本地模板兜底；类型名和关键词保持稳定）
+const typeInfo = computed(() => {
+  const base = getTypeInfo(mbtiType.value);
+  if (!aiReport.value) return base;
+  return {
+    ...base,
+    description: {
+      traits: aiReport.value.traits || base.description.traits,
+      careers: aiReport.value.careers || base.description.careers,
+      relationships: aiReport.value.relationships || base.description.relationships
+    }
+  };
+});
+
+// 获取深度报告（AI 报告优先，本地模板兜底）
+const deepReport = computed(() => {
+  const base = getDeepReport(mbtiType.value);
+  if (!aiReport.value) return base;
+  return {
+    cognitiveFunctions: aiReport.value.cognitiveFunctions || base.cognitiveFunctions,
+    stressMode: aiReport.value.stressMode || base.stressMode,
+    careerMatch: aiReport.value.careerMatch || base.careerMatch
+  };
+});
 
 // 类型图标
 const typeIcon = computed(() => {
@@ -259,20 +289,27 @@ const showShare = () => {
   showSharePoster.value = true;
 };
 
-// 模拟加载
-onMounted(() => {
+// 生成 AI 个性化报告（进度条最多走到 90%，生成完成后跳到 100%）
+onMounted(async () => {
   let progress = 0;
   const interval = setInterval(() => {
-    progress += Math.random() * 15;
-    if (progress >= 100) {
-      progress = 100;
-      clearInterval(interval);
-      setTimeout(() => {
-        loading.value = false;
-      }, 300);
-    }
-    analysisProgress.value = Math.floor(progress);
+    progress += Math.random() * 10;
+    analysisProgress.value = Math.min(Math.floor(progress), 90);
   }, 200);
+
+  // AI 报告失败时返回 null，自动使用本地模板
+  aiReport.value = await generateAIReport({
+    type: mbtiType.value,
+    percentages: percentages.value,
+    qaPairs: props.qaPairs,
+    isComplete: props.hasCompletedAll
+  });
+
+  clearInterval(interval);
+  analysisProgress.value = 100;
+  setTimeout(() => {
+    loading.value = false;
+  }, 300);
 });
 </script>
 
@@ -412,6 +449,17 @@ onMounted(() => {
   color: #1F2937;
   margin: 0 0 12px 0;
   text-align: center;
+}
+
+.ai-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: linear-gradient(135deg, #F3E8FF, #EDE9FE);
+  border-radius: 10px;
+  font-size: 11px;
+  color: #7C3AED;
+  font-weight: 600;
+  vertical-align: middle;
 }
 
 .radar-chart-container {

@@ -1,5 +1,12 @@
 <template>
   <div class="app-container">
+    <!-- AI 出题加载遮罩 -->
+    <div v-if="preparing" class="preparing-overlay">
+      <div class="preparing-spinner"></div>
+      <p class="preparing-text">AI 正在为你生成专属题目...</p>
+      <p class="preparing-subtext">每次测试题目都不相同</p>
+    </div>
+
     <!-- 页面过渡动画 -->
     <transition name="fade" mode="out-in">
       <!-- 首页 -->
@@ -21,10 +28,11 @@
       />
       
       <!-- 结果页 -->
-      <Result 
+      <Result
         v-else-if="currentPage === 'result'"
         :scores="scores"
         :hasCompletedAll="hasCompletedAll"
+        :qaPairs="qaPairs"
         @continue="continueQuiz"
         @restart="restart"
         @share="shareResult"
@@ -52,13 +60,17 @@ import Quiz from './components/Quiz.vue';
 import Result from './components/Result.vue';
 import { getBasicQuestions, getProQuestions } from './data/questions.js';
 import { initScores, updateScore, calculateMBTIType } from './utils/scoring.js';
+import { generateBasicQuestions, generateProQuestions } from './services/aiService.js';
 
 // 当前页面
 const currentPage = ref('home');
 
-// 题目数据
-const basicQuestions = getBasicQuestions();
-const proQuestions = getProQuestions();
+// AI 出题中
+const preparing = ref(false);
+
+// 题目数据（AI 生成，失败时回退固定题库；持久化到 localStorage 保证断点续答时题答一致）
+const basicQuestions = ref([]);
+const proQuestions = ref([]);
 
 // 答案记录
 const basicAnswers = ref([]);
@@ -69,8 +81,25 @@ const scores = ref(initScores());
 
 // 是否已完成全部题目
 const hasCompletedAll = computed(() => {
-  return proAnswers.value.length === proQuestions.length && 
+  return proQuestions.value.length > 0 &&
+         proAnswers.value.length === proQuestions.value.length &&
          proAnswers.value.every(a => a !== undefined && a !== null);
+});
+
+// 答题记录（题目 + 所选选项文本），供 AI 生成个性化报告
+const qaPairs = computed(() => {
+  const pairs = [];
+  const collect = (questions, answers) => {
+    questions.forEach((q, i) => {
+      const ans = answers[i];
+      if (!ans) return;
+      const opt = q.options.find(o => o.type === ans);
+      if (opt) pairs.push({ question: q.question, answer: opt.text });
+    });
+  };
+  collect(basicQuestions.value, basicAnswers.value);
+  collect(proQuestions.value, proAnswers.value);
+  return pairs;
 });
 
 // 是否有任何答题结果
@@ -80,23 +109,39 @@ const hasAnyResult = computed(() => {
 
 // 页面加载时恢复状态
 onMounted(() => {
+  // 恢复题目（AI 生成的题目需与答案一起恢复，保证题答一致）
+  const savedBasicQuestions = localStorage.getItem('mbti_basic_questions');
+  if (savedBasicQuestions) {
+    basicQuestions.value = JSON.parse(savedBasicQuestions);
+  }
+
+  const savedProQuestions = localStorage.getItem('mbti_pro_questions');
+  if (savedProQuestions) {
+    proQuestions.value = JSON.parse(savedProQuestions);
+  }
+
   // 恢复答题进度
   const savedBasicAnswers = localStorage.getItem('mbti_basic_answers');
   if (savedBasicAnswers) {
     basicAnswers.value = JSON.parse(savedBasicAnswers);
   }
-  
+
   const savedProAnswers = localStorage.getItem('mbti_pro_answers');
   if (savedProAnswers) {
     proAnswers.value = JSON.parse(savedProAnswers);
   }
-  
+
   // 恢复分数
   const savedScores = localStorage.getItem('mbti_scores');
   if (savedScores) {
     scores.value = JSON.parse(savedScores);
   }
-  
+
+  // 有答案但题目丢失（如旧版本存档），清空作废
+  if (basicAnswers.value.length > 0 && basicQuestions.value.length === 0) {
+    clearProgress();
+  }
+
   // 如果有答题记录，自动跳转到结果页
   if (hasAnyResult.value && currentPage.value === 'home') {
     recalculateScores();
@@ -104,8 +149,39 @@ onMounted(() => {
   }
 });
 
+// 生成基础版题目（AI 优先，固定题库兜底），并持久化
+const ensureBasicQuestions = async () => {
+  if (basicQuestions.value.length > 0) return;
+
+  preparing.value = true;
+  try {
+    basicQuestions.value = await generateBasicQuestions();
+  } catch (error) {
+    console.error('AI 出题失败，使用固定题库:', error);
+    basicQuestions.value = getBasicQuestions();
+  }
+  localStorage.setItem('mbti_basic_questions', JSON.stringify(basicQuestions.value));
+  preparing.value = false;
+};
+
+// 生成深度版题目（AI 优先，固定题库兜底），并持久化
+const ensureProQuestions = async () => {
+  if (proQuestions.value.length > 0) return;
+
+  preparing.value = true;
+  try {
+    proQuestions.value = await generateProQuestions(basicQuestions.value);
+  } catch (error) {
+    console.error('AI 出题失败，使用固定题库:', error);
+    proQuestions.value = getProQuestions();
+  }
+  localStorage.setItem('mbti_pro_questions', JSON.stringify(proQuestions.value));
+  preparing.value = false;
+};
+
 // 开始测试
-const startTest = () => {
+const startTest = async () => {
+  await ensureBasicQuestions();
   currentPage.value = 'quiz';
 };
 
@@ -160,24 +236,34 @@ const onProQuizComplete = (answers) => {
 };
 
 // 继续答题（从结果页进入深度答题）
-const continueQuiz = () => {
+const continueQuiz = async () => {
+  await ensureProQuestions();
   currentPage.value = 'proQuiz';
 };
 
 // ========== 重新测试逻辑 ==========
 
-const restart = () => {
-  // 清除所有答题记录
+// 清空所有进度（答题记录、分数、AI 题目）
+const clearProgress = () => {
   basicAnswers.value = [];
   proAnswers.value = [];
+  basicQuestions.value = [];
+  proQuestions.value = [];
   scores.value = initScores();
-  
-  // 清除localStorage
+
   localStorage.removeItem('mbti_basic_answers');
   localStorage.removeItem('mbti_pro_answers');
   localStorage.removeItem('mbti_scores');
-  
+  localStorage.removeItem('mbti_basic_questions');
+  localStorage.removeItem('mbti_pro_questions');
+};
+
+const restart = async () => {
+  // 清除所有进度，重新 AI 出题（每次题目不同）
+  clearProgress();
+
   // 进入基础测试（28题）
+  await ensureBasicQuestions();
   currentPage.value = 'quiz';
 };
 
@@ -246,6 +332,45 @@ body {
   min-height: 100vh;
   background: #F3F4F6;
   position: relative;
+}
+
+/* AI 出题加载遮罩 */
+.preparing-overlay {
+  position: fixed;
+  inset: 0;
+  background: #F3F4F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.preparing-spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid #E5E7EB;
+  border-top-color: #8B5CF6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.preparing-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1F2937;
+  margin: 0 0 6px 0;
+}
+
+.preparing-subtext {
+  font-size: 13px;
+  color: #9CA3AF;
+  margin: 0;
 }
 
 /* 页面过渡动画 */
