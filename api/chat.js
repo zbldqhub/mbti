@@ -1,11 +1,12 @@
 // Vercel Serverless Function：代理 Kimi API，避免前端暴露 Key
 
 const ALLOWED_MODELS = new Set([
+  'kimi-k3',
   'moonshot-v1-8k',
   'moonshot-v1-32k',
 ]);
 
-const DEFAULT_MODEL = process.env.KIMI_MODEL || 'moonshot-v1-8k';
+const DEFAULT_MODEL = process.env.KIMI_MODEL || 'kimi-k3';
 const API_KEY = process.env.KIMI_API_KEY;
 
 export default async function handler(req, res) {
@@ -50,18 +51,32 @@ export default async function handler(req, res) {
       : 0.8;
 
   try {
+    // Kimi K3 参数差异：
+    // - 始终开启思考模式，用 reasoning_effort=low 降低推理开销（生成类任务不需要深度推理）
+    // - temperature 固定为 1.0，不能显式传入
+    // - 用 max_completion_tokens 代替 max_tokens，且思考 token 也计入其中，需留推理余量
+    const isK3 = requestedModel === 'kimi-k3';
+    const payload = isK3
+      ? {
+          model: requestedModel,
+          messages: body.messages,
+          reasoning_effort: 'low',
+          max_completion_tokens: maxTokens + 1000,
+        }
+      : {
+          model: requestedModel,
+          messages: body.messages,
+          temperature,
+          max_tokens: maxTokens,
+        };
+
     const response = await fetch('https://api.moonshot.cn/v1/chat/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`,
       },
-      body: JSON.stringify({
-        model: requestedModel,
-        messages: body.messages,
-        temperature,
-        max_tokens: maxTokens,
-      }),
+      body: JSON.stringify(payload),
     });
 
     const data = await response.json().catch(() => ({}));

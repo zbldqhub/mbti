@@ -2,7 +2,7 @@ import type { Word } from '../types';
 
 // Kimi API 配置（通过 Vercel Function 代理，避免在前端暴露 Key）
 const API_URL = '/api/chat';
-const MODEL = 'moonshot-v1-8k';
+const MODEL = 'kimi-k3';
 
 // Pollinations AI 绘画 API (免费)
 const IMAGE_API_URL = 'https://image.pollinations.ai/prompt';

@@ -11,7 +11,7 @@
 import { questions as fixedQuestions } from '../data/questions.js';
 
 const API_URL = '/api/chat';
-const MODEL = 'moonshot-v1-8k';
+const MODEL = 'kimi-k3';
 
 // 每批出题数量（控制单次响应长度）
 const BATCH_SIZE = 8;
