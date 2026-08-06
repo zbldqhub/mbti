@@ -58,6 +58,31 @@ if (fs.existsSync(wordfallHtmlPath)) {
   console.error('wordfall.html not found in dist');
 }
 
+// 在dist目录内创建turtle目录
+const turtleDir = path.join(distDir, 'turtle');
+if (!fs.existsSync(turtleDir)) {
+  fs.mkdirSync(turtleDir, { recursive: true });
+  console.log('Created dist/turtle directory');
+}
+
+// 复制turtle.html到turtle目录并重命名为index.html
+const turtleHtmlPath = path.join(distDir, 'turtle.html');
+const turtleIndexPath = path.join(turtleDir, 'index.html');
+if (fs.existsSync(turtleHtmlPath)) {
+  let content = fs.readFileSync(turtleHtmlPath, 'utf8');
+  // 修改资源引用路径
+  content = content.replace(/src="\.\.\//g, 'src="../');
+  content = content.replace(/href="\.\.\//g, 'href="../');
+  fs.writeFileSync(turtleIndexPath, content);
+  console.log('Created dist/turtle/index.html with updated asset paths');
+
+  // 删除原始的turtle.html
+  fs.unlinkSync(turtleHtmlPath);
+  console.log('Removed original turtle.html');
+} else {
+  console.error('turtle.html not found in dist');
+}
+
 // 修改主index.html中的链接为相对路径
 const mainIndexPath = path.join(distDir, 'index.html');
 if (fs.existsSync(mainIndexPath)) {
@@ -66,6 +91,8 @@ if (fs.existsSync(mainIndexPath)) {
   content = content.replace(/href="\/mbti"/g, 'href="./mbti/"');
   // 将/wordfall链接改为相对路径 ./wordfall/
   content = content.replace(/href="\/wordfall"/g, 'href="./wordfall/"');
+  // 将/turtle链接改为相对路径 ./turtle/
+  content = content.replace(/href="\/turtle"/g, 'href="./turtle/"');
   fs.writeFileSync(mainIndexPath, content);
   console.log('Updated main index.html links to relative paths');
 }
@@ -79,7 +106,9 @@ console.log('    ├── index.html         (主页 - 访问 /)');
 console.log('    ├── assets/            (公共资源)');
 console.log('    ├── mbti/');
 console.log('    │    └── index.html    (MBTI测试页 - 访问 /mbti/)');
-console.log('    └── wordfall/');
-console.log('         └── index.html    (词语瀑布 - 访问 /wordfall/)');
+console.log('    ├── wordfall/');
+console.log('    │    └── index.html    (词语瀑布 - 访问 /wordfall/)');
+console.log('    └── turtle/');
+console.log('         └── index.html    (AI海龟汤 - 访问 /turtle/)');
 console.log('');
 console.log('部署时只需上传 dist 目录即可！');
