@@ -25,3 +25,24 @@ export async function judgeAction(
   }
   return (await response.json()) as EngineResponse;
 }
+
+/**
+ * 开局建议：POST start 模式（服务端不调 AI，直接返回初始建议）。
+ * 失败（网络异常 / 非 200 / 响应不含有效建议）时返回 null，由引擎静默降级为通用建议。
+ */
+export async function fetchStartSuggestions(sceneId: SceneId): Promise<string[] | null> {
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ sceneId, mode: 'start' }),
+    });
+    if (!response.ok) return null;
+    const data = (await response.json()) as { suggestions?: unknown };
+    if (!Array.isArray(data.suggestions)) return null;
+    const suggestions = data.suggestions.filter((x): x is string => typeof x === 'string' && !!x);
+    return suggestions.length > 0 ? suggestions : null;
+  } catch {
+    return null;
+  }
+}

@@ -352,4 +352,76 @@ assert.equal(r.body.outcome.status, 'won');
 assert.equal(r.body.outcome.win_path, '诡道');
 ok('诡道：outside + entered_405 + broke_window_from_inside + hammer → won');
 
+// ---- ⑪ start 模式：动物园初始 suggestions，不调用 AI（无需 API key） ----
+fetchCalls = [];
+r = await run('POST', { sceneId: 'midnight_zoo', mode: 'start' });
+assert.equal(r.statusCode, 200);
+assert.ok(Array.isArray(r.body.suggestions), 'start 模式应返回 suggestions 数组');
+assert.ok(r.body.suggestions.includes('前往中央广场'), '动物园开局应建议「前往中央广场」');
+assert.equal(fetchCalls.length, 0, 'start 模式不应调用 AI（不依赖 API key）');
+ok('start 模式 → 初始 suggestions 含「前往中央广场」，不调用 AI');
+
+// ---- start 模式：非法 sceneId → 404 ----
+r = await run('POST', { sceneId: 'not_a_scene', mode: 'start' });
+assert.equal(r.statusCode, 404);
+ok('start 模式非法 sceneId → 404');
+
+// ---- action 响应含 suggestions 数组 ----
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'midnight_zoo', input: '巡逻', state: zooState() });
+assert.ok(Array.isArray(r.body.suggestions), 'action 响应应含 suggestions 数组');
+assert.ok(r.body.suggestions.length >= 2 && r.body.suggestions.length <= 8, 'suggestions 数量应在 2-8 之间');
+ok('action 响应含 suggestions 数组（2-8 个）');
+
+// ---- 整点时刻在 central_plaza → 含「整点打卡」 ----
+modelOutputs = [aiJson({})];
+r = await run('POST', {
+  sceneId: 'midnight_zoo',
+  input: '环顾四周',
+  state: zooState({ time: '01:00', location: 'central_plaza', lastCheckinHour: '00:00' }),
+});
+assert.ok(r.body.suggestions.includes('整点打卡'), '整点窗口内应建议「整点打卡」');
+ok('整点时刻在 central_plaza → suggestions 含「整点打卡」');
+
+// ---- rabbit_zone → 含「拾取密码纸条」 ----
+modelOutputs = [aiJson({})];
+r = await run('POST', {
+  sceneId: 'midnight_zoo',
+  input: '查看四周',
+  state: zooState({ location: 'rabbit_zone' }),
+});
+assert.ok(r.body.suggestions.includes('拾取密码纸条'), 'rabbit_zone 应建议拾取密码纸条');
+ok('rabbit_zone → suggestions 含「拾取密码纸条」');
+
+// ---- 隐藏物品不点名 + requirement 过滤（central_plaza，无钥匙） ----
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'midnight_zoo', input: '查看四周', state: zooState() });
+assert.ok(!JSON.stringify(r.body.suggestions).includes('监控室钥匙'), 'hidden 物品不得点名');
+assert.ok(r.body.suggestions.includes('仔细搜索周围'), '存在未持有 hidden 物品时应建议「仔细搜索周围」');
+ok('隐藏物品不点名：不含「监控室钥匙」字样但含「仔细搜索周围」');
+
+assert.ok(!r.body.suggestions.includes('前往监控室'), '无 monitor_key 时不应建议前往监控室');
+ok('无钥匙 → suggestions 不含「前往监控室」（requirement 过滤）');
+
+// ---- 公寓 room_405 持 hammer → 含「用锤子打破观测窗」 ----
+modelOutputs = [aiJson({})];
+r = await run('POST', {
+  sceneId: 'infinite_corridor',
+  input: '查看四周',
+  state: corridorState({ location: 'room_405', items: ['hammer'], countdowns: { room_405: 2 } }),
+});
+assert.ok(r.body.suggestions.includes('用锤子打破观测窗'), 'room_405 持锤应建议破窗');
+ok('公寓 room_405 持 hammer → suggestions 含「用锤子打破观测窗」');
+
+// ---- 结局后 suggestions 为空数组 ----
+modelOutputs = [aiJson({ san_change: -10 })];
+r = await run('POST', {
+  sceneId: 'midnight_zoo',
+  input: '直视兔子的眼睛',
+  state: zooState({ san: 5 }),
+});
+assert.equal(r.body.outcome.status, 'lost');
+assert.deepEqual(r.body.suggestions, [], '结局后 suggestions 应为空数组');
+ok('结局后 suggestions 为空数组');
+
 console.log(`\n全部通过：${passed} 项`);

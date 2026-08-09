@@ -34,7 +34,8 @@ export default function App() {
   };
 
   const startScene = (sceneId: SceneId) => {
-    enter(RuleEngine.start(sceneId));
+    // start 为异步：会先请求服务端开局建议（失败时引擎内静默降级），再进入游戏
+    void RuleEngine.start(sceneId).then(enter);
   };
 
   const continueScene = (sceneId: SceneId) => {

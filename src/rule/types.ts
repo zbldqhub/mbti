@@ -58,6 +58,8 @@ export interface GameState {
   phase: Phase;
   ending: Ending | null;
   winPath: WinPath | null;
+  /** 建议动作（服务端下发；不可用时由引擎降级为通用移动建议） */
+  suggestions: string[];
 }
 
 /** 倒计时 key → 徽章文案 */
@@ -127,4 +129,6 @@ export interface EngineResponse {
   system_effects?: SystemEffect[];
   state_updates?: { lastCheckinHour?: string };
   outcome: Outcome;
+  /** 建议动作列表（2-6 个；结局后为空数组）。旧版服务端可能缺失，需判空 */
+  suggestions?: string[];
 }

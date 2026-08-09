@@ -160,6 +160,23 @@ export default function GameView({
       )}
 
       <footer className="rt-game-footer">
+        {state.phase === 'playing' && state.suggestions.length > 0 && (
+          <div className="rt-suggest">
+            <span className="rt-suggest-label">不知道做什么？点选建议动作：</span>
+            <div className="rt-suggest-chips">
+              {state.suggestions.map(text => (
+                <button
+                  key={text}
+                  className="rt-suggest-chip"
+                  disabled={busy}
+                  onClick={() => onAction(text)}
+                >
+                  {text}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="rt-input-row">
           <input
             value={input}

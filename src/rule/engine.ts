@@ -8,7 +8,7 @@
 
 import { scenes } from './data/scenePublic';
 import type { PublicEvent, PublicScene } from './data/scenePublic';
-import { judgeAction } from './api';
+import { fetchStartSuggestions, judgeAction } from './api';
 import { clearSave, loadSave, recordWin, writeSave } from './storage';
 import type { SaveData } from './storage';
 import type {
@@ -26,11 +26,15 @@ export type JudgeFn = (
   state: EngineRequestState,
 ) => Promise<EngineResponse>;
 
+export type StartSuggestionsFn = (sceneId: SceneId) => Promise<string[] | null>;
+
 export interface EngineDeps {
   /** 随机源（测试可注入确定性序列） */
   random?: () => number;
   /** 判定请求（测试可注入 mock，默认走 /api/rule-engine） */
   judge?: JudgeFn;
+  /** 开局建议请求（测试可注入 mock，默认走 /api/rule-engine start 模式） */
+  suggest?: StartSuggestionsFn;
 }
 
 /** 404 房间漂移配置（仅 infinite_corridor 启用） */
@@ -155,19 +159,27 @@ export class RuleEngine {
   private readonly scene: PublicScene;
   private readonly random: () => number;
   private readonly judge: JudgeFn;
+  private readonly suggest: StartSuggestionsFn;
 
   private constructor(scene: PublicScene, deps: EngineDeps, save?: SaveData) {
     this.scene = scene;
     this.random = deps.random ?? Math.random;
     this.judge = deps.judge ?? judgeAction;
+    this.suggest = deps.suggest ?? fetchStartSuggestions;
     if (save) {
       this.state = save.state;
+      // 旧版存档无 suggestions 字段：降级为当前区域的通用移动建议
+      if (!Array.isArray(this.state.suggestions)) {
+        this.state.suggestions = this.defaultSuggestions();
+      }
       this.pool = this.scene.events.filter(ev => save.poolIds.includes(ev.id));
       this.scheduled = save.scheduled.map(x => ({ ...x }));
       this.triggered = new Set(save.triggered);
       this.lastFixedMin = save.lastFixedMin;
     } else {
       this.state = this.initialState();
+      // 先落通用移动建议，start() 拿到服务端开局建议后会覆盖
+      this.state.suggestions = this.defaultSuggestions();
       this.pool = this.drawPool();
       // random + any_time 事件：开局时随机排到第 4~20 行动之一
       this.scheduled = this.pool
@@ -184,11 +196,20 @@ export class RuleEngine {
     }
   }
 
-  /** 开新局（会覆盖该场景已有存档） */
-  static start(sceneId: SceneId, deps: EngineDeps = {}): RuleEngine {
+  /**
+   * 开新局（会覆盖该场景已有存档）。
+   * 构造后请求服务端开局建议（start 模式，不调 AI）；失败时保留构造期写入的通用移动建议。
+   */
+  static async start(sceneId: SceneId, deps: EngineDeps = {}): Promise<RuleEngine> {
     const scene = scenes.find(s => s.id === sceneId);
     if (!scene) throw new Error(`未知场景: ${sceneId}`);
-    return new RuleEngine(scene, deps);
+    const engine = new RuleEngine(scene, deps);
+    const suggestions = await engine.suggest(sceneId);
+    if (suggestions && suggestions.length > 0) {
+      engine.state.suggestions = suggestions;
+      engine.persist();
+    }
+    return engine;
   }
 
   /** 从本地存档恢复；无存档或存档已完结时返回 null */
@@ -226,7 +247,18 @@ export class RuleEngine {
       phase: 'playing',
       ending: null,
       winPath: null,
+      suggestions: [],
     };
+  }
+
+  /** 通用降级建议：当前区域「前往{连接区域名}」列表（id→name 映射）+「查看四周」 */
+  private defaultSuggestions(): string[] {
+    const area = this.scene.areas.find(a => a.id === this.state.location);
+    const moves = (area?.connections ?? [])
+      .map(id => this.scene.areas.find(a => a.id === id)?.name)
+      .filter((name): name is string => !!name)
+      .map(name => `前往${name}`);
+    return [...moves, '查看四周'];
   }
 
   /**
@@ -585,6 +617,11 @@ export class RuleEngine {
 
     if (res.state_updates?.lastCheckinHour) {
       s.lastCheckinHour = res.state_updates.lastCheckinHour;
+    }
+
+    // 服务端下发了建议动作则整体覆盖（结局后为空数组）；未下发则保留现状
+    if (Array.isArray(res.suggestions)) {
+      s.suggestions = res.suggestions;
     }
   }
 
