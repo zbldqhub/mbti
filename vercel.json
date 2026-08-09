@@ -4,6 +4,8 @@
     { "source": "/wordfall/:path*", "destination": "/wordfall.html" },
     { "source": "/turtle", "destination": "/turtle.html" },
     { "source": "/turtle/:path*", "destination": "/turtle.html" },
+    { "source": "/rule", "destination": "/rule.html" },
+    { "source": "/rule/:path*", "destination": "/rule.html" },
     { "source": "/mbti", "destination": "/mbti/index.html" },
     { "source": "/mbti/:path*", "destination": "/mbti/index.html" },
     { "source": "/", "destination": "/index.html" }

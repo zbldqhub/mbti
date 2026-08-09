@@ -1,0 +1,598 @@
+{
+  "id": "midnight_zoo",
+  "name": "午夜动物园",
+  "theme": "恐怖",
+  "background": "你是一名夜班保安，今晚23:00来到「青林动物园」接班。白班保安没有留下交接记录，对讲机里只有一条自动语音：「不要相信任何穿蓝色工作服的人。」园区大门在你进入后自动锁死了，监控室的屏幕上显示着扭曲的雪花。你必须在凌晨6:00前找到真正的出口离开，否则……你会成为下一任「白班保安」。",
+  "hidden_truth": "这座动物园是一个「认知污染实验场」。所有动物都是未能逃离的人类转化的。白班保安=上一批被同化的夜班保安。你带走的鸽子羽毛，是实验体脱离场域的「标记」——但你真的逃出去了吗？",
+  "time_config": {
+    "start": "23:00",
+    "limit": "06:00",
+    "step_minutes": 15,
+    "action_definition": "移动、搜索、拾取、阅读、交互均计为1次行动（15分钟）；所有短计时以行动数表达",
+    "deadline_rule": "行动以其开始时刻判定是否超时：开始时刻早于截止时间方可执行；行动结束后时间推进，若未通关且时间到达截止时间则触发timeout失败"
+  },
+  "player_config": {
+    "san": 100,
+    "con": 0,
+    "location": "gate",
+    "items": []
+  },
+  "areas": [
+    {
+      "id": "gate",
+      "name": "大门",
+      "desc": "园区入口，自动锁死。旁边有监控室，但门锁着。",
+      "connections": [
+        "central_plaza"
+      ],
+      "items": [],
+      "danger_level": 0
+    },
+    {
+      "id": "central_plaza",
+      "name": "中央广场",
+      "desc": "广场中央有一座打卡机，机上贴着便签：「监控室备用钥匙照旧压在打卡机底下」。西侧是兔子园区，东侧是狮子园区，北侧是更衣室，南侧通往西门。自动贩卖机闪烁着微弱的光。",
+      "connections": [
+        "gate",
+        "rabbit_zone",
+        "lion_zone",
+        "locker_room",
+        "west_gate",
+        "monitor_room"
+      ],
+      "items": [
+        "monitor_key",
+        "mineral_water"
+      ],
+      "danger_level": 0
+    },
+    {
+      "id": "rabbit_zone",
+      "name": "兔子园区",
+      "desc": "夜间有低语声。园区深处有一扇生锈的铁门，通往13号仓库。",
+      "connections": [
+        "central_plaza",
+        "warehouse_13"
+      ],
+      "items": [
+        "password_note"
+      ],
+      "danger_level": 2
+    },
+    {
+      "id": "lion_zone",
+      "name": "狮子园区",
+      "desc": "东侧，夜间有低吼。园区边缘有一座岗亭。",
+      "connections": [
+        "central_plaza",
+        "sentry_box"
+      ],
+      "items": [
+        "usb_drive"
+      ],
+      "danger_level": 3
+    },
+    {
+      "id": "warehouse_13",
+      "name": "13号仓库",
+      "desc": "废弃仓库，墙上用血写着模糊的字迹。角落有一具穿蓝色工作服的尸体，旁边的挂钩上搭着一件红色工作服。",
+      "connections": [
+        "rabbit_zone"
+      ],
+      "items": [
+        "red_uniform"
+      ],
+      "danger_level": 4
+    },
+    {
+      "id": "sentry_box",
+      "name": "岗亭",
+      "desc": "狭小的岗亭，可以躲避。抽屉里有一本日记和应急手电筒。",
+      "connections": [
+        "lion_zone"
+      ],
+      "items": [
+        "flashlight",
+        "diary"
+      ],
+      "danger_level": 1
+    },
+    {
+      "id": "locker_room",
+      "name": "更衣室",
+      "desc": "保安更衣室，衣柜里挂着灰色制服。墙上贴着一张泛黄的纸条。",
+      "connections": [
+        "central_plaza",
+        "west_gate"
+      ],
+      "items": [
+        "gray_uniform"
+      ],
+      "danger_level": 0
+    },
+    {
+      "id": "monitor_room",
+      "name": "监控室",
+      "desc": "布满屏幕的房间，大部分屏幕显示雪花。中央有一台电脑，需要密码和U盘才能操作。",
+      "connections": [
+        "central_plaza"
+      ],
+      "items": [],
+      "danger_level": 2,
+      "requirement": "monitor_key",
+      "computer": {
+        "requires_items": [
+          "password_note",
+          "usb_drive"
+        ],
+        "result_flag": "used_monitor_computer",
+        "desc": "插入U盘并输入纸条上的密码，定位西门的当前坐标"
+      }
+    },
+    {
+      "id": "west_gate",
+      "name": "西门",
+      "desc": "园区出口，但23:00后「位置会移动」。门把手时而冰凉，时而温热。",
+      "connections": [
+        "central_plaza",
+        "locker_room"
+      ],
+      "items": [],
+      "danger_level": 0,
+      "special_movement": {
+        "moves_after": "23:00",
+        "returns_every_minutes": 120,
+        "return_window_actions": 1,
+        "window_alignment": "每2小时整点（01:00、03:00、05:00）起的1次行动内，西门回到原位",
+        "true_gate_feature": "门把手冰凉",
+        "desc": "23:00后位置移动，每2小时回到原位一次（整点起的1次行动内）；温热把手是伪装陷阱",
+        "fake_gate_penalty": {
+          "con_change": 25,
+          "desc": "在温热把手的假西门尝试开门（含使用红色工作服）则污染+25，门不开"
+        }
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "R01",
+      "type": "instant_death",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "进入海洋馆或看到海洋馆指示牌未闭眼倒退",
+      "desc": "本园没有海洋馆。如果看到「海洋馆」指示牌，立刻闭眼，倒退离开。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "海洋馆不存在，任何相关事物都是陷阱。"
+    },
+    {
+      "id": "R02",
+      "type": "san_penalty",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "在兔子园区听到笑声且未默念「我是游客」三次",
+      "trigger_chance": 0.5,
+      "trigger_when": "每次进入兔子园区时判定",
+      "desc": "兔子不会笑。如果听到兔子园区传来笑声，默念「我是游客」三次，然后离开该区域。",
+      "san_change": -20,
+      "con_change": 0,
+      "hint": "兔子的笑声是认知污染的一种形式。"
+    },
+    {
+      "id": "R03",
+      "type": "con_penalty",
+      "source": "基础手册",
+      "is_fake": true,
+      "trigger": "向穿蓝色工作服的人问路",
+      "desc": "穿蓝色工作服的是清洁工，可以问路，但每天只能问一次。",
+      "san_change": 0,
+      "con_change": 0,
+      "fake_effect": {
+        "desc": "被标记为猎物，后续每次行动污染+5",
+        "con_penalty_per_action": 5
+      },
+      "expose_clue": "13号仓库尸体手上的纸条：「不要相信问路的人」；便利贴字迹与打印体不同",
+      "hint": "蓝色工作服实为诱饵实体。"
+    },
+    {
+      "id": "R04",
+      "type": "con_penalty",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "狮子咆哮时，下一次行动未躲进岗亭并锁门",
+      "trigger_chance": 0.4,
+      "trigger_when": "在狮子园区时，每次行动判定",
+      "desc": "狮子园区在东侧。如果狮子安静，正常巡逻；如果狮子咆哮，必须立刻躲进最近的岗亭并锁门（下一次行动）。",
+      "san_change": 0,
+      "con_change": 30,
+      "hint": "狮子的咆哮意味着「它」在猎食。"
+    },
+    {
+      "id": "R05",
+      "type": "con_penalty",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "追逐或喂食黑猫",
+      "desc": "园区内没有猫。如果看到黑猫，不要追，不要喂，低头走过。",
+      "san_change": 0,
+      "con_change": 20,
+      "hint": "黑猫是未完全转化的实验体。"
+    },
+    {
+      "id": "R06",
+      "type": "san_penalty",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "错过整点打卡",
+      "desc": "每整点必须到中央广场打卡（整点起的1次行动内打卡有效；首次强制打卡为00:00，开局23:00免打卡）。如果错过，下一次打卡需额外消耗1次行动。未打卡则理智-10。",
+      "checkin_window_actions": 1,
+      "first_checkin": "00:00",
+      "san_change": -10,
+      "con_change": 0,
+      "hint": "打卡是确认你仍然是「你」的仪式。",
+      "extra_effect": {
+        "missed_checkin_extra_stay_actions": 1,
+        "desc": "错过打卡后，下一次打卡需额外消耗1次行动"
+      }
+    },
+    {
+      "id": "R07",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "13号仓库（墙面血字）",
+      "desc": "白鸽在02:00出现在中央广场。跟随它，它会带你找到「真正的西门」。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "白鸽是上一个成功逃离者留下的「标记」。",
+      "acquire_area": "warehouse_13"
+    },
+    {
+      "id": "R08",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "监控室（录音机）",
+      "desc": "西门在23:00后会「移动」，但每2小时（01:00、03:00、05:00）会回到原位一次，整点起的1次行动内有效。原位的特征是：门把手是冰凉的。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "温热的门把手是「它」伪装的陷阱。",
+      "acquire_area": "monitor_room"
+    },
+    {
+      "id": "R09",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "在更衣室阅读衣柜纸条",
+      "desc": "红色工作服可以打开西门，但穿上后每行动一次污染+8。穿上后最多保留 2 次行动（约 30 分钟），超时未脱则同化。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "红色工作服是饲养员的制服，穿着它意味着加入它们。",
+      "acquire_area": "locker_room"
+    },
+    {
+      "id": "R10",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "在岗亭阅读日记",
+      "desc": "如果园区停电，所有声控规则失效。此时唯一安全的光源是「应急手电筒」。黑暗中每行动一次理智-5。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "停电时，光是你唯一的保护。"
+    },
+    {
+      "id": "R11",
+      "type": "con_penalty",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "红衣服巡逻员工主动朝你走来时未立即避开",
+      "acquire_location": "monitor_room",
+      "acquire_desc": "在监控室屏幕中可以看到红衣服员工拖走「睡着的人」",
+      "desc": "巡逻的红衣服员工不会检查证件，也不要求你帮忙。但如果他们主动朝你走来，立刻避开——他们在「补充库存」。",
+      "san_change": 0,
+      "con_change": 15,
+      "hint": "红衣服员工是被完全同化的保安。",
+      "acquire_area": "monitor_room"
+    }
+  ],
+  "items": [
+    {
+      "id": "flashlight",
+      "name": "应急手电筒",
+      "location": "sentry_box",
+      "effect": "照亮黑暗区域，避免停电时额外理智损失",
+      "negative": "电池只够3次行动",
+      "is_consumable": true,
+      "charges": 3
+    },
+    {
+      "id": "diary",
+      "name": "保安日记",
+      "location": "sentry_box",
+      "effect": "记载了停电时的应对方法",
+      "carrier_rule": "R10",
+      "negative": "无",
+      "is_consumable": false
+    },
+    {
+      "id": "pigeon_feather",
+      "name": "鸽子羽毛",
+      "location": "event_reward",
+      "effect": "通关必需（正道）。白鸽留下的标记，可以稳定西门的位置",
+      "negative": "无",
+      "is_consumable": false
+    },
+    {
+      "id": "gray_uniform",
+      "name": "灰色制服",
+      "location": "locker_room",
+      "effect": "替换变色后的制服，污染-30",
+      "effect_structured": {
+        "con_reduce": 30,
+        "max_per_game": 1,
+        "note": "每局限用一次"
+      },
+      "negative": "无",
+      "is_consumable": false,
+      "trigger_note": "污染达到50时身上的保安制服会「变色」（叙事信号），此时替换灰色制服效果最佳"
+    },
+    {
+      "id": "red_uniform",
+      "name": "红色工作服",
+      "location": "warehouse_13",
+      "effect": "可打开西门（诡道通关）",
+      "negative": "每行动污染+8，最多保留2次行动（约30分钟），超时即同化",
+      "is_consumable": false,
+      "carry_rule": "未穿着时可随身携带，不产生污染；穿上/脱下各计1次行动；仅穿着状态计污染与时长；到西门前再穿上即可（仓库到西门需3次移动，穿着走不到）。配合回归窗口开门时：在窗口前一次行动穿上（如02:45），窗口所在步（如03:00）开门，累计穿着恰为2次行动",
+      "wear_effect": {
+        "con_penalty_per_action": 8,
+        "duration_limit_actions": 2,
+        "timeout_result": "lose_assimilation",
+        "desc": "穿上后每行动一次污染+8，最多保留2次行动（约30分钟），超时未脱下即被同化"
+      }
+    },
+    {
+      "id": "monitor_key",
+      "name": "监控室钥匙",
+      "location": "central_plaza",
+      "effect": "进入监控室",
+      "negative": "无",
+      "is_consumable": false,
+      "hidden": true,
+      "hidden_location": "打卡机下方"
+    },
+    {
+      "id": "password_note",
+      "name": "密码纸条",
+      "location": "rabbit_zone",
+      "effect": "监控室电脑的密码",
+      "negative": "获取过程需面对兔子低语，理智-10",
+      "is_consumable": false
+    },
+    {
+      "id": "usb_drive",
+      "name": "U盘",
+      "location": "lion_zone",
+      "effect": "监控室电脑需要U盘才能定位西门",
+      "negative": "拾取时若狮子咆哮则污染+30",
+      "is_consumable": false
+    },
+    {
+      "id": "mineral_water",
+      "name": "矿泉水",
+      "location": "central_plaza",
+      "effect": "恢复5点理智",
+      "negative": "贩卖机其他饮料触碰即污染+15",
+      "is_consumable": true,
+      "acquire_note": "从中央广场贩卖机获取；只选矿泉水，其他饮料触碰即污染+15",
+      "usage_limit": {
+        "max_per_game": 2,
+        "note": "贩卖机内仅有2瓶矿泉水，不可补货"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "E01",
+      "name": "园区停电",
+      "category": "random",
+      "trigger_type": "time",
+      "trigger_value": "01:00-02:00",
+      "probability": 0.6,
+      "effect": {
+        "desc": "所有区域陷入黑暗，声控灯失效",
+        "rule_override": [
+          "声控灯规则临时失效"
+        ],
+        "san_penalty_per_action": 5,
+        "duration_minutes": 30
+      }
+    },
+    {
+      "id": "E02",
+      "name": "动物暴动",
+      "category": "random",
+      "trigger_type": "time",
+      "trigger_value": "02:30-03:30",
+      "probability": 0.4,
+      "effect": {
+        "desc": "狮子园区和兔子园区的动物「越狱」",
+        "area_lockdown": [
+          "rabbit_zone",
+          "lion_zone"
+        ],
+        "instant_death_if_enter": true,
+        "duration_minutes": 30
+      }
+    },
+    {
+      "id": "E03",
+      "name": "迷雾弥漫",
+      "category": "random",
+      "trigger_type": "time",
+      "trigger_value": "03:00-04:00",
+      "probability": 0.5,
+      "effect": {
+        "desc": "所有区域连接关系错乱",
+        "connection_shuffle": true,
+        "duration_minutes": 30,
+        "destination_rule": "错乱改道的目的地排除即死/封锁区域（如暴动封锁中的兔子园区、狮子园区）；若唯一可行目的地被封锁，则改为回到中央广场"
+      }
+    },
+    {
+      "id": "E04",
+      "name": "额外巡逻",
+      "category": "random",
+      "trigger_type": "random",
+      "trigger_value": "any_time",
+      "probability": 0.35,
+      "effect": {
+        "desc": "场景中额外出现1-2名红衣服员工",
+        "extra_entities": 2,
+        "entity_type": "red_uniform_staff",
+        "penalty_rule": "R11",
+        "duration_minutes": 30,
+        "disguise_note": "玩家穿着红色工作服时，红衣服员工不会主动接近（诡道伪装生效，不触发R11）"
+      }
+    },
+    {
+      "id": "E05",
+      "name": "广播污染",
+      "category": "random",
+      "trigger_type": "random",
+      "trigger_value": "any_time",
+      "probability": 0.3,
+      "effect": {
+        "desc": "广播播放假规则",
+        "fake_broadcast": "海洋馆今日开放，欢迎参观",
+        "instant_death_if_obey": true
+      }
+    },
+    {
+      "id": "E06",
+      "name": "时间加速",
+      "category": "random",
+      "trigger_type": "time",
+      "trigger_value": "04:00-05:00",
+      "probability": 0.3,
+      "effect": {
+        "desc": "时钟速度翻倍",
+        "time_multiplier": 2,
+        "duration_minutes": 30
+      }
+    },
+    {
+      "id": "E07",
+      "name": "白鸽降临",
+      "category": "story",
+      "trigger_type": "time_location",
+      "trigger_value": "02:00 at central_plaza",
+      "probability": 1,
+      "effect": {
+        "desc": "一只白鸽出现在中央广场",
+        "reward_item": "pigeon_feather",
+        "require_follow": true,
+        "follow_actions": 1,
+        "follow_note": "在中央广场跟随白鸽：计1次行动，直接到达真西门位置并获得鸽子羽毛",
+        "note": "固定剧情事件，每局必触发，不占随机事件2-4个的名额",
+        "dove_stay_actions": 2,
+        "stay_note": "白鸽在02:00出现并停留2个行动步（至02:30），玩家可先完成02:00打卡再跟随"
+      }
+    }
+  ],
+  "win_check_note": "多条路径同时满足时，按 win_conditions 数组顺序取第一个满足的路径",
+  "rule_acquire_note": "散落规则获取：绑定carrier_rule物品的需执行「阅读」（计1次行动）；仅标注trigger地点的规则，进入对应区域即自动习得（不计行动）",
+  "win_conditions": [
+    {
+      "path": "正道",
+      "name": "白鸽引路",
+      "conditions": {
+        "time_before": "06:00",
+        "location": "west_gate",
+        "items_required": [
+          "pigeon_feather"
+        ],
+        "san_min": 1,
+        "con_max": 99
+      }
+    },
+    {
+      "path": "险道",
+      "name": "监控室密码",
+      "conditions": {
+        "time_before": "06:00",
+        "location": "west_gate",
+        "items_required": [
+          "password_note",
+          "usb_drive"
+        ],
+        "flags_required": [
+          "used_monitor_computer"
+        ],
+        "san_min": 1,
+        "con_max": 99
+      }
+    },
+    {
+      "path": "诡道",
+      "name": "伪装员工",
+      "conditions": {
+        "time_before": "06:00",
+        "location": "west_gate",
+        "items_required": [
+          "red_uniform"
+        ],
+        "flags_required": [
+          "wore_red_uniform_within_limit"
+        ],
+        "san_min": 1,
+        "con_max": 99
+      }
+    }
+  ],
+  "lose_conditions": [
+    {
+      "type": "san_zero",
+      "desc": "精神崩溃",
+      "narrative": "你坐在长椅上，对着兔子园区傻笑。你成为了园区的一部分。"
+    },
+    {
+      "type": "con_full",
+      "desc": "被同化",
+      "narrative": "你感到皮肤开始长出毛发，视野变得模糊。你成为了下一任「白班保安」。"
+    },
+    {
+      "type": "timeout",
+      "time": "06:00",
+      "desc": "时间耗尽",
+      "narrative": "天亮了，但你已经不是你了。"
+    },
+    {
+      "type": "instant_death",
+      "rule_id": "R01",
+      "desc": "进入海洋馆",
+      "narrative": "你推开了海洋馆的门。里面没有水，没有鱼，只有无数双眼睛在黑暗中注视着你。"
+    },
+    {
+      "type": "duration_exceeded",
+      "item_id": "red_uniform",
+      "desc": "红色工作服超时",
+      "narrative": "你感到工作服与皮肤融为一体，再也无法脱下。"
+    },
+    {
+      "type": "instant_death",
+      "event_id": "E02",
+      "desc": "暴动期间进入兔子园区或狮子园区",
+      "narrative": "黑暗中无数双眼睛同时转向你。你成了暴动动物们的「新玩具」。"
+    },
+    {
+      "type": "instant_death",
+      "event_id": "E05",
+      "desc": "相信广播前往「海洋馆」",
+      "narrative": "你跟着广播的指引找到了「海洋馆」的入口。门后没有水，只有一张写着你名字的门票。"
+    }
+  ],
+  "lose_condition_note": "所有 type=instant_death 或 countdown_death 的规则与事件效果均默认触发失败结算；lose_conditions 列表为各死因提供定制文案，未列出的由引擎使用通用文案。"
+}

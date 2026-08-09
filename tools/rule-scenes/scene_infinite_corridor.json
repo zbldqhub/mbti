@@ -1,0 +1,561 @@
+{
+  "id": "infinite_corridor",
+  "name": "无限回廊公寓",
+  "theme": "都市怪谈",
+  "background": "你搬进了一栋租金异常便宜的公寓。入住第一晚，你发现电梯按钮有13楼、B1、甚至还有3.5楼。每层走廊都贴着前住户留下的规则纸条。更诡异的是，你明明住在4楼，但走廊里根本没有404房间——只有403和405。你必须找到真正的「出口」——但出口可能不在楼下。",
+  "hidden_truth": "这栋公寓是一个「空间褶皱」。所有住户都是被困在时间里的人。404是「观测点」，405是「坍缩点」。你以为你逃到了B1，但B1的门外，是另一栋一模一样的公寓。白猫是上一个成功「逃离」的住户变的——它不是在帮你，而是在找替死鬼。",
+  "time_config": {
+    "start": "23:00",
+    "limit": "06:00",
+    "step_minutes": 15,
+    "action_definition": "移动、搜索、拾取、阅读、交互均计为1次行动（15分钟）；所有短计时以行动数表达",
+    "deadline_rule": "行动以其开始时刻判定是否超时：开始时刻早于截止时间方可执行；行动结束后时间推进，若未通关且时间到达截止时间则触发timeout失败"
+  },
+  "player_config": {
+    "san": 100,
+    "con": 0,
+    "location": "floor_4_corridor",
+    "items": []
+  },
+  "areas": [
+    {
+      "id": "floor_4_corridor",
+      "name": "4楼走廊",
+      "desc": "你本该住在这里，但找不到404房间。只有403和405。走廊尽头有消防栓，在滴水。",
+      "connections": [
+        "elevator_hall",
+        "room_403",
+        "room_405",
+        "stairwell"
+      ],
+      "items": [
+        "hammer",
+        "password_fragment_c"
+      ],
+      "danger_level": 1
+    },
+    {
+      "id": "room_403",
+      "name": "403房间",
+      "desc": "邻居的房间。门上贴着「请勿打扰」，门缝下透出微光。",
+      "connections": [
+        "floor_4_corridor"
+      ],
+      "items": [],
+      "danger_level": 2,
+      "note": "可进入但无实质内容：房内空无一人，镜子里却映出两个人影",
+      "enter_penalty": {
+        "san_change": -5,
+        "once": true,
+        "desc": "首次进入理智-5（好奇心税），之后再进无影响"
+      }
+    },
+    {
+      "id": "elevator_hall",
+      "name": "电梯间",
+      "desc": "电梯按钮有1~13楼、B1、3.5楼。电梯镜子里的你应该比你慢半拍。",
+      "connections": [
+        "floor_4_corridor",
+        "floor_3_corridor",
+        "floor_5_corridor",
+        "floor_13",
+        "floor_b1",
+        "floor_3_5"
+      ],
+      "items": [],
+      "danger_level": 1,
+      "password_terminal": {
+        "requires_items": [
+          "password_fragment_a",
+          "password_fragment_b",
+          "password_fragment_c"
+        ],
+        "result_flag": "correct_elevator_password",
+        "desc": "集齐三块密码碎片后在电梯间拼出完整密码（无需玩家输入具体内容），随后乘电梯直达B1"
+      }
+    },
+    {
+      "id": "floor_3_corridor",
+      "name": "3楼走廊",
+      "desc": "看似正常的走廊。墙上贴着一张黄色便签。消防栓在滴水。",
+      "connections": [
+        "elevator_hall",
+        "stairwell"
+      ],
+      "items": [],
+      "danger_level": 1
+    },
+    {
+      "id": "floor_5_corridor",
+      "name": "5楼走廊",
+      "desc": "和4楼几乎一模一样。消防栓干燥。",
+      "connections": [
+        "elevator_hall",
+        "stairwell"
+      ],
+      "items": [
+        "password_fragment_a"
+      ],
+      "danger_level": 2
+    },
+    {
+      "id": "floor_13",
+      "name": "13楼天台",
+      "desc": "天台。白猫在这里。风很大，地上有前住户的刻字。",
+      "connections": [
+        "elevator_hall",
+        "stairwell"
+      ],
+      "items": [
+        "cat_bell"
+      ],
+      "danger_level": 0,
+      "access_note": "电梯13楼按钮是陷阱，必须走楼梯"
+    },
+    {
+      "id": "stairwell",
+      "name": "楼梯间",
+      "desc": "狭窄的安全步行通道。4楼到5楼之间的墙上有涂鸦，转角处有一具前住户的尸体，手里攥着一枚电梯按钮碎片。",
+      "connections": [
+        "floor_3_corridor",
+        "floor_4_corridor",
+        "floor_5_corridor",
+        "floor_13"
+      ],
+      "items": [],
+      "danger_level": 1
+    },
+    {
+      "id": "floor_b1",
+      "name": "B1",
+      "desc": "门口铭牌写着「B1=1楼」。一扇锁着的门，需要白猫铃铛才能打开。",
+      "connections": [
+        "elevator_hall"
+      ],
+      "items": [],
+      "danger_level": 0
+    },
+    {
+      "id": "floor_3_5",
+      "name": "3.5楼",
+      "desc": "异常楼层。走廊很短，墙上全是规则纸条，但全是假的。",
+      "connections": [
+        "elevator_hall"
+      ],
+      "items": [
+        "password_fragment_b"
+      ],
+      "danger_level": 4
+    },
+    {
+      "id": "room_404",
+      "name": "404房间",
+      "desc": "你的「安全区」。进入可恢复理智+10。但位置会漂移。",
+      "connections": [
+        "floor_3_corridor",
+        "floor_4_corridor"
+      ],
+      "items": [
+        "room_404_key"
+      ],
+      "danger_level": 0,
+      "special": "位置漂移的安全区",
+      "drift": {
+        "interval_minutes": 120,
+        "locate_method": "消防栓滴水旁的那扇门",
+        "initial_location": "floor_3_corridor",
+        "candidates": [
+          "floor_3_corridor",
+          "floor_4_corridor"
+        ],
+        "candidate_rule": "仅漂移到当前消防栓滴水的楼层（5楼消防栓干燥，永远不是漂移目的地）",
+        "while_occupied": "玩家在404内时，漂移延迟至其离开后触发",
+        "san_recover": 10,
+        "san_recover_limit": "每个漂移位置仅首次进入恢复理智（防止反复进出刷理智）"
+      }
+    },
+    {
+      "id": "room_405",
+      "name": "405房间",
+      "desc": "禁区。进入触发「坍缩」倒计时（限3次行动）。内部有观测窗。",
+      "connections": [
+        "floor_4_corridor"
+      ],
+      "items": [],
+      "danger_level": 5,
+      "special": "禁区，进入触发坍缩倒计时",
+      "countdown_actions": 3,
+      "escape_feature": "观测窗（从内部打破可逃离，需要锤子）",
+      "action_budget": {
+        "total": 3,
+        "breakdown": "进入405的行动本身不计入倒计时；进入后搜索/破窗/逃出各计1次行动；第3次行动结束时若未逃出则触发countdown_death",
+        "note": "破窗需要锤子；持锤直接破窗+逃出仅需2次行动，余1次机动"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "R01",
+      "type": "instant_death",
+      "source": "基础手册",
+      "is_fake": true,
+      "trigger": "按电梯13楼按钮",
+      "desc": "电梯里没有13楼按钮。如果看到13楼按钮，按13楼，那是天台，白猫在那里。",
+      "san_change": 0,
+      "con_change": 0,
+      "fake_effect": "到达不存在的楼层，即死",
+      "expose_clue": "楼梯间尸体手里攥着13楼电梯按钮碎片；3楼黄色便签：「电梯13楼是陷阱，白猫在天台，走楼梯」",
+      "hint": "13楼按钮是「它」的诱饵。"
+    },
+    {
+      "id": "R02",
+      "type": "con_penalty",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "在消防栓干燥的楼层停留",
+      "desc": "每层走廊尽头有消防栓。如果消防栓在滴水，这层是安全的。如果干燥，立刻进电梯离开。",
+      "san_change": 0,
+      "con_change": 10,
+      "hint": "消防栓滴水意味着空间稳定。"
+    },
+    {
+      "id": "R03",
+      "type": "san_penalty",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "回应或对视没有影子的邻居",
+      "trigger_chance": 0.3,
+      "trigger_when": "在走廊区域移动时，每次行动判定（携带锤子则概率+0.2，见hammer的risk_modifier）",
+      "penalty_note": "走廊偶遇时回应：理智-20（本条）；E01敲门事件中回应（开门直视）：理智-30，事件惩罚优先",
+      "desc": "遇到邻居可以打招呼。但如果邻居没有影子，不要回应、不要对视。",
+      "san_change": -20,
+      "con_change": 0,
+      "hint": "没有影子的邻居是「它」的投影。"
+    },
+    {
+      "id": "R04",
+      "type": "countdown_death",
+      "source": "基础手册",
+      "is_fake": false,
+      "trigger": "进入405房间后，除进入行动外限3次行动内未逃出",
+      "budget_note": "进入不计入倒计时；破窗1次、逃出1次，余1次机动（见room_405.action_budget）",
+      "countdown_actions": 3,
+      "desc": "你的房间号是404。如果看到405，不要进去，那是「它」的房间。",
+      "truth": "手册宣称的「进入即死」实为夸大威慑：进入405会触发坍缩倒计时（限3次行动），时间内找到内部出口（用锤子打破观测窗）即可存活——这是诡道通关的核心，纸条R08揭示此真相。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "405是坍缩点，但也是「它」唯一关不住你的地方。"
+    },
+    {
+      "id": "R05",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "3楼走廊黄色便签",
+      "desc": "电梯里的13楼按钮是陷阱。白猫在13楼天台，但必须走楼梯。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "揭穿假规则1的关键线索。",
+      "acquire_area": "floor_3_corridor"
+    },
+    {
+      "id": "R06",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": true,
+      "trigger": "3.5楼墙壁白色A4纸条",
+      "desc": "B1是地下室，不要去。",
+      "san_change": 0,
+      "con_change": 0,
+      "fake_effect": "阻止玩家找到真正出口",
+      "expose_clue": "B1门口铭牌：「B1=1楼」",
+      "hint": "3.5楼的所有规则都是反向的。",
+      "acquire_area": "floor_3_5"
+    },
+    {
+      "id": "R07",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "13楼天台白猫旁刻字",
+      "desc": "跟随白猫时，如果它突然停下并炸毛，说明前方有危险，不要继续前进。白猫每隔一段时间会消失一次行动，之后自行现身。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "白猫不是完全可信的。",
+      "acquire_area": "floor_13"
+    },
+    {
+      "id": "R08",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "405门缝纸条（与密码碎片C同处，拾取碎片C时一并获得）",
+      "desc": "405房间内部有「观测窗」，从内部可以看到公寓的真实结构。打破窗户可以逃离，但玻璃不是赤手空拳能打破的——你需要工具。进入后限3次行动内完成。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "诡道通关的核心线索。",
+      "acquire_note": "与密码碎片C绑定获取：拾取碎片C（1次行动，理智-5窥视坍缩）时一并发掘门缝下的纸条",
+      "acquire_item": "password_fragment_c"
+    },
+    {
+      "id": "R09",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "楼梯间4楼到5楼之间涂鸦",
+      "desc": "404房间会漂移。找到它的方法是：看走廊的消防栓，滴水的消防栓旁边那扇门就是404。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "安全区不是固定的。",
+      "acquire_area": "stairwell"
+    },
+    {
+      "id": "R10",
+      "type": "hint",
+      "source": "散落规则",
+      "is_fake": false,
+      "trigger": "B1门口铭牌",
+      "desc": "B1就是1楼。但门需要「白猫铃铛」才能打开。铃铛在白猫身上，白猫只在整点的行动步允许你靠近（可取得铃铛）。",
+      "san_change": 0,
+      "con_change": 0,
+      "hint": "正道通关的最终步骤。",
+      "note": "白猫铃铛仅约束步行到达B1时的开门；用电梯密码直达B1时，电梯门开即是出口，无需铃铛（险道）",
+      "acquire_area": "floor_b1"
+    }
+  ],
+  "items": [
+    {
+      "id": "cat_bell",
+      "name": "白猫铃铛",
+      "location": "floor_13",
+      "effect": "打开B1出口的门（正道通关）",
+      "negative": "无",
+      "is_consumable": false,
+      "acquire_condition": "整点时白猫允许靠近"
+    },
+    {
+      "id": "room_404_key",
+      "name": "404钥匙",
+      "location": "room_404",
+      "effect": "持有后可直接开启漂移后的404房门（首次发现404时在房内拾取）",
+      "negative": "首次寻找404仍需通过消防栓滴水定位",
+      "is_consumable": false
+    },
+    {
+      "id": "password_fragment_a",
+      "name": "密码碎片A",
+      "location": "floor_5_corridor",
+      "effect": "电梯密码的一部分",
+      "negative": "位于干燥消防栓的不安全楼层，停留拾取将触发R02的污染惩罚（-10，不重复计）",
+      "is_consumable": false
+    },
+    {
+      "id": "password_fragment_b",
+      "name": "密码碎片B",
+      "location": "floor_3_5",
+      "effect": "电梯密码的一部分",
+      "negative": "3.5楼假规则多，容易中招",
+      "is_consumable": false
+    },
+    {
+      "id": "password_fragment_c",
+      "name": "密码碎片C",
+      "location": "floor_4_corridor",
+      "effect": "电梯密码的一部分",
+      "negative": "需贴近405门缝拾取，窥视坍缩：理智-5",
+      "is_consumable": false
+    },
+    {
+      "id": "hammer",
+      "name": "锤子",
+      "location": "floor_4_corridor",
+      "effect": "可以从内部打破405窗户（诡道）",
+      "negative": "携带锤子时，邻居会「注意到你」，增加遭遇无影邻居的概率",
+      "is_consumable": false,
+      "risk_modifier": {
+        "shadow_neighbor_encounter_bonus": 0.2,
+        "desc": "携带锤子时遭遇无影邻居的概率+20%"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "E01",
+      "name": "邻居敲门",
+      "category": "random",
+      "trigger_type": "random",
+      "trigger_value": "in_any_room",
+      "probability": 0.4,
+      "effect": {
+        "desc": "门外传来邻居声音",
+        "choice": "回应或不应",
+        "san_penalty_if_respond": -30,
+        "narrative_if_respond": "你打开门，门外站着一个没有影子的邻居。"
+      }
+    },
+    {
+      "id": "E02",
+      "name": "电梯错乱",
+      "category": "random",
+      "trigger_type": "random",
+      "trigger_value": "using_elevator",
+      "probability": 0.5,
+      "effect": {
+        "desc": "按下楼层后，到达的楼层与按钮不符",
+        "wrong_floor_chance": 0.5,
+        "duration_uses": 2,
+        "destination_blacklist": [
+          "floor_13"
+        ],
+        "rule_note": "错乱改道的目的地排除即死楼层（13楼）；可能到达3.5楼或B1但无即死效果"
+      }
+    },
+    {
+      "id": "E03",
+      "name": "404漂移",
+      "category": "core_mechanic",
+      "trigger_type": "fixed",
+      "trigger_value": "every_120min",
+      "probability": 1,
+      "effect": {
+        "desc": "404房间位置改变",
+        "room_404_relocate": true,
+        "new_location_method": "消防栓滴水旁"
+      }
+    },
+    {
+      "id": "E04",
+      "name": "白猫变色",
+      "category": "random",
+      "trigger_type": "random",
+      "trigger_value": "following_cat",
+      "probability": 0.3,
+      "effect": {
+        "desc": "白猫突然变成黑猫",
+        "con_penalty_if_continue": 30,
+        "narrative": "白猫的毛色开始变深，眼睛发出红光……",
+        "follow_note": "跟随白猫=与其同行前往其目的地（每层楼1次行动）；正道取铃后可声明跟随白猫下楼，期间R07炸毛警告与E04变色事件可触发"
+      }
+    },
+    {
+      "id": "E05",
+      "name": "规则纸条变化",
+      "category": "random",
+      "trigger_type": "random",
+      "trigger_value": "any_time",
+      "probability": 0.25,
+      "effect": {
+        "desc": "某条已读规则纸条上的文字自行改变",
+        "rule_invert": true,
+        "affected_rule_count": 1,
+        "invert_rule": "翻转目标规则的is_fake状态与文本表述，惩罚数值不变；已被玩家识破（rules_exposed）的规则免疫；玩家需重新判断"
+      }
+    },
+    {
+      "id": "E06",
+      "name": "时间循环",
+      "category": "random",
+      "trigger_type": "time",
+      "trigger_value": "05:00",
+      "probability": 0.25,
+      "effect": {
+        "desc": "时间倒退回23:00",
+        "time_rewind_hours": 6,
+        "areas_reset": true,
+        "items_preserved": true,
+        "ghosts_appear": true,
+        "reset_scope": {
+          "areas": true,
+          "flags": false,
+          "exposed_rules": false,
+          "inventory": "保留",
+          "desc": "仅重置区域状态；已获得的规则知识、flag、物品全部保留；已在物品栏的物品不会在区域中重复刷新"
+        }
+      }
+    }
+  ],
+  "win_conditions": [
+    {
+      "path": "正道",
+      "name": "白猫引路",
+      "conditions": {
+        "location": "floor_b1",
+        "items_required": [
+          "cat_bell"
+        ],
+        "san_min": 1,
+        "con_max": 99
+      }
+    },
+    {
+      "path": "险道",
+      "name": "电梯密码",
+      "conditions": {
+        "location": "floor_b1",
+        "items_required": [
+          "password_fragment_a",
+          "password_fragment_b",
+          "password_fragment_c"
+        ],
+        "flags_required": [
+          "correct_elevator_password"
+        ],
+        "san_min": 1,
+        "con_max": 99,
+        "note": "电梯密码直达B1时电梯门开即是出口，无需白猫铃铛（R10仅约束步行到达）"
+      }
+    },
+    {
+      "path": "诡道",
+      "name": "405内部突破",
+      "conditions": {
+        "location": "outside",
+        "flags_required": [
+          "entered_405",
+          "broke_window_from_inside"
+        ],
+        "items_required": [
+          "hammer"
+        ],
+        "san_min": 1,
+        "con_max": 99
+      }
+    }
+  ],
+  "virtual_locations": {
+    "outside": "公寓外的真实世界（诡道通关终点，非区域图节点）"
+  },
+  "win_check_note": "多条路径同时满足时，按 win_conditions 数组顺序取第一个满足的路径",
+  "rule_acquire_note": "散落规则获取：绑定carrier_rule物品的需执行「阅读」（计1次行动）；仅标注trigger地点的规则，进入对应区域即自动习得（不计行动）",
+  "lose_conditions": [
+    {
+      "type": "san_zero",
+      "desc": "精神崩溃",
+      "narrative": "你接受了这里，成为了新的「住户」，永远留在了404房间。"
+    },
+    {
+      "type": "con_full",
+      "desc": "被同化",
+      "narrative": "你感到身体开始透明化，成为了公寓规则的一部分。"
+    },
+    {
+      "type": "timeout",
+      "time": "06:00",
+      "desc": "时间耗尽",
+      "narrative": "天亮了，但你发现窗外还是走廊。"
+    },
+    {
+      "type": "instant_death",
+      "rule_id": "R01",
+      "desc": "按电梯13楼按钮",
+      "narrative": "电梯门打开，外面是一片虚无。你走了出去，再也没有回来。"
+    },
+    {
+      "type": "countdown_death",
+      "rule_id": "R04",
+      "desc": "405坍缩倒计时超时",
+      "narrative": "倒计时结束，405房间开始坍缩，你成为了空间褶皱的一部分。"
+    }
+  ],
+  "lose_condition_note": "所有 type=instant_death 或 countdown_death 的规则与事件效果均默认触发失败结算；lose_conditions 列表为各死因提供定制文案，未列出的由引擎使用通用文案。"
+}
