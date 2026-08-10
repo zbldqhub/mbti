@@ -525,7 +525,8 @@ const buildSuggestions = (scene, state, resultLocation) => {
     if (loc === 'room_405' && items.includes('hammer') && !flags.includes('broke_window_from_inside')) {
       special.push('用锤子打破观测窗');
     }
-    if (loc === 'floor_b1') special.push(items.includes('cat_bell') ? '用铃铛开门' : '试着开门');
+    // B1 不提供开门选项：持铃铛到达 B1 即满足正道通关（服务端结算，无需开门动作）；
+    // 无铃铛时进入 B1 会自动习得 R10（铭牌告知需要铃铛）。任何「试着开门」都是无后果空转，故意不提供
     if (
       loc === 'elevator_hall' &&
       hasAllItems(items, ['password_fragment_a', 'password_fragment_b', 'password_fragment_c']) &&
@@ -533,7 +534,16 @@ const buildSuggestions = (scene, state, resultLocation) => {
     ) {
       special.push('输入电梯密码');
     }
-    if (loc === 'floor_13' && !items.includes('cat_bell')) special.push('靠近白猫');
+    if (loc === 'floor_13' && !items.includes('cat_bell')) {
+      // 白猫只在整点起的 1 次行动步允许取铃（R10）；非整点提供信息型动作，避免无后果空刷
+      const step = clampNumber(scene.time_config?.step_minutes, 1, 60, 15);
+      const mins = toMinutes(state.time);
+      if (mins !== null && mins % 60 < step) {
+        special.push('趁机取下白猫铃铛');
+      } else {
+        special.push('观察白猫');
+      }
+    }
     if (loc === 'elevator_hall') special.push('按 13 楼按钮'); // 假规则陷阱选项，故意保留
   }
 
@@ -558,6 +568,8 @@ const buildSuggestions = (scene, state, resultLocation) => {
       hasHidden = true;
       continue;
     }
+    // 带 acquire_condition 的物品（如白猫铃铛需整点）不走普通拾取，由特殊交互按条件提供
+    if (item.acquire_condition) continue;
     pickup.push(`拾取${item.name}`);
   }
   if (hasHidden) pickup.push('仔细搜索周围');

@@ -505,4 +505,28 @@ assert.equal(r.body.judgment.con_change, 25, '假门惩罚 con_change=25 应透�
 assert.equal(r.body.judgment.new_location, 'central_plaza', '回环位置迁移应通过校验（central_plaza 在 west_gate connections 内）');
 ok('假西门开门 → 污染+25 且回环中央广场，均通过校验');
 
+// ---- ⑮ 无后果空转选项封堵（公寓） ----
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'infinite_corridor', input: '查看四周', state: corridorState({ location: 'floor_b1' }) });
+assert.ok(!r.body.suggestions.some(s => s.includes('开门')), 'B1 无铃铛时不应提供任何开门选项');
+ok('B1 无铃铛 → 不提供「试着开门」（无后果空转封堵）');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'infinite_corridor', input: '乘电梯到B1', state: corridorState({ location: 'floor_b1', items: ['cat_bell'] }) });
+assert.equal(r.body.outcome.status, 'won', '持铃铛到达 B1 应直接判胜');
+assert.equal(r.body.outcome.win_path, '正道', '应为正道通关');
+assert.deepEqual(r.body.suggestions, [], '判胜后 suggestions 应为空');
+ok('B1 持铃铛到达 → 正道通关（无需开门动作，不产生空转选项）');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'infinite_corridor', input: '查看四周', state: corridorState({ location: 'floor_13', time: '23:15' }) });
+assert.ok(r.body.suggestions.includes('观察白猫'), '非整点 13F 应提供「观察白猫」');
+assert.ok(!r.body.suggestions.some(s => s.includes('铃铛')), '非整点不应提供取铃选项');
+ok('13F 非整点 → 提供信息型「观察白猫」，无取铃选项');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'infinite_corridor', input: '观察白猫', state: corridorState({ location: 'floor_13', time: '00:00' }) });
+assert.ok(r.body.suggestions.includes('趁机取下白猫铃铛'), '整点窗口应建议「趁机取下白猫铃铛」');
+ok('13F 整点窗口 → 含「趁机取下白猫铃铛」');
+
 console.log(`\n全部通过：${passed} 项`);
