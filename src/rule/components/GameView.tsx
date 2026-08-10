@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, BookOpen, Clock, Flag, MapPin, Send } from 'lucide-react';
+import { ArrowLeft, BookOpen, Clock, Flag, MapPin } from 'lucide-react';
 import type { PublicScene } from '../data/scenePublic';
 import { COUNTDOWN_LABELS, COUNTDOWN_DISPLAY_MAX } from '../types';
 import type { GameState, HistoryEntry } from '../types';
@@ -26,7 +26,6 @@ export default function GameView({
   onGiveUp,
   onExit,
 }: Props) {
-  const [input, setInput] = useState('');
   const [rulesOpen, setRulesOpen] = useState(false);
   const [giveUpOpen, setGiveUpOpen] = useState(false);
   const logRef = useRef<HTMLDivElement | null>(null);
@@ -36,13 +35,6 @@ export default function GameView({
     const el = logRef.current;
     if (el) el.scrollTop = el.scrollHeight;
   }, [state.history.length, busy]);
-
-  const submit = () => {
-    const text = input.trim();
-    if (!text || busy) return;
-    setInput('');
-    onAction(text);
-  };
 
   const handleExit = () => {
     if (window.confirm('进度已自动保存，确定返回场景选择吗？')) {
@@ -121,7 +113,7 @@ export default function GameView({
             {scene.background}
             <br />
             <br />
-            输入你的行动，例如「前往中央广场」「搜索岗亭」「阅读日记」。
+            点击下方行动按钮开始探索，例如「前往中央广场」「搜索岗亭」「阅读日记」。
           </div>
         )}
         {state.history.map((entry, i) => (
@@ -162,7 +154,7 @@ export default function GameView({
       <footer className="rt-game-footer">
         {state.phase === 'playing' && state.suggestions.length > 0 && (
           <div className="rt-suggest">
-            <span className="rt-suggest-label">不知道做什么？点选建议动作：</span>
+            <span className="rt-suggest-label">选择你的行动：</span>
             <div className="rt-suggest-chips">
               {state.suggestions.map(text => (
                 <button
@@ -177,26 +169,6 @@ export default function GameView({
             </div>
           </div>
         )}
-        <div className="rt-input-row">
-          <input
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => {
-              if (e.key === 'Enter' && !e.nativeEvent.isComposing) submit();
-            }}
-            placeholder="输入你的行动…"
-            maxLength={500}
-            disabled={busy}
-          />
-          <button
-            className="rt-btn rt-btn-primary rt-send-btn"
-            onClick={submit}
-            disabled={busy || !input.trim()}
-            aria-label="发送"
-          >
-            <Send size={16} />
-          </button>
-        </div>
         <div className="rt-actions">
           <button
             className={`rt-btn ${rulesOpen ? 'rt-btn-active' : ''}`}

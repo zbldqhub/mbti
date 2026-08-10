@@ -370,8 +370,8 @@ ok('start 模式非法 sceneId → 404');
 modelOutputs = [aiJson({})];
 r = await run('POST', { sceneId: 'midnight_zoo', input: '巡逻', state: zooState() });
 assert.ok(Array.isArray(r.body.suggestions), 'action 响应应含 suggestions 数组');
-assert.ok(r.body.suggestions.length >= 2 && r.body.suggestions.length <= 8, 'suggestions 数量应在 2-8 之间');
-ok('action 响应含 suggestions 数组（2-8 个）');
+assert.ok(r.body.suggestions.length >= 2 && r.body.suggestions.length <= 10, 'suggestions 数量应在 2-10 之间');
+ok('action 响应含 suggestions 数组（2-10 个）');
 
 // ---- 整点时刻在 central_plaza → 含「整点打卡」 ----
 modelOutputs = [aiJson({})];
@@ -423,5 +423,59 @@ r = await run('POST', {
 assert.equal(r.body.outcome.status, 'lost');
 assert.deepEqual(r.body.suggestions, [], '结局后 suggestions 应为空数组');
 ok('结局后 suggestions 为空数组');
+
+// ---- ⑫ 全选项化：场景防御/陷阱选项 ----
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'midnight_zoo', input: '查看四周', state: zooState({ location: 'lion_zone' }) });
+assert.ok(r.body.suggestions.includes('躲进岗亭并锁门'), 'lion_zone 应建议「躲进岗亭并锁门」');
+ok('动物园 lion_zone → suggestions 含「躲进岗亭并锁门」');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'midnight_zoo', input: '查看四周', state: zooState({ location: 'rabbit_zone' }) });
+assert.ok(r.body.suggestions.includes('默念『我是游客』'), 'rabbit_zone 应建议「默念『我是游客』」');
+ok('动物园 rabbit_zone → suggestions 含「默念『我是游客』」');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', {
+  sceneId: 'midnight_zoo',
+  input: '查看四周',
+  state: zooState({ location: 'central_plaza', activeEvents: [{ id: 'E05', remainingActions: 3 }] }),
+});
+assert.ok(r.body.suggestions.includes('前往广播里的「海洋馆」'), 'E05 广播污染中应保留陷阱选项');
+ok('E05 事件中 central_plaza → suggestions 含陷阱选项「前往广播里的「海洋馆」」');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', {
+  sceneId: 'abandoned_hospital',
+  input: '查看四周',
+  state: zooState({ location: 'floor_3', items: ['cotton'] }),
+});
+assert.ok(r.body.suggestions.includes('用棉花塞住耳朵'), 'floor_3 持 cotton 应建议「用棉花塞住耳朵」');
+ok('医院 floor_3 持 cotton → suggestions 含「用棉花塞住耳朵」');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', {
+  sceneId: 'infinite_corridor',
+  input: '查看四周',
+  state: corridorState({ location: 'elevator_hall' }),
+});
+assert.ok(r.body.suggestions.includes('按 13 楼按钮'), 'elevator_hall 应保留假规则陷阱选项「按 13 楼按钮」');
+ok('公寓 elevator_hall → suggestions 含「按 13 楼按钮」');
+
+// ---- 常驻兜底：任意响应含「仔细查看四周」与「等待片刻」 ----
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'midnight_zoo', input: '巡逻', state: zooState({ location: 'gate' }) });
+assert.ok(r.body.suggestions.includes('仔细查看四周'), '任意响应应含「仔细查看四周」');
+assert.ok(r.body.suggestions.includes('等待片刻'), '任意响应应含「等待片刻」');
+ok('常驻兜底：suggestions 始终含「仔细查看四周」与「等待片刻」');
+
+// ---- ⑬ system prompt 含「执行玩家动作」原则 ----
+fetchCalls = [];
+modelOutputs = [aiJson({})];
+await run('POST', { sceneId: 'midnight_zoo', input: '开门离开', state: zooState({ location: 'west_gate' }) });
+const execPrompt = fetchCalls[0].payload.messages[0].content;
+assert.ok(execPrompt.includes('必须执行'), 'system prompt 应含「必须执行」的玩家动作原则');
+assert.ok(execPrompt.includes('不得劝阻'), 'system prompt 应声明不得劝阻玩家动作');
+ok('system prompt 含「执行玩家动作、不得劝阻」原则');
 
 console.log(`\n全部通过：${passed} 项`);

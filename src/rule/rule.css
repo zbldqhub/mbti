@@ -566,34 +566,35 @@ body {
   gap: 8px;
 }
 
-/* ========== 建议动作 ========== */
+/* ========== 行动选择（游戏主操作区） ========== */
 
 .rt-suggest {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .rt-suggest-label {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--rt-muted);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .rt-suggest-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
 }
 
 .rt-suggest-chip {
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
   color: var(--rt-text);
   border: 1px solid rgba(163, 50, 58, 0.55);
   background: var(--rt-blood-soft);
-  border-radius: 999px;
-  padding: 4px 12px;
+  border-radius: 10px;
+  padding: 12px 14px;
   cursor: pointer;
   transition:
     background 0.15s,
@@ -607,39 +608,7 @@ body {
 
 .rt-suggest-chip:disabled {
   opacity: 0.5;
-  cursor: default;
-}
-
-.rt-input-row {
-  display: flex;
-  gap: 8px;
-}
-
-.rt-input-row input {
-  flex: 1;
-  min-width: 0;
-  padding: 12px 14px;
-  border: 1px solid var(--rt-border);
-  border-radius: 10px;
-  background: var(--rt-bg-soft);
-  color: var(--rt-text);
-  font-family: inherit;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.15s;
-}
-
-.rt-input-row input:focus {
-  border-color: rgba(163, 50, 58, 0.6);
-}
-
-.rt-input-row input:disabled {
-  opacity: 0.5;
-}
-
-.rt-send-btn {
-  flex: none;
-  padding: 12px 16px;
+  cursor: not-allowed;
 }
 
 .rt-actions {
