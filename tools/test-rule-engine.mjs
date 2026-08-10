@@ -378,10 +378,19 @@ modelOutputs = [aiJson({})];
 r = await run('POST', {
   sceneId: 'midnight_zoo',
   input: '环顾四周',
-  state: zooState({ time: '01:00', location: 'central_plaza', lastCheckinHour: '00:00' }),
+  state: zooState({ time: '00:45', location: 'central_plaza', lastCheckinHour: '00:00' }),
 });
-assert.ok(r.body.suggestions.includes('整点打卡'), '整点窗口内应建议「整点打卡」');
-ok('整点时刻在 central_plaza → suggestions 含「整点打卡」');
+assert.ok(r.body.suggestions.includes('整点打卡'), '行动结束时刻为整点（01:00）时应建议「整点打卡」');
+ok('行动后时刻为整点（00:45 行动 → 01:00）→ suggestions 含「整点打卡」');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', {
+  sceneId: 'midnight_zoo',
+  input: '巡逻',
+  state: zooState({ time: '01:00', location: 'central_plaza', lastCheckinHour: '01:00' }),
+});
+assert.ok(!r.body.suggestions.includes('整点打卡'), '行动结束时刻为 01:15（窗口外）不应建议「整点打卡」');
+ok('行动后时刻为整点后（01:00 行动 → 01:15）→ 不含「整点打卡」');
 
 // ---- rabbit_zone → 含「拾取密码纸条」 ----
 modelOutputs = [aiJson({})];
@@ -525,8 +534,8 @@ assert.ok(!r.body.suggestions.some(s => s.includes('铃铛')), '非整点不应�
 ok('13F 非整点 → 提供信息型「观察白猫」，无取铃选项');
 
 modelOutputs = [aiJson({})];
-r = await run('POST', { sceneId: 'infinite_corridor', input: '观察白猫', state: corridorState({ location: 'floor_13', time: '00:00' }) });
-assert.ok(r.body.suggestions.includes('趁机取下白猫铃铛'), '整点窗口应建议「趁机取下白猫铃铛」');
-ok('13F 整点窗口 → 含「趁机取下白猫铃铛」');
+r = await run('POST', { sceneId: 'infinite_corridor', input: '观察白猫', state: corridorState({ location: 'floor_13', time: '23:45' }) });
+assert.ok(r.body.suggestions.includes('趁机取下白猫铃铛'), '行动结束时刻为整点（00:00）时应建议「趁机取下白猫铃铛」');
+ok('13F 行动后时刻为整点（23:45 行动 → 00:00）→ 含「趁机取下白猫铃铛」');
 
 console.log(`\n全部通过：${passed} 项`);

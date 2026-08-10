@@ -122,6 +122,14 @@ const toMinutes = t => {
   return m ? Number(m[1]) * 60 + Number(m[2]) : null;
 };
 
+// HH:MM 加 minutes 分钟（跨午夜取模），返回 HH:MM；无法解析则原样返回
+const shiftHHMM = (t, mins) => {
+  const total = toMinutes(t);
+  if (total === null) return t;
+  const next = (((total + mins) % 1440) + 1440) % 1440;
+  return `${String(Math.floor(next / 60)).padStart(2, '0')}:${String(next % 60).padStart(2, '0')}`;
+};
+
 // t 距场景 start 的分钟数（0~1439，跨午夜自动取模）
 const gameMinutes = (t, start) => {
   const tm = toMinutes(t);
@@ -881,11 +889,18 @@ export default async function handler(req, res) {
   }
 
   // 建议动作：按判定后状态（位置/物品/flag/习得规则已结算）确定性生成；结局后为空数组
+  // 时间口径：选项是玩家「下一步」的操作面，必须按行动结束时刻生成（整点打卡/整点取铃等窗口），
+  // 否则选项会比玩家看到的时钟慢一步
+  const timeMultiplier = (Array.isArray(state.activeEvents) ? state.activeEvents : []).reduce((m, ev) => {
+    const def = (scene.events || []).find(e => e.id === ev.id);
+    return m * (def?.effect?.time_multiplier || 1);
+  }, 1);
+  const suggestTime = shiftHHMM(state.time, step * timeMultiplier);
   const suggestions =
     outcome.status === 'playing'
       ? buildSuggestions(
           scene,
-          { ...state, items: newItems, flags: finalFlags, learnedRules: [...learned] },
+          { ...state, time: suggestTime, items: newItems, flags: finalFlags, learnedRules: [...learned] },
           effLoc
         )
       : [];
