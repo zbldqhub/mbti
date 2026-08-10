@@ -478,4 +478,31 @@ assert.ok(execPrompt.includes('必须执行'), 'system prompt 应含「必须执
 assert.ok(execPrompt.includes('不得劝阻'), 'system prompt 应声明不得劝阻玩家动作');
 ok('system prompt 含「执行玩家动作、不得劝阻」原则');
 
+// ---- ⑭ 假门回环：检查门把手选项 + move_to 机制执行 ----
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'midnight_zoo', input: '查看四周', state: zooState({ location: 'west_gate' }) });
+assert.ok(r.body.suggestions.includes('检查门把手'), 'west_gate 应建议「检查门把手」');
+assert.ok(r.body.suggestions.includes('开门离开'), 'west_gate 应保留「开门离开」');
+ok('west_gate → suggestions 含「检查门把手」与「开门离开」');
+
+modelOutputs = [aiJson({})];
+r = await run('POST', { sceneId: 'abandoned_hospital', input: '查看四周', state: zooState({ location: 'fire_exit' }) });
+assert.ok(r.body.suggestions.includes('检查门把手温度'), 'fire_exit 应建议「检查门把手温度」');
+ok('医院 fire_exit → suggestions 含「检查门把手温度」');
+
+fetchCalls = [];
+modelOutputs = [aiJson({})];
+await run('POST', { sceneId: 'midnight_zoo', input: '开门离开', state: zooState({ location: 'west_gate' }) });
+const mechPrompt = fetchCalls[0].payload.messages[0].content;
+assert.ok(mechPrompt.includes('move_to'), 'system prompt 应含 move_to 机制执行条款');
+assert.ok(mechPrompt.includes('回廊'), 'system prompt 应含回环叙事指引');
+ok('system prompt 含假门回环（move_to）执行条款');
+
+// 假西门开门 → AI 按 move_to 回环：con_change=+25 且 new_location=central_plaza，均应通过服务端校验
+modelOutputs = [aiJson({ con_change: 25, new_location: 'central_plaza', narrative: '门后是走不完的回廊，你回过神时已站在中央广场。' })];
+r = await run('POST', { sceneId: 'midnight_zoo', input: '开门离开', state: zooState({ location: 'west_gate' }) });
+assert.equal(r.body.judgment.con_change, 25, '假门惩罚 con_change=25 应透传');
+assert.equal(r.body.judgment.new_location, 'central_plaza', '回环位置迁移应通过校验（central_plaza 在 west_gate connections 内）');
+ok('假西门开门 → 污染+25 且回环中央广场，均通过校验');
+
 console.log(`\n全部通过：${passed} 项`);

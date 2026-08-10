@@ -216,7 +216,8 @@ const buildSystemPrompt = (scene, state, currentArea) => {
 【核心原则】
 1. 规则优先级：即死 > 假规则(未识破) > 基础规则 > 散落规则 > 事件覆盖。
 2. 执行玩家动作（最高优先级之一：必须执行，不得劝阻）：
-   - 玩家的动作必须执行并结算后果，绝不允许用 narrative 劝阻、改写、替玩家退缩或阻止动作发生。即使动作危险、愚蠢或必然致死：触发即死陷阱 → death=true 并给出死亡叙事；触发惩罚规则 → 按规则数值如实扣减（例如温热把手的假西门：每次尝试开门 con_change=+25，门不开；重复尝试重复扣）。warning 字段可以写警告文案，但动作本身必须生效。一心求死也是玩法。
+   - 玩家的动作必须执行并结算后果，绝不允许用 narrative 劝阻、改写、替玩家退缩或阻止动作发生。即使动作危险、愚蠢或必然致死：触发即死陷阱 → death=true 并给出死亡叙事；触发惩罚规则 → 按规则数值如实扣减。warning 字段可以写警告文案，但动作本身必须生效。一心求死也是玩法。
+   - 区域/规则的结构化机制字段必须严格执行其效果，包括位置迁移：例如假西门的 fake_gate_penalty 含 move_to=central_plaza——玩家在温热把手的假西门「开门离开」时，必须 con_change=+25 且 new_location=central_plaza（门后是走不完的回廊，回过神来已回到中央广场），绝不允许「门不开、原地不动」式的空转结算；医院消防通道温热把手同理（move_to=lobby）。玩家在回归窗口内打开真西门但未满足通关条件时：不判胜不判死，narrative 暗示还缺关键物品/时机。
    - 玩家「仔细查看四周/搜索」时：narrative 必须描述当前区域细节；该区域若有 expose_clue 对应的线索（尸体/纸条/刻字/尸体手上的字条等），必须在叙事中展示线索内容；玩家据此识破假规则时在 rules_exposed 返回对应规则 id。
 3. 假规则未被玩家识破时生效，被玩家识破后失效。
 4. 状态必须精确更新，数值变化以规则手册的记载为准，不得臆造数值。
@@ -492,6 +493,7 @@ const buildSuggestions = (scene, state, resultLocation) => {
     const step = clampNumber(scene.time_config?.step_minutes, 1, 60, 15);
     const mins = toMinutes(state.time);
     if (loc === 'central_plaza' && mins !== null && mins % 60 < step) special.push('整点打卡');
+    if (loc === 'west_gate') special.push('检查门把手');
     if (loc === 'west_gate') special.push('开门离开');
     if (loc === 'west_gate' && items.includes('red_uniform') && !flags.includes('wearing_red_uniform')) {
       special.push('穿上红色工作服');
@@ -505,6 +507,7 @@ const buildSuggestions = (scene, state, resultLocation) => {
     // E05 广播污染：陷阱选项，故意保留——玩家选择相信广播即触发对应即死判定
     if (activeEvents.some(ev => ev.id === 'E05')) special.push('前往广播里的「海洋馆」');
   } else if (scene.id === 'abandoned_hospital') {
+    if (loc === 'fire_exit') special.push('检查门把手温度');
     if (loc === 'fire_exit') special.push('推门离开');
     if (
       loc === 'nurse_station_3f' &&
