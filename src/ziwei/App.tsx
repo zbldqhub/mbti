@@ -3,15 +3,25 @@ import type { BirthInput, ChartData } from './types';
 import { buildChart } from './engine/chart';
 import { buildReading } from './interpret';
 import { getYearly } from './engine/yearly';
+import { generateAiReading, type AiReading } from './services/aiReading';
 import InputForm from './components/InputForm';
 import ChartBoard from './components/ChartBoard';
 import ReadingView from './components/ReadingView';
+import AiReadingView from './components/AiReadingView';
+
+type AiState =
+  | { status: 'idle' }
+  | { status: 'loading' }
+  | { status: 'done'; reading: AiReading }
+  | { status: 'error'; message: string };
 
 export default function App() {
   const [chart, setChart] = useState<ChartData | null>(null);
+  const [ai, setAi] = useState<AiState>({ status: 'idle' });
 
   const handleSubmit = (input: BirthInput) => {
     setChart(buildChart(input));
+    setAi({ status: 'idle' });
     window.scrollTo(0, 0);
   };
 
@@ -28,6 +38,17 @@ export default function App() {
       yearlyBranch: yearly.mingBranch,
     };
   }, [chart]);
+
+  const handleAiRead = async () => {
+    if (!chart || ai.status === 'loading') return;
+    setAi({ status: 'loading' });
+    try {
+      const reading = await generateAiReading(chart);
+      setAi({ status: 'done', reading });
+    } catch (e) {
+      setAi({ status: 'error', message: e instanceof Error ? e.message : 'AI 解读失败' });
+    }
+  };
 
   if (!chart || !derived) {
     return <InputForm onSubmit={handleSubmit} />;
@@ -54,10 +75,43 @@ export default function App() {
         <span><sup className="zw-sh sh-lu">禄</sup><sup className="zw-sh sh-quan">权</sup><sup className="zw-sh sh-ke">科</sup><sup className="zw-sh sh-ji">忌</sup> 生年四化</span>
       </div>
 
+      {/* AI 白话解读 */}
+      <div className="zw-ai-card">
+        <h2 className="zw-section-title">AI 白话解读</h2>
+
+        {ai.status === 'idle' && (
+          <div className="zw-ai-cta">
+            <p>看不懂星曜术语？让 AI 用大白话为你拆解本命格局、当前大限与今年流年。</p>
+            <button type="button" className="zw-ai-btn" onClick={handleAiRead}>
+              ✦ 开始 AI 解读
+            </button>
+          </div>
+        )}
+
+        {ai.status === 'loading' && (
+          <div className="zw-ai-loading">
+            <div className="zw-ai-spinner" />
+            <p>正在推演命盘，请稍候…</p>
+            <p className="zw-ai-loading-sub">约需 10–30 秒</p>
+          </div>
+        )}
+
+        {ai.status === 'error' && (
+          <div className="zw-ai-cta">
+            <p className="zw-ai-error">解读失败：{ai.message}（本地排盘结果不受影响，可继续查看下方详批）</p>
+            <button type="button" className="zw-ai-btn" onClick={handleAiRead}>
+              重试
+            </button>
+          </div>
+        )}
+
+        {ai.status === 'done' && <AiReadingView reading={ai.reading} />}
+      </div>
+
       <ReadingView sections={derived.reading} />
 
       <footer className="zw-footer">
-        本工具依据传统命理书籍推演，结果仅供文化研习与娱乐参考。
+        本工具依据传统命理书籍推演，AI 解读由大模型生成，结果仅供文化研习与娱乐参考。
       </footer>
     </div>
   );
