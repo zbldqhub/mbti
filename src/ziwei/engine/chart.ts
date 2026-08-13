@@ -174,6 +174,7 @@ export function buildChart(input: BirthInput): ChartData {
     lunarYearGanZhi: cal.yearGanZhi,
     lunarYear: cal.lunarYear,
     lunarMonth: m,
+    monthAdjusted: cal.monthAdjusted,
     lunarDay: d,
     isLeapMonth: cal.isLeapMonth,
     lunarText: `${cal.lunarText} ${BRANCHES[h]}时`,

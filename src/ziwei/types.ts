@@ -77,6 +77,8 @@ export interface ChartData {
   /** 农历年（数字，虚岁推算用） */
   lunarYear: number;
   lunarMonth: number;
+  /** 闰月十六日后出生，排盘月按下月论 */
+  monthAdjusted: boolean;
   lunarDay: number;
   isLeapMonth: boolean;
   lunarText: string;

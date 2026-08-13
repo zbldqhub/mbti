@@ -170,6 +170,34 @@ describe('溥仪命盘（书载金标准）', () => {
   });
 });
 
+// ========== 闰月分界（王亭之：闰月前十五日按本月，十六日起按下月） ==========
+describe('闰月分界', () => {
+  it('闰八月十九（1995-10-13 巳时 女）→ 按九月论，命宫在巳（辛巳）', () => {
+    const c = buildChart({
+      name: '闰月', gender: 'female',
+      year: 1995, month: 10, day: 13, hour: 10, minute: 30,
+    });
+    expect(c.isLeapMonth).toBe(true);
+    expect(c.monthAdjusted).toBe(true);
+    expect(c.lunarMonth).toBe(9); // 排盘按九月
+    expect(c.mingBranch).toBe(5); // 命宫在巳
+    const ming = c.palaces[5];
+    expect(ming.stem).toBe(7); // 辛
+  });
+
+  it('闰八月十五（1995-10-09 巳时）→ 仍按本月八月论，命宫在辰（庚辰）', () => {
+    const c = buildChart({
+      name: '闰月边界', gender: 'female',
+      year: 1995, month: 10, day: 9, hour: 10, minute: 30,
+    });
+    expect(c.isLeapMonth).toBe(true);
+    expect(c.monthAdjusted).toBe(false);
+    expect(c.lunarMonth).toBe(8);
+    expect(c.mingBranch).toBe(4); // 命宫在辰
+    expect(c.palaces[4].stem).toBe(6); // 庚
+  });
+});
+
 // ========== 阴男阳女逆行验证 ==========
 describe('阳女（同生辰改性别）：大限逆行、长生逆行', () => {
   const chart = buildChart({

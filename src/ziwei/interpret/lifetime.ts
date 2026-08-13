@@ -28,7 +28,7 @@ export function interpretLifetime(chart: ChartData, currentAge: number): Reading
   const mingP = chart.palaces[chart.mingBranch];
   const bodyP = chart.palaces[chart.bodyBranch];
   const overview: string[] = [
-    `${chart.name}（${chart.yinyang}），公历${chart.solarText}，农历${chart.lunarText}${chart.isLeapMonth ? '（闰月按当月计）' : ''}。`,
+    `${chart.name}（${chart.yinyang}），公历${chart.solarText}，农历${chart.lunarText}${chart.monthAdjusted ? '（闰月十六日后出生，排盘按下月论）' : chart.isLeapMonth ? '（闰月十五日前出生，排盘按本月论）' : ''}。`,
     `命宫在${branchName(chart.mingBranch)}（${gz(mingP.stem, chart.mingBranch)}），身宫在${branchName(chart.bodyBranch)}${chart.mingBranch === chart.bodyBranch ? '（身命同宫）' : `（落于${PALACE_NAMES[bodyP.nameIndex]}）`}，${chart.juName}，命主${chart.mingZhu}、身主${chart.shenZhu}。`,
   ];
   if (chart.unknownTime) {

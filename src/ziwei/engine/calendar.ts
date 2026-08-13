@@ -1,17 +1,22 @@
 // 公历 → 农历 / 干支 / 时辰 封装（基于 lunar-javascript）
-// 规则（依《安星法》总结文档）：
+// 规则（依王亭之《安星法》）：
 // - 年干支以立春换年（lunar-javascript 的 getYearInGanZhi 即立春分界）
 // - 日界为凌晨 00:00，晚子时（23:00-24:00）归当日，不跨日
-// - 闰月按当月计（取月份绝对值）
+// - 闰月以月中为界：前十五日照本月推算，十六日至月底作下月推算
+//   （《中州派紫微斗数讲义》「过节气与闰月」节原文）
 
 import { Solar } from 'lunar-javascript';
 import { STEMS, BRANCHES } from './constants';
 
 export interface CalendarInfo {
   lunarYear: number;
-  /** 农历月 1-12（闰月取正数） */
+  /** 农历月（闰月分界调整后的排盘用月）1-12 */
   lunarMonth: number;
+  /** 原始农历月 1-12 */
+  rawLunarMonth: number;
   isLeapMonth: boolean;
+  /** 闰月十六日后出生，排盘按下月论 */
+  monthAdjusted: boolean;
   /** 农历日 1-30 */
   lunarDay: number;
   yearStem: number;
@@ -30,8 +35,12 @@ export function getCalendarInfo(
 
   const rawMonth = lunar.getMonth();
   const isLeapMonth = rawMonth < 0;
-  const lunarMonth = Math.abs(rawMonth);
+  const rawLunarMonth = Math.abs(rawMonth);
   const lunarDay = lunar.getDay();
+
+  // 闰月分界：十六日起按下月
+  const monthAdjusted = isLeapMonth && lunarDay >= 16;
+  const lunarMonth = monthAdjusted ? (rawLunarMonth % 12) + 1 : rawLunarMonth;
 
   const gz = lunar.getYearInGanZhi();
   const yearStem = STEMS.indexOf(gz[0] as (typeof STEMS)[number]);
@@ -45,7 +54,9 @@ export function getCalendarInfo(
   return {
     lunarYear: lunar.getYear(),
     lunarMonth,
+    rawLunarMonth,
     isLeapMonth,
+    monthAdjusted,
     lunarDay,
     yearStem,
     yearBranch,
