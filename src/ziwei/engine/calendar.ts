@@ -5,7 +5,7 @@
 // - 闰月以月中为界：前十五日照本月推算，十六日至月底作下月推算
 //   （《中州派紫微斗数讲义》「过节气与闰月」节原文）
 
-import { Solar } from 'lunar-javascript';
+import { Solar, Lunar, LunarYear } from 'lunar-javascript';
 import { STEMS, BRANCHES } from './constants';
 
 export interface CalendarInfo {
@@ -76,4 +76,31 @@ export function yearGanZhiOf(year: number): { stem: number; branch: number; ganZ
     branch: BRANCHES.indexOf(gz[1] as (typeof BRANCHES)[number]),
     ganZhi: gz,
   };
+}
+
+/** 查询某农历年的闰月（无闰月返回 0） */
+export function getLeapMonthOfYear(lunarYear: number): number {
+  return LunarYear.fromYear(lunarYear).getLeapMonth();
+}
+
+/**
+ * 农历日期 → 公历日期。
+ * @param month 农历月 1-12；isLeap=true 表示闰月
+ * @throws 该年无此闰月 / 该月无此日 时抛错
+ */
+export function lunarToSolar(
+  lunarYear: number, month: number, day: number, isLeap: boolean,
+): { year: number; month: number; day: number } {
+  const ly = LunarYear.fromYear(lunarYear);
+  if (isLeap && ly.getLeapMonth() !== month) {
+    throw new Error(`农历${lunarYear}年没有闰${month}月（该年${ly.getLeapMonth() > 0 ? `闰${ly.getLeapMonth()}月` : '无闰月'}）`);
+  }
+  const monthObj = ly.getMonth(isLeap ? -month : month);
+  if (!monthObj) throw new Error('非法农历月份');
+  const dayCount = monthObj.getDayCount();
+  if (day < 1 || day > dayCount) {
+    throw new Error(`该月只有 ${dayCount} 天，没有${day}日`);
+  }
+  const solar = Lunar.fromYmd(lunarYear, isLeap ? -month : month, day).getSolar();
+  return { year: solar.getYear(), month: solar.getMonth(), day: solar.getDay() };
 }

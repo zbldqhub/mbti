@@ -132,7 +132,9 @@ ${summary}
       {"name": "事业运", "stars": 1到5的整数, "points": ["2-3条具体解读与建议"]},
       {"name": "财运", "stars": 1到5的整数, "points": ["2-3条"]},
       {"name": "感情运", "stars": 1到5的整数, "points": ["2-3条"]},
-      {"name": "健康运", "stars": 1到5的整数, "points": ["2-3条"]}
+      {"name": "健康运", "stars": 1到5的整数, "points": ["2-3条"]},
+      {"name": "贵人运", "stars": 1到5的整数, "points": ["2-3条，结合流年命宫三方四正的天魁天钺、左辅右弼、化科等吉星，说清今年容不容易遇到贵人、贵人是长辈还是平辈、该主动链接哪类人"]},
+      {"name": "出行变动运", "stars": 1到5的整数, "points": ["2-3条，结合流年迁移宫与天马、杀破狼等变动星曜的引动，说清今年宜不宜远行、搬迁、跳槽、变换环境"]}
     ]
   },
   "conclusion": {
@@ -171,7 +173,10 @@ export function extractJson(text: string): unknown {
   return JSON.parse(cleaned.slice(start, end + 1));
 }
 
-/** 校验并规范化 AI 输出；不合法抛异常 */
+/** 流年固定展示的六个方面（顺序即展示顺序） */
+export const CANONICAL_ASPECTS = ['事业运', '财运', '感情运', '健康运', '贵人运', '出行变动运'] as const;
+
+/** 校验并规范化 AI 输出；不合法抛异常。流年方面始终补齐为固定六项 */
 export function normalizeReading(raw: unknown): AiReading {
   const r = raw as Partial<AiReading>;
   if (typeof r?.summary !== 'string' || !r.summary) throw new Error('missing summary');
@@ -180,11 +185,28 @@ export function normalizeReading(raw: unknown): AiReading {
   if (!Array.isArray(r?.yearly?.aspects) || r.yearly.aspects.length === 0) throw new Error('missing yearly.aspects');
   if (!Array.isArray(r?.conclusion?.advice)) throw new Error('missing conclusion.advice');
 
-  const aspects: AiAspect[] = r.yearly.aspects.map((a, i) => ({
-    name: typeof a?.name === 'string' && a.name ? a.name : ['事业运', '财运', '感情运', '健康运'][i] ?? `方面${i + 1}`,
-    stars: Math.max(1, Math.min(5, Math.round(Number(a?.stars) || 3))),
-    points: Array.isArray(a?.points) ? a.points.filter((p): p is string => typeof p === 'string') : [],
-  }));
+  // 六个固定方面：按名匹配 AI 输出，缺失的补默认项，保证每次都完整展示
+  const byName = new Map<string, { stars?: number; points?: string[] }>();
+  for (const a of r.yearly.aspects) {
+    if (a && typeof a.name === 'string') {
+      const key = a.name.replace(/\s/g, '');
+      byName.set(key, a);
+      byName.set(key.replace(/运$/, ''), a); // 兼容「出行运」/「出行」等写法
+    }
+  }
+  const findAspect = (name: string) =>
+    byName.get(name) ?? byName.get(name.replace(/运$/, '')) ?? byName.get(name.slice(0, 2));
+  const aspects: AiAspect[] = CANONICAL_ASPECTS.map((name) => {
+    const hit = findAspect(name);
+    const points = Array.isArray(hit?.points)
+      ? hit.points.filter((p): p is string => typeof p === 'string' && !!p)
+      : [];
+    return {
+      name,
+      stars: Math.max(1, Math.min(5, Math.round(Number(hit?.stars) || 3))),
+      points: points.length > 0 ? points : ['今年此方面无显著吉凶引动，运势平稳，按部就班即可。'],
+    };
+  });
 
   return {
     summary: r.summary,
