@@ -3,78 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字手作 - 欢迎</title>
+    <title>数字手作 - 一些小而美的应用</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0f0e1a;
+            --card: rgba(255, 255, 255, 0.06);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text: #eceaf4;
+            --text-dim: #a9a4c0;
+            --accent1: #667eea;
+            --accent2: #764ba2;
+            --gold: #e8c470;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* 背景光斑 */
+        .glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .glow-1 {
+            width: 480px; height: 480px;
+            background: var(--accent1);
+            top: -120px; left: -120px;
+        }
+        .glow-2 {
+            width: 420px; height: 420px;
+            background: var(--accent2);
+            bottom: -100px; right: -80px;
+        }
+        .glow-3 {
+            width: 300px; height: 300px;
+            background: #e8c470;
+            opacity: 0.12;
+            top: 40%; left: 55%;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* ---------- Hero ---------- */
+
+        .hero {
+            text-align: center;
+            padding: 84px 20px 48px;
+        }
+
+        .hero-logo {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: white;
+            width: 76px; height: 76px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            font-size: 38px;
+            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.35);
+            margin-bottom: 26px;
         }
-        .container {
-            max-width: 800px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+        .hero h1 {
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: 6px;
+            background: linear-gradient(135deg, #fff 30%, #b9b0e8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            font-weight: 700;
+
+        .hero .tagline {
+            font-size: 16px;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            line-height: 1.9;
         }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .btn {
+
+        .hero .badge {
             display: inline-block;
-            padding: 12px 30px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            margin-top: 22px;
+            padding: 6px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--card-border);
+            background: var(--card);
+            font-size: 12px;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+        }
+
+        /* ---------- 应用卡片 ---------- */
+
+        .apps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .app-card {
+            display: block;
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--text);
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 18px;
+            padding: 26px 24px;
+            backdrop-filter: blur(12px);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
-        .btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.28);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
         }
+
+        .app-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .icon-mbti { background: linear-gradient(135deg, #667eea, #9f7aea); }
+        .icon-wordfall { background: linear-gradient(135deg, #38b2ac, #4299e1); }
+        .icon-turtle { background: linear-gradient(135deg, #ed8936, #e53e3e); }
+        .icon-rule { background: linear-gradient(135deg, #4a5568, #805ad5); }
+        .icon-ziwei { background: linear-gradient(135deg, #b8452f, #c9a86a); }
+
+        .app-card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .app-card p {
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        .app-card .go {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 12px;
+            color: #c3b8f5;
+            letter-spacing: 1px;
+        }
+
+        /* ---------- 赞赏区 ---------- */
+
+        .support {
+            margin-top: 56px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 22px;
+            padding: 40px 36px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        .support-qr {
+            flex-shrink: 0;
+            width: 200px;
+        }
+
+        .support-qr img {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+            display: block;
+        }
+
+        .support-qr .qr-tip {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .support-text h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            color: var(--gold);
+        }
+
+        .support-text p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 2.1;
+            text-align: justify;
+        }
+
+        .support-text .thanks {
+            margin-top: 12px;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* ---------- 页脚 ---------- */
+
         .footer {
-            margin-top: 50px;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            margin-top: 56px;
+            text-align: center;
+            font-size: 12px;
+            color: #6d6788;
+            letter-spacing: 1px;
+            line-height: 2;
+        }
+
+        /* ---------- 响应式 ---------- */
+
+        @media (max-width: 640px) {
+            .hero { padding: 56px 10px 36px; }
+            .hero h1 { font-size: 32px; letter-spacing: 4px; }
+            .support {
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 24px;
+            }
+            .support-qr { width: 180px; }
+            .support-text h2 { text-align: center; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>欢迎来到数字手作</h1>
-        <p>这里是数字手作的官方网站，我们致力于为您提供优质的数字产品和服务。</p>
-        <p>探索我们的应用：</p>
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="/mbti" class="btn">MBTI性格测试</a>
-            <a href="/wordfall" class="btn">词语瀑布</a>
-            <a href="/turtle" class="btn">AI海龟汤</a>
-            <a href="/rule" class="btn">规则怪谈</a>
-            <a href="/ziwei" class="btn">紫微斗数排盘</a>
-        </div>
-    </div>
-    <div class="footer">
-        <p>&copy; 2026 数字手作. 保留所有权利.</p>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <div class="page">
+        <!-- Hero -->
+        <header class="hero">
+            <div class="hero-logo">✦</div>
+            <h1>数字手作</h1>
+            <p class="tagline">一些利用业余时间慢慢打磨的小应用<br>免费、无广告，希望它们刚好能逗乐你、帮到你</p>
+            <span class="badge">5 款小应用 · 持续更新中</span>
+        </header>
+
+        <!-- 应用列表 -->
+        <main class="apps">
+            <a href="/mbti" class="app-card">
+                <div class="app-icon icon-mbti">🧠</div>
+                <h2>MBTI 性格测试</h2>
+                <p>AI 动态出题的 MBTI 测评，每次题目都不同，附个性化分析报告。</p>
+                <span class="go">开始测试 →</span>
+            </a>
+
+            <a href="/ziwei" class="app-card">
+                <div class="app-icon icon-ziwei">☯</div>
+                <h2>紫微斗数排盘</h2>
+                <p>中州派天盘排盘，支持农历/闰月，附 AI 白话解读与流年运势。</p>
+                <span class="go">立即排盘 →</span>
+            </a>
+
+            <a href="/turtle" class="app-card">
+                <div class="app-icon icon-turtle">🐢</div>
+                <h2>AI 海龟汤</h2>
+                <p>和 AI 主持人玩情境推理，通过提问一步步逼近事件真相。</p>
+                <span class="go">开始推理 →</span>
+            </a>
+
+            <a href="/rule" class="app-card">
+                <div class="app-icon icon-rule">📜</div>
+                <h2>规则怪谈</h2>
+                <p>在诡异规则中求生：读懂每一条规则，活到故事的结局。</p>
+                <span class="go">进入怪谈 →</span>
+            </a>
+
+            <a href="/wordfall" class="app-card">
+                <div class="app-icon icon-wordfall">💧</div>
+                <h2>词语瀑布</h2>
+                <p>词语如瀑布坠落，在流动与组合中感受文字之美。</p>
+                <span class="go">去看看 →</span>
+            </a>
+        </main>
+
+        <!-- 赞赏区 -->
+        <section class="support">
+            <div class="support-qr">
+                <img src="./images/zanshang.png" alt="赞赏码">
+                <p class="qr-tip">微信扫一扫 · 随缘赞赏</p>
+            </div>
+            <div class="support-text">
+                <h2>请作者喝杯咖啡 ☕</h2>
+                <p>数字手作里的每一款小应用，都是下班后和周末一点一点敲出来的。从排盘算法到 AI 解读，从题目设计到界面打磨，都是一个人在折腾。它们现在免费、干净、无广告，我也希望它们一直这样。</p>
+                <p>如果其中某一款刚好让你觉得好玩、有点用，欢迎扫码请我喝杯咖啡。金额随意，哪怕一块钱，都是在告诉我：这些东西值得继续做下去。</p>
+                <p class="thanks">谢谢你的支持，它会被认真换成更多的时间和更好的小作品。🙏</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 数字手作 · 用休息时间做的小东西</p>
+        </footer>
     </div>
 </body>
 </html>
