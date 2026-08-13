@@ -1,0 +1,475 @@
+/* 紫微斗数排盘 — 古典暗红金风格 */
+
+:root {
+  --zw-bg: #1a1410;
+  --zw-card: #241c15;
+  --zw-border: #4a3a28;
+  --zw-gold: #c9a86a;
+  --zw-gold-dim: #9a8055;
+  --zw-text: #e8dcc8;
+  --zw-text-dim: #a89880;
+  --zw-red: #b8452f;
+  --zw-green: #6a9a6a;
+  --zw-blue: #6a8aaa;
+  --zw-orange: #c97f3a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--zw-bg);
+  color: var(--zw-text);
+  font-family: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 输入页 ---------- */
+
+.zw-input-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.zw-input-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--zw-card);
+  border: 1px solid var(--zw-border);
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+
+.zw-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--zw-gold);
+  text-align: center;
+  letter-spacing: 6px;
+}
+
+.zw-subtitle {
+  text-align: center;
+  color: var(--zw-text-dim);
+  font-size: 12px;
+  margin: 10px 0 28px;
+  letter-spacing: 2px;
+}
+
+.zw-label {
+  display: block;
+  font-size: 14px;
+  color: var(--zw-gold-dim);
+  margin: 18px 0 6px;
+}
+
+.zw-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #17120d;
+  border: 1px solid var(--zw-border);
+  border-radius: 8px;
+  color: var(--zw-text);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+}
+
+.zw-input:focus {
+  border-color: var(--zw-gold);
+}
+
+.zw-radio-row {
+  display: flex;
+  gap: 12px;
+}
+
+.zw-radio {
+  flex: 1;
+  padding: 10px 0;
+  background: #17120d;
+  border: 1px solid var(--zw-border);
+  border-radius: 8px;
+  color: var(--zw-text-dim);
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.zw-radio.active {
+  border-color: var(--zw-gold);
+  color: var(--zw-gold);
+  background: rgba(201, 168, 106, 0.08);
+}
+
+.zw-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--zw-text-dim);
+  cursor: pointer;
+}
+
+.zw-check input {
+  accent-color: var(--zw-gold);
+}
+
+.zw-error {
+  color: #e0705a;
+  font-size: 13px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.zw-submit {
+  width: 100%;
+  margin-top: 24px;
+  padding: 13px 0;
+  background: linear-gradient(135deg, #8a3a24, #b8452f);
+  border: 1px solid #d4694f;
+  border-radius: 8px;
+  color: #f5e8d8;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.zw-submit:hover {
+  filter: brightness(1.1);
+}
+
+.zw-disclaimer {
+  margin-top: 20px;
+  font-size: 11px;
+  color: var(--zw-text-dim);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* ---------- 命盘页 ---------- */
+
+.zw-result-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 12px 60px;
+}
+
+.zw-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.zw-result-header .zw-title {
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.zw-back {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid var(--zw-border);
+  border-radius: 8px;
+  color: var(--zw-gold);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.zw-back:hover {
+  border-color: var(--zw-gold);
+}
+
+/* 命盘 4×4 网格 */
+
+.zw-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4px;
+  background: var(--zw-border);
+  border: 1px solid var(--zw-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.zw-cell-wrap {
+  min-height: 118px;
+  display: flex;
+}
+
+.zw-cell {
+  flex: 1;
+  background: var(--zw-card);
+  padding: 6px 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid transparent;
+}
+
+.zw-cell.is-ming {
+  border-color: var(--zw-gold);
+}
+
+.zw-cell.is-daxian {
+  border-color: var(--zw-blue);
+}
+
+.zw-cell.is-ming.is-daxian {
+  border-color: var(--zw-gold);
+  box-shadow: inset 0 0 0 2px var(--zw-blue);
+}
+
+.zw-cell.is-yearly {
+  background: #2b2118;
+}
+
+.zw-cell-stars {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 0;
+}
+
+.zw-majors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--zw-gold);
+}
+
+.zw-major.empty {
+  color: var(--zw-text-dim);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.zw-minors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px 6px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.zw-minors.aux {
+  color: var(--zw-green);
+}
+
+.zw-minors.sha {
+  color: #c9705a;
+}
+
+.zw-minors.misc {
+  color: var(--zw-text-dim);
+}
+
+/* 亮度角标 */
+
+sup[class^='br-'] {
+  font-size: 9px;
+  margin-left: 1px;
+  font-weight: 400;
+}
+
+.br-庙, .br-旺 { color: #e0b050; }
+.br-得, .br-平 { color: var(--zw-text-dim); }
+.br-闲 { color: #8a7a62; }
+.br-陷 { color: #a05040; }
+
+/* 四化角标 */
+
+.zw-sh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  font-size: 9px;
+  margin-left: 2px;
+  font-weight: 700;
+  vertical-align: super;
+}
+
+.sh-lu { background: var(--zw-green); color: #10180f; }
+.sh-quan { background: var(--zw-orange); color: #1c1208; }
+.sh-ke { background: var(--zw-blue); color: #0e1418; }
+.sh-ji { background: var(--zw-red); color: #f5e0d8; }
+
+/* 宫底信息 */
+
+.zw-cell-foot {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 10px;
+  color: var(--zw-text-dim);
+  margin-top: 4px;
+}
+
+.zw-changsheng {
+  color: #8a9a7a;
+}
+
+.zw-daxian {
+  color: var(--zw-blue);
+}
+
+.zw-palace-name {
+  margin-left: auto;
+  color: var(--zw-gold-dim);
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.zw-body-mark {
+  font-style: normal;
+  background: var(--zw-gold);
+  color: #20180f;
+  border-radius: 3px;
+  padding: 0 3px;
+  margin-left: 3px;
+  font-size: 9px;
+}
+
+.zw-ganzhi {
+  color: var(--zw-text-dim);
+}
+
+/* 中宫 */
+
+.zw-center {
+  background: #1e1712;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--zw-text-dim);
+  text-align: center;
+  padding: 10px;
+}
+
+.zw-center-name {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--zw-gold);
+  letter-spacing: 8px;
+}
+
+.zw-warn {
+  color: #e0705a;
+  font-size: 11px;
+}
+
+/* 图例 */
+
+.zw-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 12px 4px;
+  font-size: 12px;
+  color: var(--zw-text-dim);
+  align-items: center;
+}
+
+.zw-legend .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.zw-legend .dot.is-ming { border: 2px solid var(--zw-gold); }
+.zw-legend .dot.is-daxian { border: 2px solid var(--zw-blue); }
+.zw-legend .dot.is-yearly { background: #2b2118; border: 1px solid var(--zw-border); }
+
+/* 推算文字 */
+
+.zw-reading {
+  margin-top: 10px;
+}
+
+.zw-section {
+  background: var(--zw-card);
+  border: 1px solid var(--zw-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+.zw-section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--zw-gold);
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--zw-border);
+}
+
+.zw-para {
+  font-size: 14px;
+  line-height: 2.0;
+  color: var(--zw-text);
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+.zw-footer {
+  text-align: center;
+  color: var(--zw-text-dim);
+  font-size: 11px;
+  margin-top: 24px;
+  line-height: 1.8;
+}
+
+/* 小屏适配 */
+
+@media (max-width: 640px) {
+  .zw-cell-wrap {
+    min-height: 96px;
+  }
+  .zw-majors {
+    font-size: 14px;
+    gap: 1px 5px;
+  }
+  .zw-minors {
+    font-size: 9px;
+  }
+  .zw-cell-foot {
+    font-size: 8px;
+    gap: 4px;
+  }
+  .zw-palace-name {
+    font-size: 9px;
+  }
+  .zw-center-name {
+    font-size: 22px;
+    letter-spacing: 4px;
+  }
+  .zw-center {
+    font-size: 10px;
+    gap: 3px;
+  }
+}

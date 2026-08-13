@@ -108,6 +108,31 @@ if (fs.existsSync(ruleHtmlPath)) {
   console.error('rule.html not found in dist');
 }
 
+// 在dist目录内创建ziwei目录
+const ziweiDir = path.join(distDir, 'ziwei');
+if (!fs.existsSync(ziweiDir)) {
+  fs.mkdirSync(ziweiDir, { recursive: true });
+  console.log('Created dist/ziwei directory');
+}
+
+// 复制ziwei.html到ziwei目录并重命名为index.html
+const ziweiHtmlPath = path.join(distDir, 'ziwei.html');
+const ziweiIndexPath = path.join(ziweiDir, 'index.html');
+if (fs.existsSync(ziweiHtmlPath)) {
+  let content = fs.readFileSync(ziweiHtmlPath, 'utf8');
+  // 修改资源引用路径
+  content = content.replace(/src="\.\.\//g, 'src="../');
+  content = content.replace(/href="\.\.\//g, 'href="../');
+  fs.writeFileSync(ziweiIndexPath, content);
+  console.log('Created dist/ziwei/index.html with updated asset paths');
+
+  // 删除原始的ziwei.html
+  fs.unlinkSync(ziweiHtmlPath);
+  console.log('Removed original ziwei.html');
+} else {
+  console.error('ziwei.html not found in dist');
+}
+
 // 修改主index.html中的链接为相对路径
 const mainIndexPath = path.join(distDir, 'index.html');
 if (fs.existsSync(mainIndexPath)) {
@@ -120,6 +145,8 @@ if (fs.existsSync(mainIndexPath)) {
   content = content.replace(/href="\/turtle"/g, 'href="./turtle/"');
   // 将/rule链接改为相对路径 ./rule/
   content = content.replace(/href="\/rule"/g, 'href="./rule/"');
+  // 将/ziwei链接改为相对路径 ./ziwei/
+  content = content.replace(/href="\/ziwei"/g, 'href="./ziwei/"');
   fs.writeFileSync(mainIndexPath, content);
   console.log('Updated main index.html links to relative paths');
 }
@@ -137,7 +164,9 @@ console.log('    ├── wordfall/');
 console.log('    │    └── index.html    (词语瀑布 - 访问 /wordfall/)');
 console.log('    ├── turtle/');
 console.log('    │    └── index.html    (AI海龟汤 - 访问 /turtle/)');
-console.log('    └── rule/');
-console.log('         └── index.html    (规则怪谈 - 访问 /rule/)');
+console.log('    ├── rule/');
+console.log('    │    └── index.html    (规则怪谈 - 访问 /rule/)');
+console.log('    └── ziwei/');
+console.log('         └── index.html    (紫微斗数排盘 - 访问 /ziwei/)');
 console.log('');
 console.log('部署时只需上传 dist 目录即可！');

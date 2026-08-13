@@ -21,6 +21,7 @@ export default defineConfig({
         wordfall: path.resolve(__dirname, './wordfall.html'),
         turtle: path.resolve(__dirname, './turtle.html'),
         rule: path.resolve(__dirname, './rule.html'),
+        ziwei: path.resolve(__dirname, './ziwei.html'),
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
