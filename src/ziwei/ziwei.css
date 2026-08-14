@@ -519,6 +519,12 @@ sup[class^='br-'] {
   color: #7a6a52;
 }
 
+.zw-ai-quota {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #7a6a52;
+}
+
 .zw-ai-spinner {
   width: 34px;
   height: 34px;

@@ -12,6 +12,9 @@ const ALLOWED_MODELS = new Set([
 const DEFAULT_MODEL = process.env.KIMI_MODEL || 'kimi-k3';
 const API_KEY = process.env.KIMI_API_KEY;
 
+// 紫微解读限流：每 IP 每日 3 次（实例内存计数，best-effort）
+const ZIWEI_DAILY_USES = new Map();
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' });
@@ -52,6 +55,21 @@ export default async function handler(req, res) {
     typeof body.temperature === 'number' && body.temperature >= 0 && body.temperature <= 2
       ? body.temperature
       : 0.8;
+
+  // 紫微解读：轻量限流（每 IP 每日 3 次，内存计数，实例级 best-effort，防连点与脚本刷）
+  if (body.scope === 'ziwei') {
+    const ip = String(req.headers['x-forwarded-for'] || 'unknown').split(',')[0].trim();
+    const day = new Date().toISOString().slice(0, 10);
+    const key = `${ip}:${day}`;
+    const n = (ZIWEI_DAILY_USES.get(key) || 0) + 1;
+    ZIWEI_DAILY_USES.set(key, n);
+    // 防内存膨胀：超过一万条清空（约一天量）
+    if (ZIWEI_DAILY_USES.size > 10000) ZIWEI_DAILY_USES.clear();
+    if (n > 3) {
+      res.status(429).json({ error: 'RATE_LIMITED' });
+      return;
+    }
+  }
 
   try {
     // Kimi K3 参数差异：

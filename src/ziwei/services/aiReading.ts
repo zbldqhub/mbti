@@ -12,6 +12,48 @@ import { collectTianjiNotes } from '../data/tianjiNotes';
 const API_URL = '/api/chat';
 const MODEL = 'kimi-k3';
 
+/** 每日免费解读次数上限（前端提示层；服务端另有按 IP 的兜底限流） */
+export const DAILY_FREE_LIMIT = 3;
+
+interface StorageLike {
+  getItem(key: string): string | null;
+  setItem(key: string, value: string): void;
+}
+
+function defaultStorage(): StorageLike | null {
+  try {
+    return typeof localStorage !== 'undefined' ? localStorage : null;
+  } catch {
+    return null;
+  }
+}
+
+/** 今日已用次数 */
+export function getTodayUsage(storage: StorageLike | null = defaultStorage(), now = new Date()): number {
+  if (!storage) return 0;
+  const day = now.toISOString().slice(0, 10);
+  const raw = storage.getItem('ziwei_read_usage');
+  if (!raw) return 0;
+  try {
+    const obj = JSON.parse(raw);
+    return obj.day === day ? Number(obj.count) || 0 : 0;
+  } catch {
+    return 0;
+  }
+}
+
+/** 今日还能免费用几次 */
+export function todayRemaining(storage?: StorageLike | null, now?: Date): number {
+  return Math.max(0, DAILY_FREE_LIMIT - getTodayUsage(storage, now));
+}
+
+/** 成功解读后记一次 */
+export function bumpTodayUsage(storage: StorageLike | null = defaultStorage(), now = new Date()): void {
+  if (!storage) return;
+  const day = now.toISOString().slice(0, 10);
+  storage.setItem('ziwei_read_usage', JSON.stringify({ day, count: getTodayUsage(storage, now) + 1 }));
+}
+
 export interface AiAspect {
   name: string;
   stars: number;
@@ -253,10 +295,14 @@ async function callApi(prompt: string): Promise<string> {
         messages: [{ role: 'user', content: prompt }],
         temperature: 0.8,
         max_tokens: 6000,
+        scope: 'ziwei',
       }),
       signal: controller.signal,
     });
 
+    if (response.status === 429) {
+      throw new Error('今天免费解读次数已用完，明天再来吧（这是为省 token 费的限流）');
+    }
     if (!response.ok) {
       throw new Error(`AI 服务请求失败（HTTP ${response.status}）`);
     }

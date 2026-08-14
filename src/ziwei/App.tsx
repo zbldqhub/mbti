@@ -3,7 +3,7 @@ import type { BirthInput, ChartData } from './types';
 import { buildChart } from './engine/chart';
 import { buildReading } from './interpret';
 import { getYearly } from './engine/yearly';
-import { generateAiReading, type AiReading } from './services/aiReading';
+import { generateAiReading, todayRemaining, bumpTodayUsage, DAILY_FREE_LIMIT, type AiReading } from './services/aiReading';
 import InputForm from './components/InputForm';
 import ChartBoard from './components/ChartBoard';
 import ReadingView from './components/ReadingView';
@@ -41,9 +41,14 @@ export default function App() {
 
   const handleAiRead = async () => {
     if (!chart || ai.status === 'loading') return;
+    if (todayRemaining() <= 0) {
+      setAi({ status: 'error', message: `今天免费解读次数（每日 ${DAILY_FREE_LIMIT} 次）已用完，明天再来吧` });
+      return;
+    }
     setAi({ status: 'loading' });
     try {
       const reading = await generateAiReading(chart);
+      bumpTodayUsage();
       setAi({ status: 'done', reading });
     } catch (e) {
       setAi({ status: 'error', message: e instanceof Error ? e.message : 'AI 解读失败' });
@@ -85,6 +90,7 @@ export default function App() {
             <button type="button" className="zw-ai-btn" onClick={handleAiRead}>
               ✦ 开始 AI 解读
             </button>
+            <p className="zw-ai-quota">今日免费剩余 {todayRemaining()} 次</p>
           </div>
         )}
 
