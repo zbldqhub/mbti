@@ -13,18 +13,38 @@ const LUNAR_DAYS = [
   '廿一', '廿二', '廿三', '廿四', '廿五', '廿六', '廿七', '廿八', '廿九', '三十',
 ];
 
+const SOLAR_YEARS = Array.from({ length: 201 }, (_, i) => 1900 + i);
+const HOURS = Array.from({ length: 24 }, (_, i) => i);
+const MINUTES = Array.from({ length: 60 }, (_, i) => i);
+
+function daysInSolarMonth(year: number, month: number): number {
+  return new Date(year, month, 0).getDate();
+}
+
 export default function InputForm({ onSubmit }: Props) {
   const [name, setName] = useState('');
   const [gender, setGender] = useState<'male' | 'female'>('male');
   const [calType, setCalType] = useState<'solar' | 'lunar'>('solar');
-  const [date, setDate] = useState('1990-01-01');
+
+  // 公历
+  const [solarYear, setSolarYear] = useState(1990);
+  const [solarMonth, setSolarMonth] = useState(1);
+  const [solarDay, setSolarDay] = useState(1);
+  // 农历
   const [lunarYear, setLunarYear] = useState(1990);
   const [lunarMonth, setLunarMonth] = useState(1);
   const [lunarDay, setLunarDay] = useState(1);
   const [isLeap, setIsLeap] = useState(false);
-  const [time, setTime] = useState('12:00');
+  // 时间
+  const [hour, setHour] = useState(12);
+  const [minute, setMinute] = useState(0);
   const [unknownTime, setUnknownTime] = useState(false);
+
   const [error, setError] = useState('');
+
+  // 公历当月天数（年月变化时日序钳位）
+  const maxSolarDay = daysInSolarMonth(solarYear, solarMonth);
+  const effectiveSolarDay = Math.min(solarDay, maxSolarDay);
 
   // 所选农历年的闰月（决定「闰」是否可选）
   const leapMonth = useMemo(() => getLeapMonthOfYear(lunarYear), [lunarYear]);
@@ -45,12 +65,7 @@ export default function InputForm({ onSubmit }: Props) {
     let y: number; let mo: number; let d: number;
 
     if (calType === 'solar') {
-      const m = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-      if (!m) {
-        setError('请填写正确的出生日期');
-        return;
-      }
-      [y, mo, d] = [+m[1], +m[2], +m[3]];
+      [y, mo, d] = [solarYear, solarMonth, effectiveSolarDay];
     } else {
       try {
         const s = lunarToSolar(lunarYear, lunarMonth, lunarDay, isLeap && leapSelectable);
@@ -69,7 +84,7 @@ export default function InputForm({ onSubmit }: Props) {
       setError('请填写姓名');
       return;
     }
-    const [hh, mm] = unknownTime ? [12, 0] : time.split(':').map(Number);
+    const [hh, mm] = unknownTime ? [12, 0] : [hour, minute];
     setError('');
     onSubmit({
       name: name.trim(), gender, year: y, month: mo, day: d,
@@ -123,14 +138,33 @@ export default function InputForm({ onSubmit }: Props) {
         {calType === 'solar' ? (
           <>
             <label className="zw-label">出生日期（公历）</label>
-            <input
-              className="zw-input"
-              type="date"
-              value={date}
-              min="1900-01-01"
-              max="2100-12-31"
-              onChange={(e) => setDate(e.target.value)}
-            />
+            <div className="zw-lunar-row">
+              <select
+                className="zw-input"
+                value={solarYear}
+                onChange={(e) => setSolarYear(+e.target.value)}
+              >
+                {SOLAR_YEARS.map((y) => <option key={y} value={y}>{y}年</option>)}
+              </select>
+              <select
+                className="zw-input"
+                value={solarMonth}
+                onChange={(e) => setSolarMonth(+e.target.value)}
+              >
+                {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => (
+                  <option key={m} value={m}>{m}月</option>
+                ))}
+              </select>
+              <select
+                className="zw-input"
+                value={effectiveSolarDay}
+                onChange={(e) => setSolarDay(+e.target.value)}
+              >
+                {Array.from({ length: maxSolarDay }, (_, i) => i + 1).map((d) => (
+                  <option key={d} value={d}>{d}日</option>
+                ))}
+              </select>
+            </div>
           </>
         ) : (
           <>
@@ -141,9 +175,7 @@ export default function InputForm({ onSubmit }: Props) {
                 value={lunarYear}
                 onChange={(e) => setLunarYear(+e.target.value)}
               >
-                {Array.from({ length: 201 }, (_, i) => 1900 + i).map((y) => (
-                  <option key={y} value={y}>{y}年</option>
-                ))}
+                {SOLAR_YEARS.map((y) => <option key={y} value={y}>{y}年</option>)}
               </select>
               <select
                 className="zw-input"
@@ -181,13 +213,28 @@ export default function InputForm({ onSubmit }: Props) {
         )}
 
         <label className="zw-label">出生时间</label>
-        <input
-          className="zw-input"
-          type="time"
-          value={time}
-          disabled={unknownTime}
-          onChange={(e) => setTime(e.target.value)}
-        />
+        <div className="zw-lunar-row">
+          <select
+            className="zw-input"
+            value={hour}
+            disabled={unknownTime}
+            onChange={(e) => setHour(+e.target.value)}
+          >
+            {HOURS.map((h) => (
+              <option key={h} value={h}>{String(h).padStart(2, '0')}时</option>
+            ))}
+          </select>
+          <select
+            className="zw-input"
+            value={minute}
+            disabled={unknownTime}
+            onChange={(e) => setMinute(+e.target.value)}
+          >
+            {MINUTES.map((m) => (
+              <option key={m} value={m}>{String(m).padStart(2, '0')}分</option>
+            ))}
+          </select>
+        </div>
         <label className="zw-check">
           <input
             type="checkbox"
