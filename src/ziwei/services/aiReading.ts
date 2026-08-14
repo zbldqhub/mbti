@@ -241,24 +241,50 @@ export function normalizeReading(raw: unknown): AiReading {
   };
 }
 
-export async function generateAiReading(chart: ChartData, now = new Date()): Promise<AiReading> {
-  const response = await fetch(API_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [{ role: 'user', content: buildPrompt(chart, now) }],
-      temperature: 0.8,
-      max_tokens: 4000,
-    }),
-  });
+async function callApi(prompt: string): Promise<string> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 90_000); // 90s 前端兜底超时
+  try {
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: MODEL,
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.8,
+        max_tokens: 6000,
+      }),
+      signal: controller.signal,
+    });
 
-  if (!response.ok) {
-    throw new Error(`AI 服务请求失败（${response.status}）`);
+    if (!response.ok) {
+      throw new Error(`AI 服务请求失败（HTTP ${response.status}）`);
+    }
+    const data = await response.json();
+    const content: string = data.choices?.[0]?.message?.content || '';
+    if (!content) throw new Error('AI 返回了空内容');
+    return content;
+  } finally {
+    clearTimeout(timer);
   }
-  const data = await response.json();
-  const content: string = data.choices?.[0]?.message?.content || '';
-  if (!content) throw new Error('AI 返回了空内容');
+}
 
-  return normalizeReading(extractJson(content));
+export async function generateAiReading(chart: ChartData, now = new Date()): Promise<AiReading> {
+  const prompt = buildPrompt(chart, now);
+  let lastError: unknown;
+  // 失败自动重试一次（长输出偶发截断/网络抖动）
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const content = await callApi(prompt);
+      return normalizeReading(extractJson(content));
+    } catch (e) {
+      lastError = e;
+      if (e instanceof DOMException && e.name === 'AbortError') {
+        lastError = new Error('AI 响应超时（90 秒），请稍后重试');
+      } else if (e instanceof SyntaxError || (e instanceof Error && e.message.includes('JSON'))) {
+        lastError = new Error('AI 输出格式异常，请点击重试');
+      }
+    }
+  }
+  throw lastError instanceof Error ? lastError : new Error('AI 解读失败');
 }

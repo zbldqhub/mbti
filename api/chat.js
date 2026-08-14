@@ -1,5 +1,8 @@
 // Vercel Serverless Function：代理 Kimi API，避免前端暴露 Key
 
+// 长文生成（如紫微 AI 解读）需要更长执行时间，Hobby 计划上限 60s
+export const maxDuration = 60;
+
 const ALLOWED_MODELS = new Set([
   'kimi-k3',
   'moonshot-v1-8k',
@@ -42,7 +45,7 @@ export default async function handler(req, res) {
 
   const maxTokens = Math.min(
     typeof body.max_tokens === 'number' && body.max_tokens > 0 ? body.max_tokens : 100,
-    4000
+    8000
   );
 
   const temperature =
