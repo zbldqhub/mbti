@@ -150,7 +150,80 @@ export function detectPatterns(chart: ChartData): PatternResult[] {
 
   // 13. 机月同梁
   if (['天机', '太阴', '天同', '天梁'].every((s) => mingStars.has(s))) {
-    results.push({ name: '机月同梁', level: '吉', description: '天机太阴天同天梁会于三方，主性格稳细、宜公职文教与稳定机构发展。' });
+    results.push({ name: '机月同梁', level: '吉', description: '天机太阴天同天梁会于三方，主性格稳细、宜公职文教与稳定机构发展（天纪谓之「定为吏人」）。' });
+  }
+
+  // 14. 巨日格：太阳巨门皆庙旺会于命宫三方
+  {
+    const bright = (star: string) => {
+      for (const b of mingSF) {
+        const s = chart.palaces[b].stars.find((x) => x.name === star);
+        if (s && (s.brightness === '庙' || s.brightness === '旺')) return true;
+      }
+      return false;
+    };
+    if (mingStars.has('太阳') && mingStars.has('巨门') && bright('太阳') && bright('巨门')) {
+      results.push({ name: '巨日格', level: '吉', description: '太阳巨门皆庙旺会命，主大财星、能言善道，宜经商或凭口才立大业；大运逢之亦主财。' });
+    }
+    // 15. 日月并明：太阳太阴皆庙旺会于命宫三方
+    if (mingStars.has('太阳') && mingStars.has('太阴') && bright('太阳') && bright('太阴')) {
+      results.push({ name: '日月并明', level: '吉', description: '太阳太阴皆庙旺拱照命宫，主一世荣华、做事左右逢源。' });
+    }
+  }
+
+  // 16. 紫府坐垣：紫微天府同宫于寅申守命
+  if ([2, 8].includes(ming) && mingPalaceStars.has('紫微') && mingPalaceStars.has('天府')) {
+    results.push({ name: '紫府坐垣', level: '吉', description: '紫微天府同宫守命（寅申），南北斗星君同会，主位列三台、爵禄荣昌之大贵格。' });
+  }
+
+  // 17. 七杀朝斗：七杀守命寅申，对宫紫府朝照
+  if ([2, 8].includes(ming) && mingPalaceStars.has('七杀')) {
+    const oppStars = starsAt(chart, next(ming, 6));
+    if (oppStars.has('紫微') && oppStars.has('天府')) {
+      results.push({ name: '七杀朝斗', level: '吉', description: '七杀守命、紫府朝照，将星入命，主武贵、威震一方。' });
+    }
+  }
+
+  // 18. 英星入庙：破军守命于子午
+  if ([0, 6].includes(ming) && mingPalaceStars.has('破军')) {
+    results.push({ name: '英星入庙', level: '吉', description: '破军居子午守命，男子英挺武贵、女子独立晚婚；主大器晚成。' });
+  }
+
+  // 19. 将星入命：武曲贪狼同宫丑未守命
+  if ([1, 7].includes(ming) && mingPalaceStars.has('武曲') && mingPalaceStars.has('贪狼')) {
+    results.push({ name: '将星入命', level: '吉', description: '武曲贪狼同宫丑未守命，将星格，主武贵，中年后大展。' });
+  }
+
+  // 20. 日月夹命：太阳太阴分夹命宫且皆庙旺
+  {
+    const brightAt = (b: number, star: string) => {
+      const s = chart.palaces[b].stars.find((x) => x.name === star);
+      return !!s && (s.brightness === '庙' || s.brightness === '旺');
+    };
+    if ((brightAt(leftJia, '太阳') && brightAt(rightJia, '太阴'))
+      || (brightAt(leftJia, '太阴') && brightAt(rightJia, '太阳'))) {
+      results.push({ name: '日月夹命', level: '吉', description: '太阳太阴分夹命宫且皆庙旺，主一世财禄不缺、多得贵人夹辅。' });
+    }
+  }
+
+  // 21. 水澄桂萼：太阴在子守命
+  if (ming === 0 && mingPalaceStars.has('太阴')) {
+    results.push({ name: '水澄桂萼', level: '吉', description: '太阴在子守命，如子夜明月当空，主清贵；女命秀丽温婉。' });
+  }
+
+  // 13.5 半空折翅（倪海厦天纪）：廉贞贪狼双陷巳亥守命或对照命宫，或化忌冲命
+  {
+    const dui = next(ming, 6);
+    let hit = false;
+    for (const b of [ming, dui]) {
+      const majors = chart.palaces[b].stars.filter((s) => s.category === 'major').map((s) => s.name);
+      if ((b === 5 || b === 11) && majors.includes('廉贞') && majors.includes('贪狼')) hit = true;
+    }
+    const ji = chart.sihua.find((s) => s.type === '忌');
+    if (ji && ji.branch === dui) hit = true;
+    if (hit) {
+      results.push({ name: '半空折翅（天纪凶格）', level: '凶', description: '廉贞贪狼双陷巳亥或化忌冲命，古籍视为中年前后易有重大挫折之格。宜提前防范：注意健康安全、谨慎决策，该阶段守成为上，修身进德即是化解。' });
+    }
   }
 
   // 14. 桃花成局：红鸾天喜 + 天姚等会于命或福德

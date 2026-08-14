@@ -7,6 +7,7 @@ import { PALACE_NAMES } from '../types';
 import { STEMS, BRANCHES } from '../engine/constants';
 import { getYearly } from '../engine/yearly';
 import { detectPatterns } from '../data/patterns';
+import { collectTianjiNotes } from '../data/tianjiNotes';
 
 const API_URL = '/api/chat';
 const MODEL = 'kimi-k3';
@@ -109,10 +110,16 @@ function buildPrompt(chart: ChartData, now: Date): string {
   const summary = buildChartSummary(chart, now);
   const thisYear = now.getFullYear();
 
+  // 与本盘相关的天纪实例论断（选择性注入，供 AI 化用）
+  const notes = collectTianjiNotes(chart, 8);
+  const notesSection = notes.length > 0
+    ? `\n【名家实例论断参考】（以下论断摘自倪海厦《天纪》实例讲义，与本命盘特征相关。请在解读中自然化用，增强实例感；其中涉及凶象的内容，务必转述为「风险提示 + 化解建议」，严禁预言生死、严禁恐吓）：\n${notes.map((n) => `◆ ${n.title}：${n.text}`).join('\n')}\n`
+    : '';
+
   return `你是一位精通中州派紫微斗数的命理师，擅长把命盘翻译成普通人看得懂的大白话。下面是一张已经排好的命盘完整数据，请你直接基于这些数据做解读，不需要自己排盘，也不要质疑数据。
 
 ${summary}
-
+${notesSection}
 请严格按以下 JSON 结构输出（只输出 JSON，不要任何其他文字、不要用 markdown 代码块包裹）：
 {
   "summary": "一段开场总述（80-120字）：用大白话概括此命的整体格局气质，点出最亮眼的配置，语气温和诚恳，用「你」称呼",
@@ -152,10 +159,11 @@ ${summary}
 
 写作要求：
 1. 全部用大白话，命理术语第一次出现时用括号或短句解释（如「化忌（容易纠缠卡壳）」）
-2. 解读必须有依据：每个判断都要对应数据里的具体宫位星曜，不要空泛的万能话术
+2. 解读必须有依据：每个判断都要对应数据里的具体宫位星曜，不要空泛的万能话术；可参考上方名家实例论断，让解读有实例感
 3. 吉凶都要说人话：好的说成具体机会，差的说成具体可防的风险，并给应对建议
-4. 不做宿命论断言，强调「趋势+选择」；不说教、不恐吓
-5. 涉及健康只说「注意、防范」，不做疾病诊断`;
+4. 不做宿命论断言，强调「趋势+选择」；不说教、不恐吓、不预言生死
+5. 若流年或大限逢化忌、煞星偏重，化解建议可融入「进德修业」的心法（坏年景宜读书进修、修炼技能、沉淀蓄力，好年景再放手进取）
+6. 涉及健康只说「注意、防范」，不做疾病诊断`;
 }
 
 // ---------- 调用与解析 ----------
